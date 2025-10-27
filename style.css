@@ -1,37 +1,98 @@
+/* Fonts and basic setup */
 body {
-  font-family: "Poppins", sans-serif;
   margin: 0;
-  background: #f9f9f9;
-  color: #333;
-  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #2c2c2c;
+  background-color: #f8f6f3;
+  line-height: 1.7;
+}
+
+h1, h2 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.8em;
+  margin-bottom: 15px;
 }
 
 header {
-  background: #e6d8c3;
-  padding: 50px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eae6df;
+  padding: 20px 0;
 }
 
-h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.5em;
-  margin-bottom: 10px;
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav a {
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
-  color: #333;
-  font-weight: 600;
+  color: #3b3b3b;
+  font-weight: 500;
 }
 
-section {
-  padding: 40px 20px;
-  max-width: 800px;
+.consult-btn {
+  background-color: #c6b39d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
   margin: auto;
 }
 
+.section.light {
+  background-color: #f2eee9;
+}
+
+.text-block {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  margin-bottom: 12px;
+  font-size: 1.05em;
+  border-left: 3px solid #c6b39d;
+  padding-left: 10px;
+}
+
+.quote {
+  background-color: #fff;
+  text-align: center;
+}
+
+.handwritten {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.8em;
+  color: #9b8873;
+  margin: 0;
+}
+
 footer {
-  background: #ddd0b8;
+  background-color: #e8e3dc;
+  text-align: center;
   padding: 20px;
   font-size: 0.9em;
 }
