@@ -75,12 +75,12 @@ nav a:hover {
 }
 
 .hero p {
-  font-family: "Bellefair", serif; /* this sets Bellefair font */
+ font-family: "Libertinus Mono", monospace;
   font-weight: 400;
   font-style: normal;
   font-size: 1.8rem; /* larger size for better balance */
   color: var(--beige);
-  margin-top: 0.2em;
+  margin-top: 0em;
   letter-spacing: 1px;
   line-height: 1.4;
 }
