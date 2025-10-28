@@ -66,12 +66,31 @@ nav a:hover {
   font-family: "Imperial Script", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 4rem; /* make it larger */
-  line-height: 1.2; /* tighter spacing between the two lines */
-  color: var(--beige); /* optional – gives warmth if your palette allows */
+  font-size: 7rem; /* make it larger for desktop */
+  line-height: 1.3; /* spacing between lines */
+  color: var(--beige);
   margin-bottom: 0.5em;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* subtle glow for contrast */
+  white-space: normal; /* ensures wrapping works properly */
 }
 
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
     
 .hero-buttons a {
     text-decoration: none;
