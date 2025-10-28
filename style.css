@@ -102,6 +102,10 @@ section:last-of-type {
     border: 2px solid var(--black);
     color: var(--black);
 }
+/* Mission Section */ 
+.mission { padding: 6em 10%; background-color: #ffffff; color: var(--white); text-align: center; } 
+.mission-main { font-family: "Bellefair", serif; font-size: 2rem; margin-bottom: 1em; } 
+.mission-sub p { font-size: 1.2rem; margin: 0.5em 0; }
 
 /* About Section */ 
 .about-container 
