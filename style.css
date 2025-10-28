@@ -279,10 +279,7 @@ nav a:hover {
 
 /* Contact */
 .contact-info a {
-    /* Contact section */
-.contact-info {
     background-color: white; /* sets the background to white */
-    color: black; /* optional: sets the text color to black for readability */
     color: var(--black);
     text-decoration: none;
 }
