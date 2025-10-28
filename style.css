@@ -69,13 +69,13 @@ nav a:hover {
   font-size: 7rem; /* make it larger for desktop */
   line-height: 1.3; /* spacing between lines */
   color: var(--beige);
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* subtle glow for contrast */
   white-space: normal; /* ensures wrapping works properly */
 }
 
 .hero p {
- font-family: "Libertinus Mono", monospace;
+  font-family: "Special Gothic Condensed One", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.8rem; /* larger size for better balance */
