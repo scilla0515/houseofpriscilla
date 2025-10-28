@@ -1,4 +1,3 @@
-/* Color Palette */
 :root {
     --black: #0e0e0e;
     --white: #ffffff;
@@ -10,8 +9,8 @@
 body {
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
-    background-color: var(--white); /* page white */
-    color: var(--black); /* font black */
+    background-color: var(--beige);
+    color: var(--white);
     scroll-behavior: smooth;
 }
 
@@ -21,22 +20,23 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1em 5%;
-    background-color: var(--white);
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
-    border-bottom: 2px solid var(--black); /* black line under header */
 }
 
+/* Logo */
 .logo-img {
-    height: 80px;
+    height: 80px; /* increase logo size */
     width: auto;
 }
 
+/* Navigation links */
 nav ul.nav-links {
     display: flex;
-    gap: 2em;
+    gap: 2em; /* space between links */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -44,24 +44,29 @@ nav ul.nav-links {
 
 nav a {
     text-decoration: none;
-    color: var(--black);
+    color: var(--white);
     font-weight: 400;
     font-size: 1rem;
 }
 
 nav a:hover {
-    color: var(--beige);
+    color: var(--black);
 }
 
-/* Section Styling */
-section {
-    padding: 3em 10%;
-    border-bottom: 2px solid var(--black); /* black line between sections */
-}
-
-/* Remove border for last section */
-section:last-of-type {
-    border-bottom: none;
+/* Make header responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1em;
+    }
+    nav ul.nav-links {
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 0.5em;
+    }
+    .logo-img {
+        height: 60px;
+    }
 }
 
 /* Hero Section */
@@ -71,94 +76,186 @@ section:last-of-type {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: none; /* remove overlay */
-    color: var(--black);
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1621570079776-2b8bafcb41a9') center/cover;
+    color: var(--white);
+    padding: 0 2em;
 }
 
 .hero h1 {
     font-family: "Imperial Script", cursive;
-    font-size: 5rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 7rem; /* make it larger for desktop */
+    line-height: 1.3; /* spacing between lines */
+    color: var(--black);
     margin-bottom: 0.2em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    white-space: normal;
 }
 
 .hero p {
     font-family: "Special Gothic Condensed One", sans-serif;
-    font-size: 1.8rem;
-    margin-top: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8rem; /* larger size for better balance */
+    color: var(--beige);
+    margin-top: 0em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 }
 
 .hero-buttons a {
     text-decoration: none;
     margin: 0 0.5em;
-    padding: 0.8em 1.5em;
 }
 
 .btn-primary {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--beige);
+    color: var(--black);
+    padding: 0.8em 1.5em;
+    border-radius: 3px;
+    font-weight: bold;
 }
 
 .btn-secondary {
-    border: 2px solid var(--black);
+    border: 1px solid var(--beige);
+    padding: 0.8em 1.5em;
     color: var(--black);
 }
-/* Mission Section */ 
-.mission { padding: 6em 10%; background-color: #ffffff; color: var(--white); text-align: center; } 
-.mission-main { font-family: "Bellefair", serif; font-size: 2rem; margin-bottom: 1em; } 
-.mission-sub p { font-size: 1.2rem; margin: 0.5em 0; }
 
-/* About Section */ 
-.about-container 
-{ display: flex; 
-align-items: center; 
-gap: 2em; padding: 6em 10%; } 
-.about-image img { width: 100%; 
-                  max-width: 400px; 
-                  border-radius: 12px; } 
-.about-content { flex: 1; } 
-.about-main { font-family: "Bellefair", serif; 
-             font-size: 1.8rem; 
-             margin-bottom: 1em; } 
-.about-sub p { font-size: 1.1rem; margin: 0.5em 0; } /* Responsive About Section */ @media (max-width: 768px) 
-{ .about-container { flex-direction: column; text-align: center; } 
- .about-image img { max-width: 80%; } }
+/* Mission Section */
+.mission {
+    padding: 6em 10%;
+    background-color: #0e0e0e;
+    color: var(--black);
+    text-align: center;
+}
+
+.mission-main {
+    font-family: "Bellefair", serif;
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+
+.mission-sub p {
+    font-size: 1.2rem;
+    margin: 0.5em 0;
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 6em 10%;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-main {
+    font-family: "Bellefair", serif;
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+}
+
+.about-sub p {
+    font-size: 1.1rem;
+    margin: 0.5em 0;
+}
+
+/* Responsive About Section */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image img {
+        max-width: 80%;
+    }
+}
 
 /* Services Section */
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 2px; /* black line between boxes */
-    background-color: var(--black);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows equally sized */
+    gap: 2px; /* white lines between boxes */
+    background-color: var(--white); /* white separator lines */
     width: 100%;
-    height: auto;
+    height: 700px; /* total height for 2 rows (adjust as needed) */
+    margin-top: 2em;
 }
 
 .service {
-    background-color: var(--white);
+    background-color: #1a1a1a;
+    padding: 2em;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: center; /* center content vertically */
+    border-radius: 0; /* remove rounded corners for clean lines */
+    box-shadow: none; /* remove shadows for clean lines */
 }
 
 .service h3 {
-    color: var(--black);
+    color: #f4d35e;
+    margin-bottom: 0.5em;
     font-size: 1.5rem;
 }
 
 .service p {
-    color: var(--black);
+    color: var(--white);
     font-size: 1.1rem;
 }
+
+/* Hover effect */
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr; /* stack vertically */
+        grid-template-rows: auto;
+        height: auto;
+    }
+}
+
+/* Testimonials Section */
 .testimonial-banner {
     background-color: #f4d35e;
-    width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    padding: 1em 0;      /* minimal height */
-    border-bottom: 2px solid var(--black); /* optional line below */
+    padding: 1.5em 0;
 }
 
 .testimonial-marquee {
@@ -169,7 +266,8 @@ gap: 2em; padding: 6em 10%; }
 .testimonial-marquee p {
     display: inline-block;
     margin: 0;
-    font-size: 1rem;
+    font-family: "Bellefair", serif;
+    font-size: 1.2rem;
     color: var(--black);
 }
 
@@ -179,7 +277,7 @@ gap: 2em; padding: 6em 10%; }
     100% { transform: translateX(-100%); }
 }
 
-/* Contact Section */
+/* Contact */
 .contact-info a {
     color: var(--black);
     text-decoration: none;
@@ -191,12 +289,11 @@ gap: 2em; padding: 6em 10%; }
 
 /* Footer */
 footer {
-    background-color: var(--white);
+    background-color: #0a0a0a;
     text-align: center;
     padding: 1.5em;
-    color: var(--black);
+    color: var(--gray);
     font-size: 0.9em;
-    border-top: 2px solid var(--black);
 }
 
 /* Responsive */
@@ -205,14 +302,13 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-
     .about-image img {
         max-width: 80%;
     }
-
     .service-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         height: auto;
     }
 }
+
