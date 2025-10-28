@@ -563,8 +563,8 @@ nav a:hover {
     color: var(--black);
     padding: 3em 10%; /* spacing inside section */
     margin-top: 4em;  /* space from previous section */
-    border-radius: 8px; /* optional soft corners */
     text-align: center; /* center all text */
+    border-radius: 0; 
     border-bottom: 4px solid var(--black); 
 }
 
