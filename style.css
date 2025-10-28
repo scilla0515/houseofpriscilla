@@ -252,7 +252,7 @@ nav a:hover {
 
 /* Testimonials Section */
 .testimonial-banner {
-    background-color: #f4d35e;
+    background-color: #d8cfc4;
     overflow: hidden;
     white-space: nowrap;
     padding: 1.5em 0;
@@ -289,10 +289,10 @@ nav a:hover {
 
 /* Footer */
 footer {
-    background-color: #0a0a0a;
+    background-color: #ffffff;
     text-align: center;
     padding: 1.5em;
-    color: var(--gray);
+    color: var(--black);
     font-size: 0.9em;
 }
 
