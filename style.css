@@ -66,16 +66,13 @@ nav a:hover {
   font-family: "Imperial Script", cursive;
   font-weight: 400;
   font-style: normal;
+  font-size: 4rem; /* make it larger */
+  line-height: 1.2; /* tighter spacing between the two lines */
+  color: var(--beige); /* optional – gives warmth if your palette allows */
+  margin-bottom: 0.5em;
 }
 
-}
-
-.hero p {
-    font-size: 1.8em;
-    color: var(--beige);
-    margin-bottom: 1.75em;
-}
-
+    
 .hero-buttons a {
     text-decoration: none;
     margin: 0 0.5em;
