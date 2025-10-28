@@ -535,7 +535,7 @@ nav a:hover {
     background-color: #d8cfc4;
     overflow: hidden;
     white-space: nowrap;
-    padding: 1.5em 0;
+    padding: 0.5em 0;
 }
 
 .testimonial-marquee {
