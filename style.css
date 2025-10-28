@@ -102,11 +102,11 @@ section {
 }
 
 h2 {
-    font-family: 'Times New Roman', serif;
-    font-size: 2em;
-    color: var(--beige);
-    margin-bottom: 1em;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
 
 p {
     font-size: 1em;
