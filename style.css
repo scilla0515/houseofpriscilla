@@ -80,7 +80,7 @@ nav a:hover {
   font-style: normal;
   font-size: 1.8rem; /* larger size for better balance */
   color: var(--beige);
-  margin-top: 0.5em;
+  margin-top: 0.2em;
   letter-spacing: 1px;
   line-height: 1.4;
 }
