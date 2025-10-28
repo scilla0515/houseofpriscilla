@@ -208,11 +208,10 @@ nav a:hover {
 .service-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-auto-rows: minmax(200px, auto); /* ensures proper row height */
-    gap: 2em; /* spacing between boxes */
-    max-width: 1200px; /* limit width */
-    margin: 2em auto; /* center on page */
-    padding: 0 1em;
+    grid-template-rows: repeat(2, auto);  /* 2 rows */
+    gap: 1px; /* small gap between items */
+    background-color: var(--white); /* background color for the grid */
+    margin-top: 2em;
 }
 
 .service {
@@ -232,6 +231,20 @@ nav a:hover {
 .service p {
     color: var(--white);
 }
+
+/* Hover effect */
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr; /* stack vertically */
+    }
+}
+
 
 /* Hover effect */
 .service:hover {
