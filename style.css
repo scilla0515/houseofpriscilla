@@ -204,12 +204,12 @@ nav a:hover {
         max-width: 80%;
     }
 }
-
 /* Services Section */
-.service-list {
+.service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2em;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, auto);  /* 2 rows */
+    gap: 2em; /* spacing between boxes */
     margin-top: 2em;
 }
 
@@ -218,6 +218,8 @@ nav a:hover {
     padding: 2em;
     border-radius: 12px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service h3 {
@@ -228,6 +230,20 @@ nav a:hover {
 .service p {
     color: var(--white);
 }
+
+/* Hover effect */
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr; /* stack vertically */
+    }
+}
+
 
 /* Testimonials Section */
 .testimonial-banner {
