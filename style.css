@@ -10,7 +10,7 @@
 body {
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
-    background-color: var(--black);
+    background-color: var(--beige);
     color: var(--white);
     scroll-behavior: smooth;
 }
@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--beige);
+    color: var(--black);
 }
 
 /* Make header responsive */
@@ -91,7 +91,7 @@ nav a:hover {
   font-style: normal;
   font-size: 7rem; /* make it larger for desktop */
   line-height: 1.3; /* spacing between lines */
-  color: var(--beige);
+  color: var(--black);
   margin-bottom: 0.2em;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* subtle glow for contrast */
   white-space: normal; /* ensures wrapping works properly */
@@ -142,14 +142,14 @@ nav a:hover {
 .btn-secondary {
     border: 1px solid var(--beige);
     padding: 0.8em 1.5em;
-    color: var(--beige);
+    color: var(--black);
 }
 
 /* Mission Section */
 .mission {
     padding: 6em 10%;
     background-color: #0e0e0e;
-    color: var(--beige);
+    color: var(--black);
     text-align: center;
 }
 
@@ -285,7 +285,7 @@ nav a:hover {
 
 /* Contact */
 .contact-info a {
-    color: var(--beige);
+    color: var(--black);
     text-decoration: none;
 }
 
