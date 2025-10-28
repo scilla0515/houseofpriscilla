@@ -103,22 +103,21 @@ section:last-of-type {
     color: var(--black);
 }
 
-/* About Section */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 2em;
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 0;
-}
-
-.about-content {
-    flex: 1;
-}
+/* About Section */ 
+.about-container 
+{ display: flex; 
+align-items: center; 
+gap: 2em; padding: 6em 10%; } 
+.about-image img { width: 100%; 
+                  max-width: 400px; 
+                  border-radius: 12px; } 
+.about-content { flex: 1; } 
+.about-main { font-family: "Bellefair", serif; 
+             font-size: 1.8rem; 
+             margin-bottom: 1em; } 
+.about-sub p { font-size: 1.1rem; margin: 0.5em 0; } /* Responsive About Section */ @media (max-width: 768px) 
+{ .about-container { flex-direction: column; text-align: center; } 
+ .about-image img { max-width: 80%; } }
 
 /* Services Section */
 .service-grid {
