@@ -131,7 +131,8 @@ gap: 2em; padding: 6em 10%; }
     gap: 2px; /* black line between boxes */
     background-color: var(--black);
     width: 100%;
-    height: 700px;
+    height: auto;
+    padding: 2em 10%;
 }
 
 .service {
