@@ -74,6 +74,18 @@ nav a:hover {
   white-space: normal; /* ensures wrapping works properly */
 }
 
+.hero p {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem;
+  color: var(--beige);
+  margin-top: 0.3em;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
 @media (max-width: 1024px) {
   .hero h1 {
     font-size: 5rem;
