@@ -270,6 +270,50 @@ nav a:hover {
     100% { transform: translateX(-100%); }
 }
 
+#what-we-do {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #222;
+  margin-bottom: 50px;
+}
+
+.what-we-do-list {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.what-we-do-item {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.number {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: #c5b9a0; /* soft gold-beige tone */
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.underline {
+  border-bottom: 1px solid #d7d2c7; /* light beige line for elegance */
+  margin: 10px 0 20px 0;
+  opacity: 0.6;
+}
+
+
 /* Services Section */
 .service-grid {
     display: grid;
