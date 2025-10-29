@@ -197,34 +197,66 @@ nav a:hover {
 .about-container {
     display: flex;
     align-items: center;
-    gap: 2em;
-   padding: 4em 10%;
-    background-color: #ffffff;
+    justify-content: space-between;
+    gap: 4em;
+    padding: 6em 10%;
+    background-color: #f9f8f6; /* soft neutral background */
     color: var(--black);
 }
 
 .about-content {
     flex: 1;
+    max-width: 600px;
 }
 
 .about-main {
     font-family: "Dancing Script", cursive;
-    font-size: 1.8rem;
-    margin-bottom: 1em;
+    font-size: 2.2rem;
+    line-height: 1.4;
+    color: #222;
+    margin-bottom: 1.5em;
 }
 
 .about-sub p {
     font-family: "Bellefair", serif;
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0.5em 0;
+    line-height: 1.8;
+    color: #555;
+    margin: 0.8em 0;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .about-image img {
     width: 100%;
-    max-width: 450px;
-    border-radius: 12px;
+    max-width: 480px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 4em 6%;
+    }
+
+    .about-main {
+        font-size: 1.8rem;
+    }
+
+    .about-image img {
+        max-width: 90%;
+        margin-top: 2em;
+    }
+}
+
 
 /* -------------------- Responsive -------------------- */
 @media (max-width: 768px) {
