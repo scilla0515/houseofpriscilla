@@ -243,6 +243,32 @@ nav a:hover {
     }
 }
 
+/* Testimonials Section */
+.testimonial-banner {
+    background-color: #d8cfc4;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 40px; 
+}
+
+.testimonial-marquee {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+}
+
+.testimonial-marquee p {
+    display: inline-block;
+    margin: 0;
+    font-family: "Bellefair", serif;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+/* Marquee Animation */
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
 
 /* Services Section */
 .service-grid {
@@ -293,32 +319,6 @@ nav a:hover {
     }
 }
 
-/* Testimonials Section */
-.testimonial-banner {
-    background-color: #d8cfc4;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 40px; 
-}
-
-.testimonial-marquee {
-    display: inline-block;
-    animation: scroll 20s linear infinite;
-}
-
-.testimonial-marquee p {
-    display: inline-block;
-    margin: 0;
-    font-family: "Bellefair", serif;
-    font-size: 1.2rem;
-    color: var(--black);
-}
-
-/* Marquee Animation */
-@keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
 
 /* Contact Section */
 .contact {
