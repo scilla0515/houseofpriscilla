@@ -291,30 +291,32 @@ nav a:hover {
 }
 
 .what-we-do-item {
+  display: flex;
+  flex-direction: column; /* stack the text + underline */
+  align-items: flex-start; /* align left */
+  margin-bottom: 25px;
+  color: #222;
   font-family: 'Playfair Display', serif;
   font-size: 18px;
+}
+
+.text-line {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  color: #222;
-  margin-bottom: 10px;
-  position: relative;
+  align-items: center; /* number + text stay aligned */
+  gap: 12px;
 }
 
 .number {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   color: #c5b9a0; /* soft gold-beige tone */
-  margin-right: 15px;
   font-size: 20px;
 }
 
 .underline {
-  border-bottom: 1px solid #b9b1a2; /* elegant soft beige */
-  width: 65%; /* underline only under the text */
-  margin-left: 40px; /* aligns with text start */
+  border-bottom: 1px solid #b9b1a2;
+  width: 65%;
   margin-top: 6px;
-  margin-bottom: 20px;
   opacity: 0.8;
 }
 
