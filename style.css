@@ -363,29 +363,3 @@ footer {
         height: auto;
     }
 }
-
-/* Footer */
-footer {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 1.5em;
-    color: var(--black);
-    font-size: 0.9em;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .about-image img {
-        max-width: 80%;
-    }
-    .service-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        height: auto;
-    }
-}
-
