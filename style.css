@@ -198,7 +198,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 2em;
-    padding: 6em 10%;
+   padding: 4em 10%;
     background-color: #ffffff;
     color: var(--black);
 }
