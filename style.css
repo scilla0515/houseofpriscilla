@@ -199,7 +199,7 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     gap: 4em;
-    padding: 6em 10%;
+    padding: 0 10%;
     background-color: #f9f8f6; /* soft neutral background */
     color: var(--black);
     border-radius: 0; 
