@@ -279,6 +279,7 @@ nav a:hover {
 
 /* Testimonials Section */
 .testimonial-banner {
+    text-align: center;
     background-color: #d8cfc4;
     overflow: hidden;
     white-space: nowrap;
