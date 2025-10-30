@@ -196,20 +196,21 @@ nav a:hover {
 /* -------------------- About Section -------------------- */
 .about-container {
     display: flex;
-    align-items: center;
+    align-items: stretch; /* makes image fill full height */
     justify-content: space-between;
     gap: 4em;
-    padding: 0 10%;
-    background-color: #f9f8f6; /* soft neutral background */
+    padding: 0 10%; /* remove top/bottom padding so image touches edges */
+    background-color: #f9f8f6;
     color: var(--black);
-    border-radius: 0; 
-    border-bottom: 4px solid var(--black); 
+    border-bottom: 4px solid var(--black);
 }
 
 .about-content {
     flex: 1;
     max-width: 600px;
+    padding: 6em 0; /* adds padding only to text, not the image */
 }
+
 
 .about-main {
     font-family: "Dancing Script", cursive;
@@ -230,15 +231,14 @@ nav a:hover {
 .about-image {
     flex: 1;
     display: flex;
-    justify-content: center;
 }
 
 .about-image img {
     width: 100%;
-    max-width: 480px;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    object-fit: cover; /* ensures image fills full vertical area */
+    border-radius: 0; /* remove rounding to match flush edges */
+    box-shadow: none;
 }
 
 /* -------------------- Responsive -------------------- */
