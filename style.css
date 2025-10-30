@@ -202,6 +202,8 @@ nav a:hover {
     padding: 6em 10%;
     background-color: #f9f8f6; /* soft neutral background */
     color: var(--black);
+    border-radius: 0; 
+    border-bottom: 4px solid var(--black); 
 }
 
 .about-content {
@@ -304,7 +306,7 @@ nav a:hover {
 
 #what-we-do {
   text-align: center;
-  padding: 100px 20px;
+  padding: 80px 20px;
   background-color: #fff;
 }
 
