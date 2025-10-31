@@ -171,6 +171,55 @@ nav a:hover {
     background-color: #b1a396;
 }
 
+.about {
+  background-color: #f7f5f2; /* light beige background */
+  color: #0e0e0e;
+  padding: 6em 10%;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4em;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-script {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+  line-height: 1.4;
+}
+
+.about-text p {
+  font-family: "Bellefair", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  color: #333;
+  max-width: 600px;
+}
+
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
 /* Testimonials Section */
 .testimonial-banner {
     text-align: center;
