@@ -253,7 +253,7 @@ nav a:hover {
 #what-we-do {
   text-align: center;
   padding: 80px 20px;
-  background-color: #fff;
+  bbackground-color: #f7f5f2;
 }
 
 .section-title {
@@ -305,7 +305,7 @@ nav a:hover {
 
 
 #services {
-  background-color: #fff;
+  background-color: #f7f5f2;
   padding: 100px 10%;
   text-align: center;
 }
@@ -417,7 +417,7 @@ nav a:hover {
 
 /* Contact Section */
 .contact {
-    background-color: var(--white); /* white background for the entire section */
+    background-color: #f7f5f2; /* white background for the entire section */
     color: var(--black);
     padding: 3em 10%; /* spacing inside section */
     margin-top: 4em;  /* space from previous section */
@@ -439,7 +439,7 @@ nav a:hover {
 
 /* Footer */
 footer {
-    background-color: #ffffff;
+    background-color: #f7f5f2;
     text-align: center;
     padding: 1.5em;
     color: var(--black);
