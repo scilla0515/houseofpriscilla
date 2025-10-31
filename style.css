@@ -172,9 +172,11 @@ nav a:hover {
 }
 
 /* -------------------- About Section -------------------- */
+/* -------------------- About Section -------------------- */
 .about-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2em;
   padding: 4em 10%;
   background-color: #ffffff;
@@ -198,26 +200,32 @@ nav a:hover {
   margin: 0.5em 0;
 }
 
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .about-image img {
-  width: 100%;
+  width: auto;
+  height: auto;
   max-width: 450px;
   border-radius: 12px;
+  object-fit: cover; /* keeps image proportions */
 }
 
 /* -------------------- Responsive -------------------- */
-@media (max-width: 768px) {
-  .mission-sub {
-    flex-direction: column;
-    align-items: center;
-  }
 
+@media (max-width: 768px) {
   .about-container {
     flex-direction: column;
     text-align: center;
   }
 
   .about-image img {
-    max-width: 80%;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
   }
 }
 
