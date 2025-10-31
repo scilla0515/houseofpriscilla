@@ -320,16 +320,16 @@ nav a:hover {
 }
 
 .what-we-do-list {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center; /* center text content */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers all the items */
+  gap: 25px;
 }
 
 .what-we-do-item {
   display: flex;
   flex-direction: column;
-  align-items: center; /* center each item horizontally */
-  margin-bottom: 25px;
+  align-items: center; /* centers number, text, and underline */
   color: #222;
   font-family: 'Playfair Display', serif;
   font-size: 18px;
@@ -338,8 +338,9 @@ nav a:hover {
 .text-line {
   display: flex;
   align-items: center;
-  justify-content: center; /* center number + text */
+  justify-content: center; /* centers number + text together */
   gap: 12px;
+  text-align: center;
 }
 
 .number {
@@ -351,7 +352,8 @@ nav a:hover {
 
 .underline {
   border-bottom: 1px solid #b9b1a2;
-  width: 65%;
+  width: fit-content; /* makes underline match text width */
+  min-width: 200px; /* optional: gives a nice balanced look */
   margin-top: 6px;
   opacity: 0.8;
 }
