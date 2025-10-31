@@ -172,60 +172,67 @@ nav a:hover {
 }
 
 /* -------------------- About Section -------------------- */
-/* -------------------- About Section -------------------- */
 .about-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2em;
-  padding: 4em 10%;
+  gap: 3em;
+  padding: 6em 10%;
   background-color: #ffffff;
   color: var(--black);
 }
 
 .about-content {
-  flex: 1;
+  flex: 1; /* takes up 50% */
+  max-width: 50%;
 }
 
 .about-main {
   font-family: "Dancing Script", cursive;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 1em;
 }
 
 .about-sub p {
   font-family: "Bellefair", serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.8;
   margin: 0.5em 0;
 }
 
 .about-image {
-  flex: 1;
+  flex: 1; /* takes up the other 50% */
+  max-width: 50%;
   display: flex;
   justify-content: center;
 }
 
 .about-image img {
-  width: auto;
-  height: auto;
-  max-width: 450px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover; /* ensures it fills space without distortion */
   border-radius: 12px;
-  object-fit: cover; /* keeps image proportions */
 }
 
 /* -------------------- Responsive -------------------- */
-
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
     text-align: center;
+    padding: 4em 8%;
+  }
+
+  .about-content,
+  .about-image {
+    max-width: 100%;
   }
 
   .about-image img {
     width: 100%;
-    max-width: 350px;
     height: auto;
+    max-width: 400px;
+    margin-top: 1.5em;
   }
 }
 
