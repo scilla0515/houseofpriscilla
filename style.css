@@ -20,17 +20,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 5%;
-      background-color: rgba(0, 0, 0, 0.85);
+    padding: 0.5em 5%;                /* smaller header */
+    background-color: #ffffff;        /* white navbar */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
+    border-bottom: 3px solid #8b5e3c; /* brown bottom border */
 }
 
 /* Logo */
 .logo-img {
-    height: 80px; /* increase logo size */
+    height: 60px; /* smaller logo to match smaller nav */
     width: auto;
 }
 
@@ -45,29 +46,29 @@ nav ul.nav-links {
 
 nav a {
     text-decoration: none;
-    color: var(--white);
-    font-weight: 400;
-    font-size: 1rem;
+    color: #8b5e3c;           /* brown text */
+    font-weight: 500;          /* slightly bolder for elegance */
+    font-size: 0.95rem;        /* slightly smaller text */
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--gold);
+    color: var(--gold);       /* gold hover accent */
 }
 
-/* Make header responsive */
+/* Optional: responsive header adjustments */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 1em;
+        padding: 0.5em 1em;
+    }
+    .logo-img {
+        height: 50px;
     }
     nav ul.nav-links {
         flex-direction: column;
         gap: 1em;
         margin-top: 0.5em;
-    }
-    .logo-img {
-        height: 60px;
     }
 }
 
