@@ -75,11 +75,11 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--beige); /* soft neutral tone */
+    background-color: #f7f5f2; /* match About section */
     color: var(--black);
     padding: 8em 2em;
     border-bottom: 3px solid var(--black);
-    height: auto; /* no more full-screen size */
+    height: auto;
 }
 
 .hero-content {
@@ -123,11 +123,11 @@ nav a:hover {
 /* -------------------- Mission Section -------------------- */ 
 .mission {
     padding: 6em 10%;
-    background-color: #ffffff;
+    background-color: #f7f5f2; /* match About section */
     color: var(--black);
     text-align: center;
-    border-radius: 0; 
-    border-bottom: 4px solid var(--black); 
+    border-radius: 0;
+    border-bottom: 4px solid var(--black);
 }
 
 .mission-main {
@@ -174,7 +174,9 @@ nav a:hover {
 .about {
   background-color: #f7f5f2; /* light beige background */
   color: #0e0e0e;
-  padding: 6em 10%;
+  padding: 4em 10%;
+  border-radius: 0;
+  border-bottom: 4px solid var(--black);
 }
 
 .about-container {
