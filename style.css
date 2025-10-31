@@ -172,6 +172,7 @@ nav a:hover {
 }
 
 /* -------------------- About Section -------------------- */
+/* -------------------- About Section -------------------- */
 .about-container {
   display: flex;
   align-items: center;
@@ -180,16 +181,17 @@ nav a:hover {
   padding: 6em 10%;
   background-color: #ffffff;
   color: var(--black);
+  flex-wrap: nowrap;
 }
 
 .about-content {
-  flex: 1; /* takes up 50% */
+  flex: 1;
   max-width: 50%;
 }
 
 .about-main {
   font-family: "Dancing Script", cursive;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 1em;
 }
 
@@ -200,19 +202,21 @@ nav a:hover {
   margin: 0.5em 0;
 }
 
+/* ✅ fix image scaling */
 .about-image {
-  flex: 1; /* takes up the other 50% */
+  flex: 1;
   max-width: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .about-image img {
   width: 100%;
-  height: 100%;
-  max-width: 100%;
-  object-fit: cover; /* ensures it fills space without distortion */
+  height: auto; /* <-- allows natural ratio */
+  max-width: 550px;
   border-radius: 12px;
+  object-fit: cover; /* fills box without distortion */
 }
 
 /* -------------------- Responsive -------------------- */
