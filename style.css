@@ -173,51 +173,52 @@ nav a:hover {
 
 /* -------------------- About Section -------------------- */
 .about-container {
-    display: flex;
-    align-items: center; /* centers image vertically without stretching */
-    justify-content: space-between;
-    gap: 4em;
-    padding: 0 10%; /* keeps image touching top/bottom */
-    background-color: #f9f8f6;
-    color: var(--black);
-    border-bottom: 4px solid var(--black);
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 4em 10%;
+  background-color: #ffffff;
+  color: var(--black);
 }
 
 .about-content {
-    flex: 1;
-    max-width: 600px;
-    padding: 6em 0;
+  flex: 1;
 }
 
 .about-main {
-    font-family: "Dancing Script", cursive;
-    font-size: 2.2rem;
-    line-height: 1.4;
-    color: #222;
-    margin-bottom: 1.5em;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  margin-bottom: 1em;
 }
 
 .about-sub p {
-    font-family: "Bellefair", serif;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin: 0.8em 0;
-}
-
-.about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* keeps image centered horizontally */
-    align-items: center; /* centers image vertically */
+  font-family: "Bellefair", serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0.5em 0;
 }
 
 .about-image img {
-    width: 100%;
-    height: auto; /* <-- allows natural aspect ratio */
-    object-fit: contain; /* keeps image fully visible without crop/stretch */
-    border-radius: 0;
-    box-shadow: none;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .mission-sub {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 80%;
+  }
 }
 
 
