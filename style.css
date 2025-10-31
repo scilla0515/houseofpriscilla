@@ -221,43 +221,6 @@ nav a:hover {
   }
 }
 
-
-/* -------------------- Responsive -------------------- */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 4em 6%;
-    }
-
-    .about-main {
-        font-size: 1.8rem;
-    }
-
-    .about-image img {
-        max-width: 90%;
-        margin-top: 2em;
-    }
-}
-
-
-/* -------------------- Responsive -------------------- */
-@media (max-width: 768px) {
-    .mission-sub {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        max-width: 80%;
-    }
-}
-
 /* Testimonials Section */
 .testimonial-banner {
     text-align: center;
