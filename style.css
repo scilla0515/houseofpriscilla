@@ -171,74 +171,15 @@ nav a:hover {
     background-color: #b1a396;
 }
 
-/* -------------------- About Section -------------------- */
-/* -------------------- About Section -------------------- */
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3em;
-  padding: 6em 10%;
-  background-color: #ffffff;
-  color: var(--black);
-  flex-wrap: nowrap;
-}
-
-.about-content {
-  flex: 1;
-  max-width: 50%;
-}
-
-.about-main {
-  font-family: "Dancing Script", cursive;
-  font-size: 2.2rem;
-  margin-bottom: 1em;
-}
-
-.about-sub p {
-  font-family: "Bellefair", serif;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin: 0.5em 0;
-}
-
-/* ✅ fix image scaling */
-.about-image {
-  flex: 1;
-  max-width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto; /* <-- allows natural ratio */
-  max-width: 550px;
-  border-radius: 12px;
-  object-fit: cover; /* fills box without distortion */
-}
-
-/* -------------------- Responsive -------------------- */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 4em 8%;
-  }
-
-  .about-content,
-  .about-image {
-    max-width: 100%;
-  }
-
-  .about-image img {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-    margin-top: 1.5em;
-  }
-}
+.about-container { display: flex; align-items: center; gap: 2em; padding: 4em 10%; background-color: #ffffff; color: var(--black); 
+                 } .about-content { flex: 1; } .about-main { font-family: "Dancing Script", cursive; font-size: 1.8rem; margin-bottom: 1em; 
+                                                           } .about-sub p { font-family: "Bellefair", serif; font-size: 1.1rem; line-height: 1.6; margin: 0.5em 0; 
+                                                                          } .about-image img { width: 100%; max-width: 450px; border-radius: 12px; } 
+/* -------------------- Responsive -------------------- */ 
+@media (max-width: 768px) 
+{ .mission-sub { flex-direction: column; align-items: center; } 
+ .about-container { flex-direction: column; text-align: center; } 
+ .about-image img { max-width: 80%; } }
 
 /* Testimonials Section */
 .testimonial-banner {
