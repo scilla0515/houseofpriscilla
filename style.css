@@ -170,16 +170,63 @@ nav a:hover {
 .mission-button:hover {
     background-color: #b1a396;
 }
+/* Final About Section Override */
+section.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  padding: 6em 10%;
+  background-color: #ffffff;
+  color: var(--black);
+}
 
-.about-container { display: flex; align-items: center; gap: 2em; padding: 4em 10%; background-color: #ffffff; color: var(--black); 
-                 } .about-content { flex: 1; } .about-main { font-family: "Dancing Script", cursive; font-size: 1.8rem; margin-bottom: 1em; 
-                                                           } .about-sub p { font-family: "Bellefair", serif; font-size: 1.1rem; line-height: 1.6; margin: 0.5em 0; 
-                                                                          } .about-image img { width: 100%; max-width: 450px; border-radius: 12px; } 
-/* -------------------- Responsive -------------------- */ 
-@media (max-width: 768px) 
-{ .mission-sub { flex-direction: column; align-items: center; } 
- .about-container { flex-direction: column; text-align: center; } 
- .about-image img { max-width: 80%; } }
+section.about-container .about-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+section.about-container .about-main {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+section.about-container .about-sub p {
+  font-family: "Bellefair", serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 0.5em 0;
+}
+
+section.about-container .about-image {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+section.about-container .about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section.about-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 4em 8%;
+  }
+
+  section.about-container .about-image img {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 1.5em;
+  }
+}
+
 
 /* Testimonials Section */
 .testimonial-banner {
