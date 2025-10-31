@@ -79,9 +79,9 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     background-color: var(--cream); /* match About section */
-    color: #8b5e3c;
+    color: #6B4C3B;
     padding: 8em 2em;
-    border-bottom: 3px solid #8b5e3c;
+    border-bottom: 3px solid #6B4C3B;
     height: auto;
 }
 
