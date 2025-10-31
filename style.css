@@ -69,77 +69,55 @@ nav a:hover {
     }
 }
 
-/* Hero Section */
+
 .hero {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7)), 
-                url('https://images.unsplash.com/photo-1621570079776-2b8bafcb41a9') center/cover;
-    color: var(--white);
-    padding: 0 2em;
-}
-
-.hero {
-  background-color: #d8cfc4; /* elegant neutral tone */
-  color: #000;
-  text-align: center;
-  padding: 6em 2em; /* smaller, but still feels spacious */
-  border-bottom: 3px solid var(--black);
+    background-color: var(--beige); /* soft neutral tone */
+    color: var(--black);
+    padding: 8em 2em;
+    border-bottom: 3px solid var(--black);
+    height: auto; /* no more full-screen size */
 }
 
 .hero-content {
-  max-width: 700px;
-  margin: 0 auto;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .hero-title {
-  font-family: "Playfair Display", serif;
-  font-weight: 600;
-  font-size: 2.8rem;
-  letter-spacing: 1.5px;
-  margin-bottom: 0.4em;
-  color: var(--black);
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 2.8rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.4em;
+    color: var(--black);
 }
 
 .hero-subtitle {
-  font-family: "Bellefair", serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #222;
-  margin-bottom: 1.5em;
+    font-family: "Bellefair", serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 1.5em;
 }
 
 .hero-btn {
-  background-color: var(--black);
-  color: #fff;
-  padding: 0.8em 2em;
-  text-decoration: none;
-  font-family: "Bellefair", serif;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  border: none;
-  transition: all 0.3s ease;
+    background-color: var(--black);
+    color: #fff;
+    padding: 0.8em 2em;
+    text-decoration: none;
+    font-family: "Bellefair", serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: none;
+    transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
-  background-color: #333;
-}
-
-.btn-primary {
-    background-color: var(--white);
-    color: var(--black);
-    padding: 0.8em 1.5em;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
-.btn-secondary {
-    border: 1px solid var(--beige);
-    padding: 0.8em 1.5em;
-    color: var(--black);
+    background-color: #333;
 }
 
 /* -------------------- Mission Section -------------------- */ 
