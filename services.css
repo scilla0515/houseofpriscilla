@@ -22,6 +22,20 @@
   width: 100%;
 }
 
+/* Swiper slide layout adjustments */
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  width: 100%;           /* ensures one full slide per view */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start; /* text on left */
+  align-items: flex-start;
+  padding: 2rem 0;
+}
+
 .service-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
