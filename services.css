@@ -8,7 +8,7 @@
   background-color: #f7f5f2;
   padding: 4rem 10%;
   border-bottom: 3px solid #6B4C3B;
-  position: relative; /* ensures arrows are positioned inside */
+  position: relative;
 }
 
 /* Swiper slide adjustments */
@@ -20,14 +20,14 @@
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  justify-content: flex-start; /* text on left */
+  justify-content: flex-start;
   align-items: flex-start;
   padding: 2rem 0;
-  height: auto; /* slide height adapts to content */
+  height: auto; /* slide height fits content */
 }
 
-/* Service text */
-.service-text {
+/* Service content */
+.service-content {
   width: 100%;
 }
 
