@@ -3,11 +3,10 @@
   --gold: #c8a97e;
 }
 
-/* -------------------- Services Section (Slider Text Only) -------------------- */
+/* Services Section */
 #services {
   background-color: #f7f5f2;
   padding: 4rem 10%;
-  text-align: left;
   border-bottom: 3px solid #6B4C3B;
 }
 
@@ -15,7 +14,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  min-height: auto; /* height adjusts to text content */
+  min-height: auto; /* slide height adapts to content */
   padding: 2rem 0;
 }
 
@@ -28,7 +27,6 @@
   font-size: 2.2rem;
   color: #6B4C3B;
   margin-bottom: 1rem;
-  letter-spacing: 1px;
 }
 
 .service-desc {
@@ -41,7 +39,7 @@
 .service-details {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 .service-details li {
@@ -61,7 +59,7 @@
 
 .service-btn {
   display: inline-block;
-  margin-top: 1.5em;
+  margin-top: 1.5rem;
   padding: 10px 24px;
   background-color: var(--black);
   color: #fff;
@@ -96,4 +94,3 @@
     justify-content: flex-start;
   }
 }
-
