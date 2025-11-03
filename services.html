@@ -28,174 +28,172 @@
     </div>
   </section>
 
-  <!-- Services Section -->
  <section id="services">
-    <div class="section-title">Our Services</div>
-    <div class="service-list">
+  <div class="section-title">Our Services</div>
+  <div class="service-list">
 
-      <!-- Bookkeeping Packages -->
-      <div class="service-item">
-        <h3 class="service-title">Bookkeeping Packages</h3>
-        <p class="service-desc">Recurring bookkeeping services to keep your business finances organized and accurate.</p>
+    <!-- 1️⃣ Bookkeeping Packages -->
+    <div class="service-item">
+      <h3 class="service-title">Bookkeeping Packages</h3>
+      <p class="service-desc">Recurring bookkeeping services to keep your business finances organized and accurate.</p>
 
-        <!-- Monthly Bookkeeping Tiers -->
-      <div class="service-item">
-  <h3 class="service-title">Bookkeeping Packages</h3>
-  <p class="service-desc">Recurring bookkeeping services to keep your business finances organized and accurate.</p>
+      <div class="tier-cards">
+        <!-- Starter Tier -->
+        <div class="tier-card" onclick="toggleCard(this)">
+          <div class="tier-front">
+            <h4 class="service-subtitle">Starter: Starts at $449/month</h4>
+          </div>
+          <div class="tier-back">
+            <ul class="service-details">
+              <li>Income + expense categorizations</li>
+              <li>Monthly account reconciliations</li>
+              <li>Profit & Loss report</li>
+              <li>Email & text support</li>
+            </ul>
+          </div>
+        </div>
 
-  <div class="tier-cards">
-    <!-- Starter -->
-    <div class="tier-card" onclick="toggleCard(this)">
-      <div class="tier-front">
-        <h4 class="service-subtitle">Starter: Starts at $449/month</h4>
+        <!-- Standard Tier -->
+        <div class="tier-card" onclick="toggleCard(this)">
+          <div class="tier-front">
+            <h4 class="service-subtitle">Standard: Starts at $649/month</h4>
+          </div>
+          <div class="tier-back">
+            <ul class="service-details">
+              <li>Everything in Starter</li>
+              <li>Annual 1099 filings</li>
+              <li>Estimated tax payment recommendations</li>
+              <li>Collaboration with your tax CPA</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Premium Tier -->
+        <div class="tier-card" onclick="toggleCard(this)">
+          <div class="tier-front">
+            <h4 class="service-subtitle">Premium: Starts at $899/month</h4>
+          </div>
+          <div class="tier-back">
+            <ul class="service-details">
+              <li>Everything in Standard</li>
+              <li>Payroll processing</li>
+              <li>Annual budgeting & reporting</li>
+              <li>Priority support</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quarterly Bookkeeping -->
+        <div class="tier-card" onclick="toggleCard(this)">
+          <div class="tier-front">
+            <h4 class="service-subtitle">Quarterly Bookkeeping: $340/month</h4>
+          </div>
+          <div class="tier-back">
+            <ul class="service-details">
+              <li>Quarterly Profit & Loss report</li>
+              <li>Quarterly account reconciliations</li>
+              <li>Email support throughout the quarter</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="tier-back">
-        <ul class="service-details">
-          <li>Income + expense categorizations</li>
-          <li>Monthly account reconciliations</li>
-          <li>Profit & Loss report</li>
-          <li>Email & text support</li>
-        </ul>
-      </div>
+
+      <a href="#contact" class="service-btn">Let's Work Together</a>
     </div>
 
-    <!-- Standard -->
-    <div class="tier-card" onclick="toggleCard(this)">
-      <div class="tier-front">
-        <h4 class="service-subtitle">Standard: Starts at $649/month</h4>
-      </div>
-      <div class="tier-back">
+    <!-- 2️⃣ Financial Setup & Cleanup -->
+    <div class="service-item">
+      <h3 class="service-title">Financial Setup & Cleanup</h3>
+      <p class="service-desc">One-time services to get your books accurate, organized, and ready for growth.</p>
+
+      <div class="service-tier">
+        <h4 class="service-subtitle">Book Catch-Up & Clean-Up</h4>
         <ul class="service-details">
-          <li>Everything in Starter</li>
-          <li>Annual 1099 filings</li>
-          <li>Estimated tax payment recommendations</li>
-          <li>Collaboration with your tax CPA</li>
+          <li>Diagnostic review & assessment</li>
+          <li>Income & expense categorizations for catch-up periods</li>
+          <li>Accurate, reconciled numbers</li>
+          <li>Tax-ready reports</li>
         </ul>
       </div>
+
+      <div class="service-tier">
+        <h4 class="service-subtitle">Diagnostic Review</h4>
+        <ul class="service-details">
+          <li>Comprehensive QuickBooks Online review</li>
+          <li>Assessment of categorizations and structure</li>
+          <li>Notes highlighting improvements & red flags</li>
+        </ul>
+        <p class="service-price">One-time investment of $449</p>
+      </div>
+
+      <div class="service-tier">
+        <h4 class="service-subtitle">QuickBooks Online Setup</h4>
+        <ul class="service-details">
+          <li>Custom QuickBooks Online setup</li>
+          <li>Custom chart of accounts</li>
+          <li>Walk-through video</li>
+          <li>30 days post-setup support</li>
+        </ul>
+        <p class="service-price">One-time investment of $549</p>
+      </div>
+
+      <a href="#contact" class="service-btn">Get Started</a>
     </div>
 
-    <!-- Premium -->
-    <div class="tier-card" onclick="toggleCard(this)">
-      <div class="tier-front">
-        <h4 class="service-subtitle">Premium: Starts at $899/month</h4>
-      </div>
-      <div class="tier-back">
+    <!-- 3️⃣ Steward Your Finances -->
+    <div class="service-item">
+      <h3 class="service-title">Steward Your Finances</h3>
+      <p class="service-desc">Systems-based money management for individuals at any income level.</p>
+
+      <div class="service-tier">
+        <h4 class="service-subtitle">Personal Finance Systems: Starts at $299/month</h4>
         <ul class="service-details">
-          <li>Everything in Standard</li>
-          <li>Payroll processing</li>
-          <li>Annual budgeting & reporting</li>
-          <li>Priority support</li>
+          <li>Custom budgeting + cash flow system</li>
+          <li>Expense tracking setup (Notion, Excel, or preferred platform)</li>
+          <li>Personalized savings + debt strategy</li>
+          <li>Monthly financial review call</li>
+          <li>Accountability check-ins for consistency</li>
+          <li>Faith-centered stewardship approach</li>
         </ul>
       </div>
+
+      <div class="service-tier">
+        <h4 class="service-subtitle">Wealth Management Systems: Starts at $599/month</h4>
+        <ul class="service-details">
+          <li>Full money management framework + automation</li>
+          <li>Custom wealth dashboard (cash flow, giving, taxes, assets)</li>
+          <li>Bi-weekly financial review + planning calls</li>
+          <li>Tax-aware money planning (with CPA collaboration)</li>
+          <li>System for multi-account management + wealth allocation</li>
+          <li>Biblical stewardship coaching + aligned decision making</li>
+        </ul>
+      </div>
+
+      <a href="#contact" class="service-btn">Start Your System</a>
     </div>
+
+    <!-- 4️⃣ Custom Website Creation -->
+    <div class="service-item">
+      <h3 class="service-title">Custom Website Creation</h3>
+      <p class="service-desc">Professional websites built from scratch to elevate your business online presence.</p>
+      <ul class="service-details">
+        <li>Custom, mobile-friendly website design</li>
+        <li>Up to 5 pages (Home, About, Services, Contact, etc.)</li>
+        <li>Brand-aligned visuals and typography</li>
+        <li>E-commerce integration (if needed)</li>
+        <li>Ongoing website maintenance</li>
+      </ul>
+      <p class="service-price">Starting at $800</p>
+      <p class="service-note">*Pricing varies based on scope and customization level.</p>
+      <a href="#contact" class="service-btn">Build My Website</a>
+    </div>
+
   </div>
+</section>
 
-  <a href="#contact" class="service-btn">Let's Work Together</a>
-</div>
-
-
-      <!-- Financial Setup & Cleanup -->
-      <div class="service-item">
-        <h3 class="service-title">Financial Setup & Cleanup</h3>
-        <p class="service-desc">One-time services to get your books accurate, organized, and ready for growth.</p>
-
-        <div class="service-tier" onclick="toggleCard(this)">
-          <h4 class="service-subtitle">Book Catch-Up & Clean-Up</h4>
-          <ul class="service-details">
-            <li>Diagnostic review & assessment</li>
-            <li>Income & expense categorizations for catch-up periods</li>
-            <li>Accurate, reconciled numbers</li>
-            <li>Tax-ready reports</li>
-          </ul>
-        </div>
-
-        <div class="service-tier" onclick="toggleCard(this)">
-          <h4 class="service-subtitle">Diagnostic Review</h4>
-          <ul class="service-details">
-            <li>Comprehensive QuickBooks Online review</li>
-            <li>Assessment of categorizations and structure</li>
-            <li>Notes highlighting improvements & red flags</li>
-          </ul>
-          <p class="service-price">One-time investment of $449</p>
-        </div>
-
-        <div class="service-tier" onclick="toggleCard(this)">
-          <h4 class="service-subtitle">QuickBooks Online Setup</h4>
-          <ul class="service-details">
-            <li>Custom QuickBooks Online setup</li>
-            <li>Custom chart of accounts</li>
-            <li>Walk-through video</li>
-            <li>30 days post-setup support</li>
-          </ul>
-          <p class="service-price">One-time investment of $549</p>
-        </div>
-
-        <a href="#contact" class="service-btn">Get Started</a>
-      </div>
-
-      <!-- Steward Your Finances -->
-      <div class="service-item">
-        <h3 class="service-title">Steward Your Finances</h3>
-        <p class="service-desc">Systems-based money management for individuals at any income level.</p>
-
-        <div class="service-tier" onclick="toggleCard(this)">
-          <h4 class="service-subtitle">Personal Finance Systems: Starts at $299/month</h4>
-          <ul class="service-details">
-            <li>Custom budgeting + cash flow system</li>
-            <li>Expense tracking setup (Notion, Excel, or preferred platform)</li>
-            <li>Personalized savings + debt strategy</li>
-            <li>Monthly financial review call</li>
-            <li>Accountability check-ins for consistency</li>
-            <li>Faith-centered stewardship approach</li>
-          </ul>
-        </div>
-
-        <div class="service-tier" onclick="toggleCard(this)">
-          <h4 class="service-subtitle">Wealth Management Systems: Starts at $599/month</h4>
-          <ul class="service-details">
-            <li>Full money management framework + automation</li>
-            <li>Custom wealth dashboard (cash flow, giving, taxes, assets)</li>
-            <li>Bi-weekly financial review + planning calls</li>
-            <li>Tax-aware money planning (with CPA collaboration)</li>
-            <li>System for multi-account management + wealth allocation</li>
-            <li>Biblical stewardship coaching + aligned decision making</li>
-          </ul>
-        </div>
-
- <!-- Digital + Creative Services -->
-<div class="service-item">
-  <h3 class="service-title">Custom Website Creation</h3>
-  <p class="service-desc">Professional websites built from scratch to elevate your business online presence.</p>
-
-  <div class="service-tier" onclick="toggleCard(this)">
-    <h4 class="service-subtitle">Website Package: Starts at $800</h4>
-    <ul class="service-details">
-      <li>Custom, mobile-friendly website design</li>
-      <li>Up to 5 pages (Home, About, Services, Contact, etc.)</li>
-      <li>Brand-aligned visuals and typography</li>
-      <li>E-commerce integration (if needed)</li>
-      <li>Ongoing website maintenance</li>
-    </ul>
-  </div>
-
-  <p class="service-note">*Pricing varies based on scope and customization level.</p>
-  <a href="#contact" class="service-btn">Build My Website</a>
-</div>
-
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 House of Priscilla Consulting. All rights reserved.
-  </footer>
-</body>
-</html>
-
+<!-- Toggle script for tier cards -->
 <script>
 function toggleCard(element) {
-  element.parentElement.classList.toggle('open');
+  element.classList.toggle('open');
 }
 </script>
-
