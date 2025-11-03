@@ -111,82 +111,115 @@ nav a:hover {
   color: #6B4C3B;
 }
 
-/* -------------------- Services Section -------------------- */
-#services {
-  background-color: #f7f5f2;
-  padding: 4rem 0; /* remove horizontal padding */
-  border-bottom: 3px solid #6B4C3B;
-  overflow: hidden; /* prevents slides from peeking */
+/* -------------------- Folder Tabs Container -------------------- */
+.folder-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: 'Bellefair', serif;
 }
 
-/* -------------------- Swiper Container -------------------- */
-.swiper {
-  width: 100%;
-  height: var(--slider-height);
-  position: relative;
-  box-sizing: border-box;
-  overflow: hidden; /* ensures only one slide is visible */
-}
-
-.swiper-wrapper {
-  width: 100%;
-  flex-wrap: nowrap;
-}
-
-/* Slides */
-.swiper-slide {
-  flex: 0 0 100%;
-  height: 100%;
+/* -------------------- Tabs -------------------- */
+.folder-tabs {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 10%;   /* remove padding to avoid slide peeking */
-  box-sizing: border-box;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-/* Text & Styling */ .service-text { flex: 1; min-width: 300px; } 
-.service-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #6B4C3B; margin-bottom: 1rem; } 
-.service-desc { font-family: 'Bellefair', serif; font-size: 1.1rem; color: #444; margin-bottom: 1rem; } 
-.service-details { list-style: none; padding: 0; margin: 0 0 1rem; } 
-.service-details li { font-family: 'Bellefair', serif; color: #333; margin: 0.4em 0; position: relative; padding-left: 1em; } 
-.service-details li::before { content: "•"; position: absolute; left: 0; color: var(--gold); } 
-.service-btn { display: inline-block; margin-top: 1.5rem; padding: 10px 24px; background-color: var(--black); color: #fff; font-family: 'Bellefair', serif; border-radius: 30px; text-decoration: none; transition: background-color 0.3s; } 
-.service-btn:hover { background-color: var(--gold); color: var(--black); } /* Optional image on right */
-.service-image { flex: 1; text-align: right; } 
-.service-image img { width: 100%; max-width: 500px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.folder-tab {
+  padding: 0.5rem 1rem;
+  border-radius: 6px 6px 0 0;
+  background-color: #f7f5f2;
+  border: 2px solid #6B4C3B;
+  border-bottom: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-/* -------------------- Swiper Controls -------------------- */
-.swiper-button-prev,
-.swiper-button-next {
-  color: #6B4C3B;
+.folder-tab:hover {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+.folder-tab.active {
+  background-color: var(--gold);
+  color: var(--black);
+  box-shadow: inset 0 -2px 0 #fff;
+}
+
+/* -------------------- Content Panel -------------------- */
+.folder-content {
+  border: 2px solid #6B4C3B;
+  border-radius: 0 6px 6px 6px;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* -------------------- Bullet Points -------------------- */
+.tab-panel ul {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.tab-panel li {
+  position: relative;
+  margin: 0.5rem 0;
+  color: #333;
+  padding-left: 1.2rem;
+}
+
+.tab-panel li::before {
+  content: "•";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  z-index: 10;
-  opacity: 1;
+  left: 0;
+  color: var(--gold);
+  font-weight: bold;
 }
 
-.swiper-button-prev { left: 10px; }
-.swiper-button-next { right: 10px; }
+/* Nested bullets */
+.tab-panel li ul li::before {
+  content: "–";
+  color: #6B4C3B;
+  font-weight: normal;
+}
 
-.swiper-pagination { bottom: 10px !important; }
-.swiper-pagination-bullet { background: #6B4C3B; }
+/* -------------------- Headings & Text -------------------- */
+.tab-panel h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #6B4C3B;
+  margin-bottom: 0.8rem;
+}
+
+.tab-panel p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
 
 /* -------------------- Responsive -------------------- */
-@media (max-width: 900px) {
-  #services { padding: 2rem 5%; }
-  .swiper { height: auto; }
-  .swiper-slide {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 1rem 0; 
+@media (max-width: 768px) {
+  .folder-tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
-  .service-content { flex-direction: column; width: 100%; }
-  .service-image { text-align: center; margin-top: 1.5rem; }
-  .service-image img { max-width: 100%; }
-  .swiper-button-prev,
-  .swiper-button-next { top: auto; bottom: 10px; transform: none; }
+  .folder-tab {
+    flex: 1 1 30%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .folder-content {
+    padding: 1rem 1.5rem;
+  }
 }
