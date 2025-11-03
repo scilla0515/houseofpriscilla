@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>House of Priscilla Consulting | Services</title>
   <link rel="stylesheet" href="services.css">
 </head>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    spaceBetween: 50,
+    grabCursor: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    effect: 'slide', // or 'fade' for a soft transition
+  });
+</script>
+
 <body>
   <!-- Header / Navbar -->
   <header>
