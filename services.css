@@ -3,52 +3,34 @@
   --gold: #c8a97e;
 }
 
-/* -------------------- Services Section -------------------- */
+/* Services Section */
 #services {
   background-color: #f7f5f2;
   padding: 4rem 10%;
   border-bottom: 3px solid #6B4C3B;
+  position: relative; /* ensures arrows are positioned inside */
 }
 
-/* Swiper wrapper adjustments */
+/* Swiper slide adjustments */
 .swiper {
   width: 100%;
 }
 
 .swiper-slide {
-  width: 100%;           /* show one full slide per view */
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start; /* text on left */
-  align-items: flex-start;     /* top-align content */
-  padding: 2rem 0;
-  min-height: auto;            /* slide height adapts to content */
-}
-
-/* Service content */
-.service-content {
-  width: 100%;
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
   align-items: flex-start;
+  padding: 2rem 0;
+  height: auto; /* slide height adapts to content */
 }
 
-/* Optional: add image on right if needed */
-.service-image {
-  flex: 1;
-  max-width: 400px;
-  display: block;
-  text-align: right;
-}
-
-.service-image img {
+/* Service text */
+.service-text {
   width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
 }
 
-/* Text */
 .service-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
@@ -104,16 +86,28 @@
 /* Swiper Controls */
 .swiper-button-prev,
 .swiper-button-next {
-  color: #6B4C3B;
-  top: 50%;                  /* vertically center arrows */
+  position: absolute;
+  top: 50%;
   transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  color: #6B4C3B;
 }
 
-.swiper-pagination-bullet {
-  background: #6B4C3B;
+.swiper-button-prev {
+  left: 10px;
 }
 
-/* -------------------- Responsive -------------------- */
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-pagination {
+  bottom: 10px;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
   #services {
     padding: 2rem 5%;
@@ -121,17 +115,7 @@
 
   .swiper-slide {
     flex-direction: column;
-    padding: 1.5rem 0;
-  }
-
-  .service-content {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .service-image {
-    max-width: 100%;
-    text-align: center;
+    align-items: flex-start;
   }
 }
 
