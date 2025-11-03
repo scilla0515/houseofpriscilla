@@ -144,51 +144,16 @@ nav a:hover {
   box-sizing: border-box;
 }
 
-.service-content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
-/* Text on left */
-.service-text {
-  flex: 1;             /* text takes up remaining space */
-  min-width: 300px;    /* prevent it from getting too narrow */
-}
-
-/* Image on right */
-.service-image {
-  flex: 1;             /* image takes up remaining space */
-  text-align: right;   /* aligns image to right side */
-}
-
-.service-image img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Responsive: stack text & image on smaller screens */
-@media (max-width: 900px) {
-  .service-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .service-image {
-    text-align: center;
-    margin-top: 1.5rem;
-  }
-
-  .service-image img {
-    max-width: 100%;
-  }
-}
+/* Text & Styling */ .service-text { flex: 1; min-width: 300px; } 
+.service-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #6B4C3B; margin-bottom: 1rem; } 
+.service-desc { font-family: 'Bellefair', serif; font-size: 1.1rem; color: #444; margin-bottom: 1rem; } 
+.service-details { list-style: none; padding: 0; margin: 0 0 1rem; } 
+.service-details li { font-family: 'Bellefair', serif; color: #333; margin: 0.4em 0; position: relative; padding-left: 1em; } 
+.service-details li::before { content: "•"; position: absolute; left: 0; color: var(--gold); } 
+.service-btn { display: inline-block; margin-top: 1.5rem; padding: 10px 24px; background-color: var(--black); color: #fff; font-family: 'Bellefair', serif; border-radius: 30px; text-decoration: none; transition: background-color 0.3s; } 
+.service-btn:hover { background-color: var(--gold); color: var(--black); } /* Optional image on right */
+.service-image { flex: 1; text-align: right; } 
+.service-image img { width: 100%; max-width: 500px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
 /* -------------------- Swiper Controls -------------------- */
 .swiper-button-prev,
