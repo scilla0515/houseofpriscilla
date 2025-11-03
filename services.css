@@ -9,24 +9,30 @@
   background-color: #f7f5f2;
   padding: 4rem 10%;
   border-bottom: 3px solid #6B4C3B;
+  overflow: hidden; /* prevent slides from peeking */
 }
 
 /* -------------------- Swiper Container -------------------- */
 .swiper {
   width: 100%;
-  height: var(--slider-height); /* fixed height */
-  position: relative; /* needed for arrows */
+  height: var(--slider-height);
+  position: relative;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: hidden; /* ensures only one slide is visible */
+}
+
+.swiper-wrapper {
+  width: 100%;
 }
 
 /* Slides */
 .swiper-slide {
+  width: 100%;   /* ensure only one slide fills container */
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 2rem 0;
+  padding: 0;   /* remove padding to avoid slide peeking */
   box-sizing: border-box;
 }
 
@@ -39,6 +45,7 @@
   max-width: 1200px;
 }
 
+/* Text & Styling */
 .service-text {
   flex: 1;
   min-width: 300px;
@@ -120,60 +127,28 @@
   width: 40px;
   height: 40px;
   z-index: 10;
-  opacity: 1; /* always visible */
+  opacity: 1;
 }
 
-.swiper-button-prev {
-  left: 10px;
-}
+.swiper-button-prev { left: 10px; }
+.swiper-button-next { right: 10px; }
 
-.swiper-button-next {
-  right: 10px;
-}
-
-.swiper-pagination {
-  bottom: 10px !important;
-}
-
-.swiper-pagination-bullet {
-  background: #6B4C3B;
-}
+.swiper-pagination { bottom: 10px !important; }
+.swiper-pagination-bullet { background: #6B4C3B; }
 
 /* -------------------- Responsive -------------------- */
 @media (max-width: 900px) {
-  #services {
-    padding: 2rem 5%;
-  }
-
-  .swiper {
-    height: auto; /* allow slides to expand on mobile */
-  }
-
+  #services { padding: 2rem 5%; }
+  .swiper { height: auto; }
   .swiper-slide {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 1rem 0; 
   }
-
-  .service-content {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .service-image {
-    text-align: center;
-    margin-top: 1.5rem;
-  }
-
-  .service-image img {
-    max-width: 100%;
-  }
-
+  .service-content { flex-direction: column; width: 100%; }
+  .service-image { text-align: center; margin-top: 1.5rem; }
+  .service-image img { max-width: 100%; }
   .swiper-button-prev,
-  .swiper-button-next {
-    top: auto;
-    bottom: 10px;
-    transform: none;
-  }
+  .swiper-button-next { top: auto; bottom: 10px; transform: none; }
 }
