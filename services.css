@@ -1,4 +1,9 @@
-/* -------------------- Services Section (Slider Style) -------------------- */
+:root {
+  --black: #0e0e0e;
+  --gold: #c8a97e;
+}
+
+/* -------------------- Services Section -------------------- */
 #services {
   background-color: #f7f5f2;
   padding: 0;
@@ -10,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* makes each service fill the viewport */
+  min-height: 80vh;
   padding: 4rem 10%;
   background-color: #f7f5f2;
 }
@@ -117,5 +122,4 @@
     max-width: 100%;
   }
 }
-
 
