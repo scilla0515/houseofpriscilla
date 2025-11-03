@@ -3,21 +3,20 @@
   --gold: #c8a97e;
 }
 
-/* -------------------- Services Section -------------------- */
+/* Services Section */
 #services {
   background-color: #f7f5f2;
   padding: 0;
-  text-align: left;
   border-bottom: 3px solid #6B4C3B;
 }
 
 .service-slide {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 80vh;
   padding: 4rem 10%;
-  background-color: #f7f5f2;
+  box-sizing: border-box;
 }
 
 .service-content {
@@ -118,8 +117,11 @@
     text-align: center;
   }
 
+  .service-image {
+    text-align: center;
+  }
+
   .service-image img {
     max-width: 100%;
   }
 }
-
