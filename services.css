@@ -7,9 +7,9 @@
 /* -------------------- Services Section -------------------- */
 #services {
   background-color: #f7f5f2;
-  padding: 4rem 10%;
+  padding: 4rem 0; /* remove horizontal padding */
   border-bottom: 3px solid #6B4C3B;
-  overflow: hidden; /* prevent slides from peeking */
+  overflow: hidden; /* prevents slides from peeking */
 }
 
 /* -------------------- Swiper Container -------------------- */
@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0;   /* remove padding to avoid slide peeking */
+  padding: 0 10%;   /* remove padding to avoid slide peeking */
   box-sizing: border-box;
 }
 
