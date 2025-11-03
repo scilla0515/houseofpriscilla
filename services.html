@@ -30,74 +30,79 @@
   </section>
 
   <!-- Services Slider -->
- <section id="services" class="services swiper">
-  <div class="swiper-wrapper">
+  <section id="services" class="services swiper">
+    <div class="swiper-wrapper">
 
-    <!-- 1️⃣ Bookkeeping Packages -->
-    <div class="swiper-slide service-slide">
-      <div class="service-content">
-        <h2 class="service-title">Bookkeeping Packages</h2>
-        <p class="service-desc">Recurring bookkeeping services to keep your business finances organized and accurate.</p>
-        <ul class="service-details">
-          <li>Income + expense categorizations</li>
-          <li>Monthly account reconciliations</li>
-          <li>Profit & Loss report</li>
-          <li>Email & text support</li>
-        </ul>
-        <a href="#contact" class="service-btn">Let's Work Together</a>
+      <!-- 1️⃣ Bookkeeping Packages -->
+      <div class="swiper-slide service-slide">
+        <div class="service-content">
+          <div class="service-text">
+            <h2 class="service-title">Bookkeeping Packages</h2>
+            <p class="service-desc">Recurring bookkeeping services to keep your business finances organized and accurate.</p>
+            <ul class="service-details">
+              <li>Income + expense categorizations</li>
+              <li>Monthly account reconciliations</li>
+              <li>Profit & Loss report</li>
+              <li>Email & text support</li>
+            </ul>
+            <a href="#contact" class="service-btn">Let's Work Together</a>
+          </div>
+          <!-- Optional Image -->
+          <!-- <div class="service-image">
+            <img src="images/bookkeeping.jpg" alt="Bookkeeping Packages">
+          </div> -->
+        </div>
       </div>
-    </div>
 
-    <!-- 2️⃣ Financial Setup & Cleanup -->
-    <div class="swiper-slide service-slide">
-      <div class="service-content">
-        <h2 class="service-title">Financial Setup & Cleanup</h2>
-        <p class="service-desc">One-time services to get your books accurate, organized, and ready for growth.</p>
-        <ul class="service-details">
-          <li>Diagnostic review & assessment</li>
-          <li>Catch-up categorizations</li>
-          <li>Tax-ready reports</li>
-        </ul>
-        <a href="#contact" class="service-btn">Get Started</a>
+      <!-- 2️⃣ Financial Setup & Cleanup -->
+      <div class="swiper-slide service-slide">
+        <div class="service-content">
+          <div class="service-text">
+            <h2 class="service-title">Financial Setup & Cleanup</h2>
+            <p class="service-desc">One-time services to get your books accurate, organized, and ready for growth.</p>
+            <ul class="service-details">
+              <li>Diagnostic review & assessment</li>
+              <li>Catch-up categorizations</li>
+              <li>Tax-ready reports</li>
+            </ul>
+            <a href="#contact" class="service-btn">Get Started</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- 3️⃣ Steward Your Finances -->
-    <div class="swiper-slide service-slide">
-      <div class="service-content">
-        <h2 class="service-title">Steward Your Finances</h2>
-        <p class="service-desc">Systems-based money management for individuals at any income level.</p>
-        <ul class="service-details">
-          <li>Custom budgeting + cash flow system</li>
-          <li>Expense tracking setup</li>
-          <li>Faith-centered stewardship approach</li>
-        </ul>
-        <a href="#contact" class="service-btn">Start Your System</a>
+      <!-- 3️⃣ Steward Your Finances -->
+      <div class="swiper-slide service-slide">
+        <div class="service-content">
+          <div class="service-text">
+            <h2 class="service-title">Steward Your Finances</h2>
+            <p class="service-desc">Systems-based money management for individuals at any income level.</p>
+            <ul class="service-details">
+              <li>Custom budgeting + cash flow system</li>
+              <li>Expense tracking setup</li>
+              <li>Faith-centered stewardship approach</li>
+            </ul>
+            <a href="#contact" class="service-btn">Start Your System</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- 4️⃣ Custom Website Creation -->
-    <div class="swiper-slide service-slide">
-      <div class="service-content">
-        <h2 class="service-title">Custom Website Creation</h2>
-        <p class="service-desc">Professional websites built from scratch to elevate your business online presence.</p>
-        <ul class="service-details">
-          <li>Custom mobile-friendly design</li>
-          <li>Up to 5 pages</li>
-          <li>E-commerce integration</li>
-        </ul>
-        <a href="#contact" class="service-btn">Build My Website</a>
+      <!-- 4️⃣ Custom Website Creation -->
+      <div class="swiper-slide service-slide">
+        <div class="service-content">
+          <div class="service-text">
+            <h2 class="service-title">Custom Website Creation</h2>
+            <p class="service-desc">Professional websites built from scratch to elevate your business online presence.</p>
+            <ul class="service-details">
+              <li>Custom mobile-friendly design</li>
+              <li>Up to 5 pages</li>
+              <li>E-commerce integration</li>
+            </ul>
+            <a href="#contact" class="service-btn">Build My Website</a>
+          </div>
+        </div>
       </div>
+
     </div>
-
-  </div>
-
-  <!-- Swiper Controls -->
-  <div class="swiper-pagination"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-</section>
-
 
     <!-- Swiper Controls -->
     <div class="swiper-pagination"></div>
@@ -105,24 +110,25 @@
     <div class="swiper-button-next"></div>
   </section>
 
-  <!-- JS should load LAST -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    spaceBetween: 50,
-    grabCursor: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    effect: 'slide',
-    speed: 700,
-  });
-</script>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'slide',
+      speed: 700,
+    });
+  </script>
 </body>
 </html>
