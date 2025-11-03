@@ -6,31 +6,33 @@
 /* Services Section */
 #services {
   background-color: #f7f5f2;
-  padding: 4rem 10%;
+  padding: 0 10%;
   border-bottom: 3px solid #6B4C3B;
-  position: relative;
 }
 
-/* Swiper slide adjustments */
+/* Swiper container */
 .swiper {
   width: 100%;
+  height: 80vh; /* fixed height, adjust as needed */
+  box-sizing: border-box;
 }
 
+/* Swiper slides */
 .swiper-slide {
   width: 100%;
-  box-sizing: border-box;
+  height: 100%; /* make slides fill the swiper container */
   display: flex;
+  align-items: center;
   justify-content: flex-start;
-  align-items: flex-start;
   padding: 2rem 0;
-  height: auto; /* slide height fits content */
+  box-sizing: border-box;
 }
 
-/* Service content */
 .service-content {
   width: 100%;
 }
 
+/* Text styles */
 .service-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
@@ -86,25 +88,12 @@
 /* Swiper Controls */
 .swiper-button-prev,
 .swiper-button-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  z-index: 10;
   color: #6B4C3B;
+  top: 50%; /* vertically center arrows */
 }
 
-.swiper-button-prev {
-  left: 10px;
-}
-
-.swiper-button-next {
-  right: 10px;
-}
-
-.swiper-pagination {
-  bottom: 10px;
+.swiper-pagination-bullet {
+  background: #6B4C3B;
 }
 
 /* Responsive */
@@ -113,9 +102,19 @@
     padding: 2rem 5%;
   }
 
+  .swiper {
+    height: auto; /* let content define height on small screens */
+  }
+
   .swiper-slide {
     flex-direction: column;
     align-items: flex-start;
+    height: auto;
+  }
+
+  .service-btn {
+    margin-bottom: 2rem;
   }
 }
+
 
