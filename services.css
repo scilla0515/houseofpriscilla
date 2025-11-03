@@ -2,6 +2,7 @@
   --black: #0e0e0e;
   --gold: #c8a97e;
   --cream: #f7f5f2; /* optional background color for hero */
+   --slider-height: 80vh;
 }
 
 /* -------------------- Header / Navbar -------------------- */
