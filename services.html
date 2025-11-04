@@ -36,6 +36,17 @@
 
   <!-- STACKED, SWIPE-UP SERVICES -->
   <main id="services" class="stack">
+
+    <div class="service-tabs">
+  <span class="tab-item active">01</span>
+  <span class="tab-item">02</span>
+  <span class="tab-item">03</span>
+  <span class="tab-item">04</span>
+  <span class="tab-item">05</span>
+  <span class="tab-item">06</span>
+  <span class="tab-item">07</span>
+</div>
+
     <!-- 01 Monthly Bookkeeping -->
     <section class="service-block fade-up">
       <div class="file-tab">Monthly Bookkeeping</div>
@@ -220,23 +231,43 @@
 
   </main>
 
-  <!-- Inline JS for the reveal animation -->
-  <script>
-    // Reveal on scroll
-    const faders = document.querySelectorAll('.fade-up');
+<!-- Inline JS for reveal animation + tab scroll sync -->
+<script>
+  // Reveal on scroll animation
+  const faders = document.querySelectorAll('.fade-up');
 
-    const appearOptions = { threshold: 0.1 };
+  const appearOptions = { threshold: 0.1 };
 
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
 
-    faders.forEach(el => appearOnScroll.observe(el));
-  </script>
+  faders.forEach(el => appearOnScroll.observe(el));
+
+
+  // === Tab highlight scroll sync ===
+  const sections = document.querySelectorAll(".service-block");
+  const tabs = document.querySelectorAll(".tab-item");
+
+  window.addEventListener("scroll", () => {
+    let current = 0;
+
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.3) {
+        current = index;
+      }
+    });
+
+    tabs.forEach((tab, index) => {
+      tab.classList.toggle("active", index === current);
+    });
+  });
+</script>
 
 </body>
 </html>
