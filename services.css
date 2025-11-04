@@ -63,46 +63,58 @@ header {
 }
 
 /*** FILE TAB — EXACT SHAPE FROM SAMPLE ***/
+/* ✅ NEW TRUE FILE-TAB STYLE */
 .file-tab {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 18px 60px 20px 90px;
-  background: #dfe3dd;
+  position: sticky;
+  top: 96px; /* Sits just under your header */
+  z-index: 1000;
+  padding: 18px 52px 18px 76px;
+  background: var(--sage);
+  color: var(--black);
   font-weight: 700;
-  font-size: 1rem;
-  color: #575d53;
-  display: inline-block;
-  clip-path: polygon(10% 0%, 88% 0%, 100% 50%, 88% 100%, 0% 100%, 0% 20%);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  opacity: 0;
-  transition: opacity .35s ease, transform .4s ease;
+  font-size: 1.05rem;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  opacity: 0; /* hidden until active */
+  transition: opacity .35s ease, transform .45s ease;
+  cursor: pointer;
+  pointer-events: none;
 }
 
-/*** Auto numbering like sample ***/
+/* ✅ Auto numbering */
 .file-tab::before {
   content: counter(service, decimal-leading-zero);
   position: absolute;
-  left: 24px;
+  left: 22px;
   top: 50%;
   transform: translateY(-50%);
   font-weight: 900;
-  font-size: 1rem;
+  opacity: .65;
 }
 
-/*** Tabs shift horizontally like reference ***/
-.service-block:nth-child(1) .file-tab { transform: translateX(0%); }
-.service-block:nth-child(2) .file-tab { transform: translateX(10%); }
-.service-block:nth-child(3) .file-tab { transform: translateX(20%); }
-.service-block:nth-child(4) .file-tab { transform: translateX(30%); }
-.service-block:nth-child(5) .file-tab { transform: translateX(40%); }
-.service-block:nth-child(6) .file-tab { transform: translateX(50%); }
-.service-block:nth-child(7) .file-tab { transform: translateX(60%); }
-
-/*** Only current tab visible at top ***/
+/* ✅ ONLY the active section tab shows fully */
 .service-block.visible .file-tab {
   opacity: 1;
+  pointer-events: auto;
 }
+
+/* ✅ Horizontal alignment like browser tabs */
+.service-block:nth-child(1) .file-tab { transform: translateX(0%); }
+.service-block:nth-child(2) .file-tab { transform: translateX(16%); }
+.service-block:nth-child(3) .file-tab { transform: translateX(32%); }
+.service-block:nth-child(4) .file-tab { transform: translateX(48%); }
+.service-block:nth-child(5) .file-tab { transform: translateX(64%); }
+.service-block:nth-child(6) .file-tab { transform: translateX(80%); }
+.service-block:nth-child(7) .file-tab { transform: translateX(96%); }
+
+/* ✅ Tab glow & elevation when active */
+.file-tab.active {
+  background: var(--white);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
 
 /*** CONTENT LAYOUT ***/
 .service-inner {
