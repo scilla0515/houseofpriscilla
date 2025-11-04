@@ -219,9 +219,8 @@
     </section>
 
   </main>
-
 <script>
-// Fade animation stays as-is
+// ✅ Fade-up reveal animation
 const faders = document.querySelectorAll('.fade-up');
 const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -234,37 +233,11 @@ const fadeObserver = new IntersectionObserver((entries) => {
 faders.forEach(el => fadeObserver.observe(el));
 
 
-// ✅ TAB SNAP — ALL TABS REMAIN AT TOP ONCE REACHED
+// ✅ Service tabs — scroll sync + docking
 const sections = Array.from(document.querySelectorAll(".service-block"));
 const tabs = Array.from(document.querySelectorAll(".file-tab"));
 
-function updateTabs() {
-  let activeIndex = 0;
-
-  sections.forEach((sec, i) => {
-    const rect = sec.getBoundingClientRect();
-
-    // detect active card
-    if (rect.top <= 150 && rect.bottom > 250) {
-      activeIndex = i;
-    }
-
-    const tab = tabs[i];
-
-    // If card passed this point = stick tab
-    if (rect.top <= 150) {
-      tab.classList.add("stuck");
-      tab.style.opacity = "1";
-    }
-  });
-
-  // highlight correct tab
-  tabs.forEach((tab, i) => {
-    tab.classList.toggle("active", i === activeIndex);
-  });
-}
-
-// ✅ click scroll
+// ✅ Smooth click scroll to section
 tabs.forEach((tab, i) => {
   tab.style.cursor = "pointer";
   tab.addEventListener("click", () => {
@@ -272,6 +245,35 @@ tabs.forEach((tab, i) => {
   });
 });
 
+
+// ✅ Updated tab behavior function
+function updateTabs() {
+  let activeIndex = 0;
+
+  sections.forEach((sec, i) => {
+    const rect = sec.getBoundingClientRect();
+    const tab = tabs[i];
+
+    // Decide which card is currently active in viewport
+    if (rect.top <= 140 && rect.bottom > 250) {
+      activeIndex = i;
+    }
+
+    // 🚀 When card reaches ~top → tab docks permanently up top
+    if (rect.top <= 140) {
+      tab.classList.add("stuck");
+      tab.style.opacity = "1";
+      tab.style.pointerEvents = "auto";
+    }
+  });
+
+  // ✅ Highlight only the active tab
+  tabs.forEach((tab, i) => {
+    tab.classList.toggle("active", i === activeIndex);
+  });
+}
+
+// ✅ Scroll + first-load initialization
 window.addEventListener("scroll", updateTabs);
 window.addEventListener("load", updateTabs);
 </script>
