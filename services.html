@@ -222,15 +222,30 @@
 
   <!-- Inline JS for the reveal animation -->
 <script>
-// Fade-Up Reveal Animation
-const faders = document.querySelectorAll('.fade-up');
-const appearOnScroll = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
+// cards
+const sections = document.querySelectorAll(".service-block");
+const tabs = document.querySelectorAll(".file-tab");
+
+// Smooth scroll to section when tab clicked
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    sections[index].scrollIntoView({ behavior: "smooth" });
   });
-}, { threshold: 0.2 });
-faders.forEach(el => appearOnScroll.observe(el));
+});
+
+// Highlight correct tab on scroll
+window.addEventListener("scroll", () => {
+  let currentSection = 0;
+
+  sections.forEach((sec, i) => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.35) currentSection = i;
+  });
+
+  tabs.forEach((tab, i) => {
+    tab.classList.toggle("active", i === currentSection);
+  });
+});
 </script>
 
 </body>
