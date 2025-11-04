@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>House of Priscilla Consulting | Services</title>
 
-  <!-- Main Services CSS -->
+  <!-- Main Services CSS (make sure the file is named exactly services.css) -->
   <link rel="stylesheet" href="services.css" />
 </head>
 
@@ -34,12 +34,11 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <main id="services">
-
+  <!-- STACKED, SWIPE-UP SERVICES -->
+  <main id="services" class="stack">
     <!-- 01 Monthly Bookkeeping -->
     <section class="service-block fade-up">
-      <div class="file-tab">01</div>
+      <div class="file-tab">Monthly Bookkeeping</div>
       <div class="service-inner">
         <div class="service-text">
           <h2>Monthly Bookkeeping</h2>
@@ -49,8 +48,8 @@
               <ul>
                 <li>Accurate income and expense categorization</li>
                 <li>Monthly account reconciliations</li>
-                <li>Profit & Loss and Balance Sheet reports by the 15th</li>
-                <li>Email & text support</li>
+                <li>Profit &amp; Loss and Balance Sheet reports by the 15th</li>
+                <li>Email &amp; text support</li>
               </ul>
             </li>
             <li><strong>✅ Standard</strong>
@@ -65,7 +64,7 @@
               <ul>
                 <li>Everything in Standard</li>
                 <li>Payroll processing</li>
-                <li>Annual budgeting & reporting</li>
+                <li>Annual budgeting &amp; reporting</li>
                 <li>Priority support</li>
               </ul>
             </li>
@@ -80,16 +79,16 @@
 
     <!-- 02 Quarterly Bookkeeping -->
     <section class="service-block fade-up">
-      <div class="file-tab">02</div>
+      <div class="file-tab">Quarterly Bookkeeping</div>
       <div class="service-inner">
         <div class="service-text">
           <h2>Quarterly Bookkeeping</h2>
           <p>Bookkeeping every 3 months for businesses that don’t need monthly tracking.</p>
           <ul>
-            <li>Quarterly Profit & Loss report</li>
+            <li>Quarterly Profit &amp; Loss report</li>
             <li>Quarterly account reconciliations</li>
             <li>Email support throughout the quarter</li>
-            <li>*Up to 3 bank accounts & fewer than 75 transactions*</li>
+            <li><em>Up to 3 bank accounts &amp; fewer than 75 transactions</em></li>
           </ul>
           <p><strong>$340/month</strong></p>
         </div>
@@ -101,11 +100,11 @@
 
     <!-- 03 Book Catch-Up -->
     <section class="service-block fade-up">
-      <div class="file-tab">03</div>
+      <div class="file-tab">Book Catch-Up &amp; Clean-Up</div>
       <div class="service-inner">
         <div class="service-text">
-          <h2>Book Catch-Up & Clean-Up</h2>
-          <p>Get fully caught up if your books are behind, whether it’s a few months or years.</p>
+          <h2>Book Catch-Up &amp; Clean-Up</h2>
+        <p>Get fully caught up if your books are behind, whether it’s a few months or years.</p>
           <ul>
             <li>Full diagnostic review</li>
             <li>Income + expense categorization for missing periods</li>
@@ -122,7 +121,7 @@
 
     <!-- 04 Diagnostic Review -->
     <section class="service-block fade-up">
-      <div class="file-tab">04</div>
+      <div class="file-tab">Diagnostic Review</div>
       <div class="service-inner">
         <div class="service-text">
           <h2>Diagnostic Review</h2>
@@ -131,7 +130,7 @@
             <li>Comprehensive review of QBO file</li>
             <li>Assessment of categorizations and reconciliations</li>
             <li>Detailed notes highlighting red flags and improvements</li>
-            <li>*Clean-up work available separately*</li>
+            <li><em>Clean-up work available separately</em></li>
           </ul>
           <p><strong>One-time investment of $449</strong></p>
         </div>
@@ -143,7 +142,7 @@
 
     <!-- 05 QuickBooks Setup -->
     <section class="service-block fade-up">
-      <div class="file-tab">05</div>
+      <div class="file-tab">QuickBooks Online Setup</div>
       <div class="service-inner">
         <div class="service-text">
           <h2>QuickBooks Online Setup</h2>
@@ -164,7 +163,7 @@
 
     <!-- 06 Steward Your Finances -->
     <section class="service-block fade-up">
-      <div class="file-tab">06</div>
+      <div class="file-tab">Steward Your Finances</div>
       <div class="service-inner">
         <div class="service-text">
           <h2>Steward Your Finances</h2>
@@ -183,7 +182,7 @@
               <ul>
                 <li>Full money management + automation</li>
                 <li>Custom wealth dashboard</li>
-                <li>Bi-weekly review & planning calls</li>
+                <li>Bi-weekly review &amp; planning calls</li>
                 <li>Tax-aware money planning</li>
                 <li>Biblical stewardship coaching</li>
               </ul>
@@ -199,7 +198,7 @@
 
     <!-- 07 Custom Website Creation -->
     <section class="service-block fade-up">
-      <div class="file-tab">07</div>
+      <div class="file-tab">Custom Website Creation</div>
       <div class="service-inner">
         <div class="service-text">
           <h2>Custom Website Creation</h2>
@@ -207,7 +206,7 @@
           <ul>
             <li>Custom mobile-friendly design</li>
             <li>Up to 5 pages</li>
-            <li>Brand-aligned visuals & typography</li>
+            <li>Brand-aligned visuals &amp; typography</li>
             <li>E-commerce integration</li>
             <li>Ongoing maintenance</li>
           </ul>
@@ -221,26 +220,24 @@
 
   </main>
 
-  <!-- ✅ SCROLL REVEAL SCRIPT -->
+  <!-- Inline JS for the reveal animation -->
   <script>
+    // Reveal on scroll
     const faders = document.querySelectorAll('.fade-up');
 
-    const appearOptions = {
-      threshold: 0.2
-    };
+    const appearOptions = { threshold: 0.1 };
 
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
+        if (!entry.isIntersecting) return;
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       });
     }, appearOptions);
 
-    faders.forEach(fade => {
-      appearOnScroll.observe(fade);
-    });
+    faders.forEach(el => appearOnScroll.observe(el));
   </script>
 
 </body>
 </html>
+
