@@ -46,7 +46,7 @@ header {
 /*** CARD ***/
 .service-block {
   position: sticky;
-  top: 120px;
+   top: 140px;
   background: var(--sage);
   width: 100%;
   margin-bottom: 120px;
@@ -62,36 +62,61 @@ header {
   transform: translateY(0);
 }
 
-/*** TAB — FIXED TOP + ANGLED LEFT ***/
+/* ✅ Correct Overlap Tabs */
 .file-tab {
-  --x: calc((counter(service) - 1) * 10%);
   position: fixed;
-  top: 120px;
-  left: calc(6% + var(--x));
+  top: 96px; /* sits ON the card border */
   padding: 15px 45px 15px 70px;
   background: var(--sage);
   color: var(--black);
   font-weight: 700;
-  border-radius: 14px;
+  font-size: 1rem;
+  border-radius: 0 0 12px 12px;
   clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.09);
+
   pointer-events: none;
   opacity: 0;
-  transition: .3s ease;
+  transform: translateY(-6px);
+  transition: opacity .35s ease, transform .35s ease;
+  z-index: 9999;
 }
 
-/*** Show Only Active Card Tab ***/
+/* ✅ Only active card tab visible */
 .service-block.visible .file-tab {
   opacity: 1;
+  transform: translateY(0);
 }
 
-/*** Auto numbering left **/
+/* ✅ Number */
 .file-tab::before {
   content: counter(service, decimal-leading-zero);
   position: absolute;
   left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
   font-weight: 900;
+  opacity: 0.6;
 }
+
+/* ✅ Horizontal overlap like screenshot */
+.service-block:nth-child(1) .file-tab { left: 4%; }
+.service-block:nth-child(2) .file-tab { left: 12%; }
+.service-block:nth-child(3) .file-tab { left: 20%; }
+.service-block:nth-child(4) .file-tab { left: 28%; }
+.service-block:nth-child(5) .file-tab { left: 36%; }
+.service-block:nth-child(6) .file-tab { left: 44%; }
+.service-block:nth-child(7) .file-tab { left: 52%; }
+
+/* ✅ Responsive */
+@media (max-width: 980px) {
+  .file-tab {
+    left: 4% !important;
+    top: 110px;
+    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
 
 /*** CONTENT LAYOUT ***/
 .service-inner {
