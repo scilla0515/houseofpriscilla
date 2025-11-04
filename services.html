@@ -37,7 +37,7 @@
   <!-- STACKED, SWIPE-UP SERVICES -->
   <main id="services" class="stack">
 
-    <div class="service-tabs">
+<div class="service-tabs">
   <span class="tab-item active">01</span>
   <span class="tab-item">02</span>
   <span class="tab-item">03</span>
@@ -231,9 +231,8 @@
 
   </main>
 
-<!-- Inline JS for reveal animation + tab scroll sync -->
 <script>
-  // Reveal on scroll animation
+  // Reveal animation
   const faders = document.querySelectorAll('.fade-up');
 
   const appearOptions = { threshold: 0.1 };
@@ -248,8 +247,7 @@
 
   faders.forEach(el => appearOnScroll.observe(el));
 
-
-  // === Tab highlight scroll sync ===
+  // Scroll sync tab highlight
   const sections = document.querySelectorAll(".service-block");
   const tabs = document.querySelectorAll(".tab-item");
 
@@ -267,8 +265,12 @@
       tab.classList.toggle("active", index === current);
     });
   });
-</script>
 
-</body>
-</html>
+  // Click tab to scroll to matching service
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      sections[index].scrollIntoView({ behavior: "smooth" });
+    });
+  });
+</script>
 
