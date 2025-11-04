@@ -14,7 +14,7 @@ html, body {
   background: var(--cream);
 }
 
-/* ===== HEADER (keeping your existing layout) ===== */
+/* ===== HEADER ===== */
 header {
   display: flex;
   align-items: center;
@@ -47,21 +47,21 @@ header {
   text-align: center;
 }
 
-.hero-title { 
-  margin: 0 0 0.5rem; 
-  font-size: 2.4rem; 
+.hero-title {
+  margin: 0 0 0.5rem;
+  font-size: 2.4rem;
 }
 
-.hero-subtitle { 
-  margin: 0 auto; 
-  max-width: 720px; 
-  color: #444; 
+.hero-subtitle {
+  margin: 0 auto;
+  max-width: 720px;
+  color: #444;
 }
 
-/* ===== TOP TAB NAV — COYNE STYLE ===== */
+/* ===== TOP TAB NAV (Coyne Style) ===== */
 .service-tabs {
   position: sticky;
-  top: 82px; /* stays below header */
+  top: 82px;
   z-index: 200;
   display: flex;
   justify-content: center;
@@ -84,55 +84,29 @@ header {
   border-bottom: 3px solid var(--black);
 }
 
-/* ========================================================= */
-/*                     SERVICE SECTIONS                     */
-/* ========================================================= */
+/* ===== STACKED SWIPE-UP SERVICE CARDS ===== */
+#services {
+  counter-reset: service-counter;
+}
+
 .service-block {
+  counter-increment: service-counter;
+  position: sticky;
+  top: 120px; /* how high they stick */
+  z-index: calc(10 + var(--order));
   width: min(1100px, 86%);
   margin: 0 auto 80px;
   border-radius: 14px;
   box-shadow: 0 16px 40px rgba(0,0,0,0.08);
   background: var(--white);
-  opacity: 0;
   transform: translateY(60px);
+  opacity: 0;
   transition: transform .6s ease, opacity .6s ease;
   overflow: clip;
 }
 
-/* Alternating background like folders */
-.service-block:nth-child(even){ background: var(--cream); }
-
-/* ===== CONTENT LAYOUT ===== */
-.service-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3.5rem;
-  padding: 64px 7.5% 56px;
-}
-
-/* ===== TEXT ===== */
-.service-text { flex: 1; }
-
-.service-text h2 {
-  margin: 0 0 12px;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.service-text p { margin: 0 0 14px; }
-.service-text ul { margin: 0 0 14px; padding-left: 1.1rem; }
-.service-text li { line-height: 1.5; margin-bottom: 6px; }
-
-/* ===== IMAGE ===== */
-.service-image { flex: 1; text-align: right; }
-
-.service-image img {
-  width: 100%;
-  max-width: 480px;
-  border-radius: 12px;
-  object-fit: cover;
-}
+/* Alternating background */
+.service-block:nth-child(even) { background: var(--cream); }
 
 /* ===== FOLDER TAB ON CARD ===== */
 .file-tab {
@@ -148,10 +122,9 @@ header {
   position: relative;
 }
 
-/* Auto numbering: "01 " before tab text */
+/* "01" numbering on card tab */
 .file-tab::before {
-  counter-increment: service-counter;
-  content: counter(service-counter, decimal-leading-zero) "  ";
+  content: counter(service-counter, decimal-leading-zero) " ";
   position: absolute;
   left: 14px;
   top: 50%;
@@ -159,7 +132,36 @@ header {
   font-weight: 800;
 }
 
-/* ===== REVEAL ANIMATION ===== */
+/* ===== INSIDE LAYOUT ===== */
+.service-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.5rem;
+  padding: 64px 7.5% 56px;
+}
+
+.service-text { flex: 1; }
+.service-text h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.service-text p { margin: 0 0 14px; }
+.service-text ul { margin: 0 0 14px; padding-left: 1.1rem; }
+.service-text li { line-height: 1.5; margin-bottom: 6px; }
+
+/* ===== IMAGE ===== */
+.service-image { flex: 1; text-align: right; }
+
+.service-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ===== REVEAL FADE ===== */
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
@@ -173,10 +175,12 @@ header {
     gap: 1.75rem;
     padding: 56px 7.5% 48px;
   }
+  
   .service-image {
     width: 100%;
     text-align: center;
   }
+
   .service-image img {
     max-width: 92%;
   }
