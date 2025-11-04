@@ -223,19 +223,21 @@
   <!-- Inline JS for the reveal animation -->
   <script>
     // Reveal on scroll
-    const faders = document.querySelectorAll('.fade-up');
+ window.addEventListener("scroll", () => {
+  let currentCardIndex = 0;
 
-    const appearOptions = { threshold: 0.1 };
+  sections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.4) {
+      currentCardIndex = index;
+    }
+  });
 
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
+  tabs.forEach((tab, index) => {
+    tab.classList.toggle("active", index === currentCardIndex);
+  });
+});
 
-    faders.forEach(el => appearOnScroll.observe(el));
   </script>
 
 </body>
