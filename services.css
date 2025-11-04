@@ -110,23 +110,21 @@ header {
 
 /* ===== When tabs SNAP into the fixed row ===== */
 .file-tab.stuck {
-  position: fixed;               /* leave the card; join the row */
-  top: 96px;                     /* sits under your header */
-  transform: translateY(0);      /* remove the -100% offset */
-  opacity: 1;
-  pointer-events: auto;          /* clickable now */
+  position: fixed;
+  top: 100px;
   z-index: 1000;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Place each stuck tab in the row from left → right (tight spacing).
-   Adjust the 6% base and the +10% steps to taste. */
-.service-block:nth-child(1) .file-tab.stuck { left: 6%;  }
+.service-block:nth-child(1) .file-tab.stuck { left: 6%; }
 .service-block:nth-child(2) .file-tab.stuck { left: 16%; }
 .service-block:nth-child(3) .file-tab.stuck { left: 26%; }
 .service-block:nth-child(4) .file-tab.stuck { left: 36%; }
 .service-block:nth-child(5) .file-tab.stuck { left: 46%; }
 .service-block:nth-child(6) .file-tab.stuck { left: 56%; }
 .service-block:nth-child(7) .file-tab.stuck { left: 66%; }
+
 
 /* Active tab styling (subtle elevation & darker text) */
 .file-tab.active {
