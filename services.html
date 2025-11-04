@@ -221,51 +221,60 @@
   </main>
 
 <script>
-// Fade-up reveal
+// Fade-up reveal animation
 const faders = document.querySelectorAll('.fade-up');
-const appearOnScroll = new IntersectionObserver(entries => {
+const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    }
   });
-}, { threshold: 0.2 });
-faders.forEach(el => appearOnScroll.observe(el));
+}, { threshold: 0.25 });
+faders.forEach(el => fadeObserver.observe(el));
 
-// Tabs + scroll sync
+
+// Service cards + tabs scroll sync
 const sections = document.querySelectorAll(".service-block");
 const tabs = document.querySelectorAll(".file-tab");
 
-// Smooth scroll when clicking tab
-tabs.forEach((tab, i) => {
-  tab.addEventListener("click", () => {
-    sections[i].scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-// Update tab position + active state
 function updateTabs() {
   let activeIndex = 0;
 
   sections.forEach((sec, i) => {
     const rect = sec.getBoundingClientRect();
-    const tab = sec.querySelector(".file-tab");
-    tab.classList.remove("stuck");
 
-    if (rect.top <= 120 && rect.bottom > 300) {
+    if (rect.top <= 150 && rect.bottom > 300) {
       activeIndex = i;
-      tab.classList.add("stuck");
     }
+  });
+
+  // Show only active tab + auto align
+  tabs.forEach((tab, i) => {
+    tab.style.opacity = i === activeIndex ? "1" : "0";
+    tab.style.transform = i === activeIndex 
+      ? getComputedStyle(tabs[i]).transform // keep assigned position
+      : "translateX(0%)"; 
   });
 
   tabs.forEach((tab, i) => {
     tab.classList.toggle("active", i === activeIndex);
-    tab.style.opacity = (i === activeIndex) ? "1" : "0";
   });
 }
 
+// Smooth click scroll
+tabs.forEach((tab, i) => {
+  tab.style.cursor = "pointer";
+  tab.addEventListener("click", () => {
+    sections[i].scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+// Run on scroll + first load
 window.addEventListener("scroll", updateTabs);
-updateTabs(); // Initialize state on load
+window.addEventListener("load", updateTabs);
 </script>
+
 
 
 </body>
