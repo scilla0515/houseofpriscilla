@@ -3,7 +3,7 @@
   --black: #0e0e0e;
   --gold: #c8a97e;
   --cream: #f7f5f2;
-  --sage: #dfe3d8; /* tab/card background */
+  --sage: #dfe3d8;
   --white: #ffffff;
 }
 
@@ -46,7 +46,7 @@ header {
 /*** CARD ***/
 .service-block {
   position: sticky;
-   top: 140px;
+  top: 140px;
   background: var(--sage);
   width: 100%;
   margin-bottom: 120px;
@@ -62,61 +62,62 @@ header {
   transform: translateY(0);
 }
 
-/* ✅ Correct Overlap Tabs */
+/*** TAB — ON CARD INITIALLY ***/
 .file-tab {
-  position: fixed;
-  top: 96px; /* sits ON the card border */
-  padding: 15px 45px 15px 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px 55px 15px 80px;
   background: var(--sage);
-  color: var(--black);
   font-weight: 700;
-  font-size: 1rem;
   border-radius: 0 0 12px 12px;
   clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.09);
-
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity .35s ease, transform .35s ease;
-  z-index: 9999;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  opacity: 1;
+  z-index: 5;
+  transition: transform .35s ease, opacity .35s ease;
 }
 
-/* ✅ Only active card tab visible */
+/*** Hide ALL file-tabs except current visible card ***/
+.file-tab {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+}
+
 .service-block.visible .file-tab {
   opacity: 1;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
-/* ✅ Number */
+/*** Auto numbering ***/
 .file-tab::before {
   content: counter(service, decimal-leading-zero);
   position: absolute;
-  left: 22px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   font-weight: 900;
-  opacity: 0.6;
+  opacity: .65;
 }
 
-/* ✅ Horizontal overlap like screenshot */
-.service-block:nth-child(1) .file-tab { left: 4%; }
-.service-block:nth-child(2) .file-tab { left: 12%; }
-.service-block:nth-child(3) .file-tab { left: 20%; }
-.service-block:nth-child(4) .file-tab { left: 28%; }
-.service-block:nth-child(5) .file-tab { left: 36%; }
-.service-block:nth-child(6) .file-tab { left: 44%; }
-.service-block:nth-child(7) .file-tab { left: 52%; }
+/*** Position Offset (Layered Like Screenshot) ***/
+.service-block:nth-child(1) .file-tab { transform: translateX(0%); }
+.service-block:nth-child(2) .file-tab { transform: translateX(10%); }
+.service-block:nth-child(3) .file-tab { transform: translateX(20%); }
+.service-block:nth-child(4) .file-tab { transform: translateX(30%); }
+.service-block:nth-child(5) .file-tab { transform: translateX(40%); }
+.service-block:nth-child(6) .file-tab { transform: translateX(50%); }
+.service-block:nth-child(7) .file-tab { transform: translateX(60%); }
 
-/* ✅ Responsive */
-@media (max-width: 980px) {
-  .file-tab {
-    left: 4% !important;
-    top: 110px;
-    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
+/*** STICKY WHEN ACTIVE AT TOP ***/
+.file-tab.stuck {
+  position: fixed;
+  top: 96px;
+  left: auto;
+  z-index: 9999;
 }
-
 
 /*** CONTENT LAYOUT ***/
 .service-inner {
@@ -139,16 +140,14 @@ header {
 .service-text ul { padding-left: 1.1rem; margin-bottom: 24px; }
 .service-text li { margin-bottom: 10px; line-height: 1.6; }
 
-.service-image {
-  flex: 1;
-}
+.service-image { flex: 1; }
 .service-image img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
 }
 
-/*** RESPONSIVE ***/
+/*** RESPONSIVE FIX ***/
 @media (max-width: 980px) {
   .service-inner {
     flex-direction: column;
@@ -156,6 +155,8 @@ header {
     padding: 30px 6% 60px;
   }
   .file-tab {
-    left: 4% !important;
+    transform: translateX(0%) !important;
+    left: 4%;
+    top: 90px;
   }
 }
