@@ -1,27 +1,20 @@
-/* =============================
-   BRAND COLORS & BASE
-============================= */
+/* ===== BRAND + BASE ===== */
 :root {
   --black: #0e0e0e;
   --gold: #c8a97e;
   --cream: #f7f5f2;
-  --sage: #d9dccf; /* lighter sage for tab */
-  --sage-card: #e3e7df; /* soft card background */
+  --sage: #dfe3d8; /* tab/card background */
   --white: #ffffff;
 }
 
 html, body {
   margin: 0;
-  padding: 0;
-  color: var(--black);
-  font-family: "Helvetica Neue", Arial, sans-serif;
   background: var(--cream);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--black);
 }
 
-
-/* =============================
-   HEADER + HERO
-============================= */
+/*** HEADER ***/
 header {
   display: flex;
   justify-content: space-between;
@@ -30,164 +23,114 @@ header {
   background: var(--white);
   border-bottom: 2px solid var(--gold);
 }
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.25rem;
-}
+.logo-img { height: 44px; }
+.nav-links { list-style: none; display: flex; gap: 1.3rem; }
 .nav-links a { text-decoration: none; color: var(--black); font-weight: 500; }
 
-.logo-img { height: 44px; }
-
+/*** HERO ***/
 .hero {
-  background: #efeae4;
   text-align: center;
+  background: #efeae4;
   padding: 6rem 8% 5rem;
 }
-.hero-title { font-size: 2.8rem; font-family: "Playfair Display", serif; margin-bottom: .5rem; }
-.hero-subtitle { color: #555; max-width: 700px; margin: 0 auto; font-size: 1.2rem; }
+.hero-title { font-size: 2.6rem; margin: 0 0 .6rem; }
+.hero-subtitle { max-width: 620px; margin: 0 auto; color: #444; }
 
-
-/* =============================
-   STACKED CARDS WITH TOP TABS
-============================= */
-
+/*** STACKED CARDS ***/
 #services {
+  position: relative;
   counter-reset: service;
+  padding-bottom: 60vh;
 }
 
+/*** CARD ***/
 .service-block {
-  counter-increment: service;
   position: sticky;
-  top: 115px;
+  top: 120px;
+  background: var(--sage);
   width: 100%;
-  margin-bottom: 150px;
-  background: var(--sage-card);
-  transform: translateY(100px);
+  margin-bottom: 120px;
+  padding-top: 85px;
   opacity: 0;
-  transition: transform .7s ease, opacity .7s ease;
+  transform: translateY(50px);
+  transition: .6s ease;
+  counter-increment: service;
 }
 
-/* Reveal */
-.fade-up.visible {
+.service-block.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-
-/* ✨ Tab Shape w/ angled corners */
+/*** TAB — FIXED TOP + ANGLED LEFT ***/
 .file-tab {
+  --x: calc((counter(service) - 1) * 10%);
   position: fixed;
-  top: 0; /* ✅ Moves tab to the exact border */
-  left: 0; /* ✅ Align flush with left content edge */
-  z-index: 9999;
-  display: inline-block;
-  padding: 14px 44px 14px 72px;
+  top: 70px;
+  left: calc(6% + var(--x));
+  padding: 15px 45px 15px 70px;
   background: var(--sage);
   color: var(--black);
   font-weight: 700;
-  border-bottom-right-radius: 22px;
-  border-top-left-radius: 22px;
-  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  opacity: 0;
+  border-radius: 14px;
+  clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
   pointer-events: none;
-  transition: opacity .3s ease, transform .4s ease;
-  font-size: 1.05rem;
+  opacity: 0;
+  transition: .3s ease;
 }
 
+/*** Show Only Active Card Tab ***/
+.service-block.visible .file-tab {
+  opacity: 1;
+}
 
-/* ✅ Auto numbering */
+/*** Auto numbering left **/
 .file-tab::before {
-  content: counter(service, decimal-leading-zero) " ";
+  content: counter(service, decimal-leading-zero);
   position: absolute;
-  left: 25px;
+  left: 22px;
   font-weight: 900;
 }
 
-/* Show only current tab */
-.service-block.visible .file-tab {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Horizontal offset for each tab */
-.service-block:nth-child(1).visible .file-tab { transform: translateX(0%); }
-.service-block:nth-child(2).visible .file-tab { transform: translateX(12%); }
-.service-block:nth-child(3).visible .file-tab { transform: translateX(24%); }
-.service-block:nth-child(4).visible .file-tab { transform: translateX(36%); }
-.service-block:nth-child(5).visible .file-tab { transform: translateX(48%); }
-.service-block:nth-child(6).visible .file-tab { transform: translateX(60%); }
-.service-block:nth-child(7).visible .file-tab { transform: translateX(72%); }
-
-/* Hover */
-.file-tab:hover {
-  background: var(--gold);
-  cursor: pointer;
-}
-
-
-/* =============================
-   CARD INNER LAYOUT
-============================= */
+/*** CONTENT LAYOUT ***/
 .service-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 100px 10% 120px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 8% 80px;
   gap: 4rem;
+  max-width: 1400px;
+  margin: auto;
 }
 
-.service-text {
-  flex: 1.4;
-}
-
+.service-text { flex: 1.4; }
 .service-text h2 {
-  font-family: "Playfair Display", serif;
-  font-weight: 600;
   font-size: 3rem;
   margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
 }
 
-.service-text p {
-  margin-bottom: 22px;
-  font-size: 1.15rem;
-}
+.service-text ul { padding-left: 1.1rem; margin-bottom: 24px; }
+.service-text li { margin-bottom: 10px; line-height: 1.6; }
 
-.service-text ul {
-  margin-bottom: 26px;
-  padding-left: 1.2rem;
-}
-.service-text li {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-/* Image column */
 .service-image {
   flex: 1;
 }
 .service-image img {
   width: 100%;
-  border-radius: 4px;
+  border-radius: 8px;
   object-fit: cover;
 }
 
-
-/* =============================
-   MOBILE RESPONSIVE
-============================= */
+/*** RESPONSIVE ***/
 @media (max-width: 980px) {
   .service-inner {
     flex-direction: column;
-    padding: 80px 7% 100px;
     gap: 2rem;
+    padding: 30px 6% 60px;
   }
-
   .file-tab {
-    left: 5%;
-    transform: translateX(0%) !important;
+    left: 4% !important;
   }
 }
-
