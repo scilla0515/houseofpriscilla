@@ -78,22 +78,24 @@ header {
 /* ✨ Tab Shape w/ angled corners */
 .file-tab {
   position: fixed;
-  top: 66px;
-  left: 6%;
+  top: 0; /* ✅ Moves tab to the exact border */
+  left: 0; /* ✅ Align flush with left content edge */
   z-index: 9999;
   display: inline-block;
-  padding: 18px 48px 18px 72px;
+  padding: 14px 44px 14px 72px;
   background: var(--sage);
   color: var(--black);
   font-weight: 700;
-  border-radius: 14px;
-  clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%); /* angled left */
+  border-bottom-right-radius: 22px;
+  border-top-left-radius: 22px;
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   opacity: 0;
   pointer-events: none;
   transition: opacity .3s ease, transform .4s ease;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
+
 
 /* ✅ Auto numbering */
 .file-tab::before {
