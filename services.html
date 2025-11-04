@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>House of Priscilla Consulting | Services</title>
+
+  <!-- Main Services CSS (make sure the file is named exactly services.css) -->
   <link rel="stylesheet" href="services.css" />
 </head>
 
@@ -33,20 +35,9 @@
   </section>
 
   <!-- STACKED, SWIPE-UP SERVICES -->
-  <main id="services">
-
-    <div class="service-tabs">
-      <span class="tab-item active">01</span>
-      <span class="tab-item">02</span>
-      <span class="tab-item">03</span>
-      <span class="tab-item">04</span>
-      <span class="tab-item">05</span>
-      <span class="tab-item">06</span>
-      <span class="tab-item">07</span>
-    </div>
-
+  <main id="services" class="stack">
     <!-- 01 Monthly Bookkeeping -->
-    <section class="service-block fade-up" style="--order:0">
+    <section class="service-block fade-up">
       <div class="file-tab">Monthly Bookkeeping</div>
       <div class="service-inner">
         <div class="service-text">
@@ -87,7 +78,7 @@
     </section>
 
     <!-- 02 Quarterly Bookkeeping -->
-    <section class="service-block fade-up" style="--order:1">
+    <section class="service-block fade-up">
       <div class="file-tab">Quarterly Bookkeeping</div>
       <div class="service-inner">
         <div class="service-text">
@@ -108,12 +99,12 @@
     </section>
 
     <!-- 03 Book Catch-Up -->
-    <section class="service-block fade-up" style="--order:2">
+    <section class="service-block fade-up">
       <div class="file-tab">Book Catch-Up &amp; Clean-Up</div>
       <div class="service-inner">
         <div class="service-text">
           <h2>Book Catch-Up &amp; Clean-Up</h2>
-          <p>Get fully caught up if your books are behind, whether it’s a few months or years.</p>
+        <p>Get fully caught up if your books are behind, whether it’s a few months or years.</p>
           <ul>
             <li>Full diagnostic review</li>
             <li>Income + expense categorization for missing periods</li>
@@ -129,7 +120,7 @@
     </section>
 
     <!-- 04 Diagnostic Review -->
-    <section class="service-block fade-up" style="--order:3">
+    <section class="service-block fade-up">
       <div class="file-tab">Diagnostic Review</div>
       <div class="service-inner">
         <div class="service-text">
@@ -150,7 +141,7 @@
     </section>
 
     <!-- 05 QuickBooks Setup -->
-    <section class="service-block fade-up" style="--order:4">
+    <section class="service-block fade-up">
       <div class="file-tab">QuickBooks Online Setup</div>
       <div class="service-inner">
         <div class="service-text">
@@ -171,7 +162,7 @@
     </section>
 
     <!-- 06 Steward Your Finances -->
-    <section class="service-block fade-up" style="--order:5">
+    <section class="service-block fade-up">
       <div class="file-tab">Steward Your Finances</div>
       <div class="service-inner">
         <div class="service-text">
@@ -206,7 +197,7 @@
     </section>
 
     <!-- 07 Custom Website Creation -->
-    <section class="service-block fade-up" style="--order:6">
+    <section class="service-block fade-up">
       <div class="file-tab">Custom Website Creation</div>
       <div class="service-inner">
         <div class="service-text">
@@ -229,48 +220,23 @@
 
   </main>
 
-<script>
-  // Reveal animation
-  const faders = document.querySelectorAll('.fade-up');
+  <!-- Inline JS for the reveal animation -->
+  <script>
+    // Reveal on scroll
+    const faders = document.querySelectorAll('.fade-up');
 
-  const appearOptions = { threshold: 0.1 };
+    const appearOptions = { threshold: 0.1 };
 
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
 
-  faders.forEach(el => appearOnScroll.observe(el));
-
-  // Scroll sync tab highlight
-  const sections = document.querySelectorAll(".service-block");
-  const tabs = document.querySelectorAll(".tab-item");
-
-  window.addEventListener("scroll", () => {
-    let current = 0;
-
-    sections.forEach((section, index) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight * 0.3) {
-        current = index;
-      }
-    });
-
-    tabs.forEach((tab, index) => {
-      tab.classList.toggle("active", index === current);
-    });
-  });
-
-  // Click tab to scroll to matching service
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
-      sections[index].scrollIntoView({ behavior: "smooth" });
-    });
-  });
-</script>
+    faders.forEach(el => appearOnScroll.observe(el));
+  </script>
 
 </body>
 </html>
