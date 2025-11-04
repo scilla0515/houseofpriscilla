@@ -221,7 +221,7 @@
   </main>
 
 <script>
-// Fade-up reveal animation
+// ✅ Fade-up reveal animation (unchanged)
 const faders = document.querySelectorAll('.fade-up');
 const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -234,35 +234,35 @@ const fadeObserver = new IntersectionObserver((entries) => {
 faders.forEach(el => fadeObserver.observe(el));
 
 
-// Service cards + tabs scroll sync
-const sections = document.querySelectorAll(".service-block");
-const tabs = document.querySelectorAll(".file-tab");
+// ✅ Tabs + snapping row behavior
+const sections = Array.from(document.querySelectorAll(".service-block"));
+const tabs = Array.from(document.querySelectorAll(".file-tab"));
 
 function updateTabs() {
   let activeIndex = 0;
 
+  // ✔ Find active card closest to top
   sections.forEach((sec, i) => {
     const rect = sec.getBoundingClientRect();
+    if (rect.top <= 140 && rect.bottom > 280) activeIndex = i;
+  });
 
-    if (rect.top <= 150 && rect.bottom > 300) {
-      activeIndex = i;
+  // ✔ Snap active + previous tabs into top row
+  tabs.forEach((tab, i) => {
+    if (i <= activeIndex) {
+      tab.classList.add("stuck");
+      tab.style.opacity = "1";
+    } else {
+      tab.classList.remove("stuck");
+      if (!sections[i].classList.contains("visible")) tab.style.opacity = "0";
     }
-  });
 
-  // Show only active tab + auto align
-  tabs.forEach((tab, i) => {
-    tab.style.opacity = i === activeIndex ? "1" : "0";
-    tab.style.transform = i === activeIndex 
-      ? getComputedStyle(tabs[i]).transform // keep assigned position
-      : "translateX(0%)"; 
-  });
-
-  tabs.forEach((tab, i) => {
+    // ✔ Highlight active
     tab.classList.toggle("active", i === activeIndex);
   });
 }
 
-// Smooth click scroll
+// ✅ Smooth scroll when clicking each tab
 tabs.forEach((tab, i) => {
   tab.style.cursor = "pointer";
   tab.addEventListener("click", () => {
@@ -270,10 +270,11 @@ tabs.forEach((tab, i) => {
   });
 });
 
-// Run on scroll + first load
+// ✅ Start behavior
+updateTabs();
 window.addEventListener("scroll", updateTabs);
-window.addEventListener("load", updateTabs);
 </script>
+
 
 
 
