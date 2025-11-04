@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>House of Priscilla Consulting | Services</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="services.css" />
 </head>
 <body>
-  <!-- Header / Navbar -->
+  <!-- Header -->
   <header>
-    <a href="index.html"><img src="H-2.svg" alt="House of Priscilla Logo" class="logo-img"></a>
+    <a href="index.html"><img src="H-2.svg" alt="House of Priscilla Logo" class="logo-img" /></a>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html#hero">Home</a></li>
@@ -25,219 +25,209 @@
   <section class="hero" id="services-hero">
     <div class="hero-content">
       <h1 class="hero-title">Our Services</h1>
-      <p class="hero-subtitle">Purpose-driven bookkeeping, personal finance systems, and custom websites built from scratch.</p>
+      <p class="hero-subtitle">
+        Purpose-driven bookkeeping, personal finance systems, and custom websites built from scratch.
+      </p>
     </div>
   </section>
 
-<div class="folder-container">
+  <!-- Services Swiper -->
+  <section id="services">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
 
-<div class="folder-container">
-
-  <!-- Tabs -->
-  <div class="folder-tabs">
-    <button class="folder-tab active" data-tab="tab1">01</button>
-    <button class="folder-tab" data-tab="tab2">02</button>
-    <button class="folder-tab" data-tab="tab3">03</button>
-    <button class="folder-tab" data-tab="tab4">04</button>
-    <button class="folder-tab" data-tab="tab5">05</button>
-    <button class="folder-tab" data-tab="tab6">06</button>
-    <button class="folder-tab" data-tab="tab7">07</button>
-  </div>
-
-  <!-- Content Panels -->
-  <div class="folder-content">
-
-    <!-- 01 Monthly Bookkeeping -->
-    <div id="tab1" class="tab-panel active">
-      <div class="service-flex">
-        <div class="service-text">
-          <h2>Monthly Bookkeeping</h2>
-          <p>Comprehensive recurring bookkeeping designed to keep your business organized, compliant, and financially clear.</p>
-          <ul>
-            <li><strong>✅ Starter</strong>
+        <!-- 01 Monthly Bookkeeping -->
+        <div class="swiper-slide service-slide">
+          <div class="service-card">
+            <div class="service-text">
+              <h2>Monthly Bookkeeping</h2>
+              <p>Comprehensive recurring bookkeeping designed to keep your business organized, compliant, and financially clear.</p>
               <ul>
-                <li>Accurate income and expense categorization</li>
-                <li>Monthly account reconciliations</li>
-                <li>Profit & Loss and Balance Sheet reports by the 15th</li>
-                <li>Email & text support</li>
+                <li><strong>✅ Starter</strong>
+                  <ul>
+                    <li>Accurate income and expense categorization</li>
+                    <li>Monthly account reconciliations</li>
+                    <li>Profit & Loss and Balance Sheet reports by the 15th</li>
+                    <li>Email & text support</li>
+                  </ul>
+                </li>
+                <li><strong>✅ Standard</strong>
+                  <ul>
+                    <li>Everything in Starter</li>
+                    <li>Annual 1099 filing</li>
+                    <li>Estimated tax guidance</li>
+                    <li>Collaboration with your tax CPA</li>
+                  </ul>
+                </li>
+                <li><strong>✅ Premium</strong>
+                  <ul>
+                    <li>Everything in Standard</li>
+                    <li>Payroll processing</li>
+                    <li>Annual budgeting & reporting</li>
+                    <li>Priority support</li>
+                  </ul>
+                </li>
               </ul>
-            </li>
-            <li><strong>✅ Standard</strong>
+              <p><strong>Starting at $449/month</strong></p>
+            </div>
+            <div class="service-image">
+              <img src="images/monthly-bookkeeping.jpg" alt="Monthly Bookkeeping">
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Quarterly Bookkeeping -->
+        <div class="swiper-slide service-slide">
+          <div class="service-card">
+            <div class="service-text">
+              <h2>Quarterly Bookkeeping</h2>
+              <p>Bookkeeping every 3 months for businesses that don’t need monthly tracking.</p>
               <ul>
-                <li>Everything in Starter</li>
-                <li>Annual 1099 filing</li>
-                <li>Estimated tax guidance</li>
-                <li>Collaboration with your tax CPA</li>
+                <li>Quarterly Profit & Loss report</li>
+                <li>Quarterly account reconciliations</li>
+                <li>Email support throughout the quarter</li>
+                <li>*Up to 3 bank accounts & fewer than 75 transactions*</li>
               </ul>
-            </li>
-            <li><strong>✅ Premium</strong>
+              <p><strong>$340/month</strong></p>
+            </div>
+            <div class="service-image">
+              <img src="images/quarterly-bookkeeping.jpg" alt="Quarterly Bookkeeping">
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Catch-Up Bookkeeping -->
+        <div class="swiper-slide service-slide">
+          <div class="service-card">
+            <div class="service-text">
+              <h2>Book Catch-Up & Clean-Up</h2>
+              <p>Get fully caught up if your books are behind, whether it’s a few months or years.</p>
               <ul>
-                <li>Everything in Standard</li>
-                <li>Payroll processing</li>
-                <li>Annual budgeting & reporting</li>
-                <li>Priority support</li>
+                <li>Full diagnostic review</li>
+                <li>Income + expense categorization for missing periods</li>
+                <li>Accurate reconciled financial statements</li>
+                <li>Tax-ready reports</li>
+                <li>Pricing varies by scope ($400–$8,000)</li>
               </ul>
-            </li>
-          </ul>
-          <p><strong>Starting at $449/month</strong></p>
+            </div>
+            <div class="service-image">
+              <img src="images/book-catchup.jpg" alt="Book Catch-Up">
+            </div>
+          </div>
         </div>
-        <div class="service-image">
-          <img src="images/monthly-bookkeeping.jpg" alt="Monthly Bookkeeping Example">
-        </div>
-      </div>
-    </div>
 
-    <!-- 02 Quarterly Bookkeeping -->
-    <div id="tab2" class="tab-panel">
-      <div class="service-flex">
-        <div class="service-text">
-          <h2>Quarterly Bookkeeping</h2>
-          <p>Bookkeeping every 3 months for businesses that don’t need monthly tracking.</p>
-          <ul>
-            <li>Quarterly Profit & Loss report</li>
-            <li>Quarterly account reconciliations</li>
-            <li>Email support throughout the quarter</li>
-            <li>*Up to 3 bank accounts & fewer than 75 transactions*</li>
-          </ul>
-          <p><strong>$340/month</strong></p>
-        </div>
-        <div class="service-image">
-          <img src="images/quarterly-bookkeeping.jpg" alt="Quarterly Bookkeeping Example">
-        </div>
-      </div>
-    </div>
-
-    <!-- 03 Catch-Up Bookkeeping -->
-    <div id="tab3" class="tab-panel">
-      <div class="service-flex">
-        <div class="service-text">
-          <h2>Book Catch-Up & Clean-Up</h2>
-          <p>Get fully caught up if your books are behind, whether it’s a few months or years.</p>
-          <ul>
-            <li>Full diagnostic review</li>
-            <li>Income + expense categorization for missing periods</li>
-            <li>Accurate reconciled financial statements</li>
-            <li>Tax-ready reports</li>
-            <li>Pricing varies by scope ($400–$8,000)</li>
-          </ul>
-        </div>
-        <div class="service-image">
-          <img src="images/book-catchup.jpg" alt="Book Catch-Up Example">
-        </div>
-      </div>
-    </div>
-
-    <!-- 04 Diagnostic Review -->
-    <div id="tab4" class="tab-panel">
-      <div class="service-flex">
-        <div class="service-text">
-          <h2>Diagnostic Review</h2>
-          <p>Professional evaluation of your QuickBooks Online setup to identify errors and missed items.</p>
-          <ul>
-            <li>Comprehensive review of QBO file</li>
-            <li>Assessment of categorizations and reconciliations</li>
-            <li>Detailed notes highlighting red flags and improvements</li>
-            <li>*Clean-up work available separately*</li>
-          </ul>
-          <p><strong>One-time investment of $449</strong></p>
-        </div>
-        <div class="service-image">
-          <img src="images/diagnostic-review.jpg" alt="Diagnostic Review Example">
-        </div>
-      </div>
-    </div>
-
-    <!-- 05 QuickBooks Online Setup -->
-    <div id="tab5" class="tab-panel">
-      <div class="service-flex">
-        <div class="service-text">
-          <h2>QuickBooks Online Setup</h2>
-          <p>For DIY business owners who want a solid foundation for organized bookkeeping.</p>
-          <ul>
-            <li>Full QBO setup</li>
-            <li>Custom chart of accounts</li>
-            <li>Walk-through video</li>
-            <li>30 days post-setup support</li>
-          </ul>
-          <p><strong>One-time investment of $549</strong></p>
-        </div>
-        <div class="service-image">
-          <img src="images/qbo-setup.jpg" alt="QuickBooks Setup Example">
-        </div>
-      </div>
-    </div>
-
-    <!-- 06 Steward Your Finances -->
-    <div id="tab6" class="tab-panel">
-      <div class="service-flex">
-        <div class="service-text">
-          <h2>Steward Your Finances</h2>
-          <p>Systems-based personal finance management with a faith-centered approach.</p>
-          <ul>
-            <li><strong>✅ Personal Finance Systems</strong>
+        <!-- 04 Diagnostic Review -->
+        <div class="swiper-slide service-slide">
+          <div class="service-card">
+            <div class="service-text">
+              <h2>Diagnostic Review</h2>
+              <p>Professional evaluation of your QuickBooks Online setup to identify errors and missed items.</p>
               <ul>
-                <li>Custom budgeting + cash flow system</li>
-                <li>Expense tracking setup</li>
-                <li>Personalized savings + debt strategy</li>
-                <li>Monthly review calls</li>
-                <li>Accountability check-ins</li>
+                <li>Comprehensive review of QBO file</li>
+                <li>Assessment of categorizations and reconciliations</li>
+                <li>Detailed notes highlighting red flags and improvements</li>
+                <li>*Clean-up work available separately*</li>
               </ul>
-            </li>
-            <li><strong>✅ Wealth Management Systems</strong>
+              <p><strong>One-time investment of $449</strong></p>
+            </div>
+            <div class="service-image">
+              <img src="images/diagnostic-review.jpg" alt="Diagnostic Review">
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 QuickBooks Online Setup -->
+        <div class="swiper-slide service-slide">
+          <div class="service-card">
+            <div class="service-text">
+              <h2>QuickBooks Online Setup</h2>
+              <p>For DIY business owners who want a solid foundation for organized bookkeeping.</p>
               <ul>
-                <li>Full money management + automation</li>
-                <li>Custom wealth dashboard</li>
-                <li>Bi-weekly review & planning calls</li>
-                <li>Tax-aware money planning</li>
-                <li>Biblical stewardship coaching</li>
+                <li>Full QBO setup</li>
+                <li>Custom chart of accounts</li>
+                <li>Walk-through video</li>
+                <li>30 days post-setup support</li>
               </ul>
-            </li>
-          </ul>
-          <p><strong>Starting at $299/month</strong></p>
+              <p><strong>One-time investment of $549</strong></p>
+            </div>
+            <div class="service-image">
+              <img src="images/qbo-setup.jpg" alt="QuickBooks Setup">
+            </div>
+          </div>
         </div>
-        <div class="service-image">
-          <img src="images/steward-finances.jpg" alt="Steward Your Finances Example">
+
+        <!-- 06 Steward Your Finances -->
+        <div class="swiper-slide service-slide">
+          <div class="service-card">
+            <div class="service-text">
+              <h2>Steward Your Finances</h2>
+              <p>Systems-based personal finance management with a faith-centered approach.</p>
+              <ul>
+                <li><strong>✅ Personal Finance Systems</strong>
+                  <ul>
+                    <li>Custom budgeting + cash flow system</li>
+                    <li>Expense tracking setup</li>
+                    <li>Personalized savings + debt strategy</li>
+                    <li>Monthly review calls</li>
+                    <li>Accountability check-ins</li>
+                  </ul>
+                </li>
+                <li><strong>✅ Wealth Management Systems</strong>
+                  <ul>
+                    <li>Full money management + automation</li>
+                    <li>Custom wealth dashboard</li>
+                    <li>Bi-weekly review & planning calls</li>
+                    <li>Tax-aware money planning</li>
+                    <li>Biblical stewardship coaching</li>
+                  </ul>
+                </li>
+              </ul>
+              <p><strong>Starting at $299/month</strong></p>
+            </div>
+            <div class="service-image">
+              <img src="images/steward-finances.jpg" alt="Steward Your Finances">
+            </div>
+          </div>
         </div>
+
+        <!-- 07 Custom Website Creation -->
+        <div class="swiper-slide service-slide">
+          <div class="service-card">
+            <div class="service-text">
+              <h2>Custom Website Creation</h2>
+              <p>Professional websites built from scratch to elevate your business online presence.</p>
+              <ul>
+                <li>Custom mobile-friendly design</li>
+                <li>Up to 5 pages</li>
+                <li>Brand-aligned visuals & typography</li>
+                <li>E-commerce integration</li>
+                <li>Ongoing maintenance</li>
+              </ul>
+              <p><strong>Starting at $800</strong></p>
+            </div>
+            <div class="service-image">
+              <img src="images/custom-website.jpg" alt="Custom Website Creation">
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <div class="swiper-pagination"></div>
     </div>
+  </section>
 
-    <!-- 07 Custom Website Creation -->
-    <div id="tab7" class="tab-panel">
-      <div class="service-flex">
-        <div class="service-text">
-          <h2>Custom Website Creation</h2>
-          <p>Professional websites built from scratch to elevate your business online presence.</p>
-          <ul>
-            <li>Custom mobile-friendly design</li>
-            <li>Up to 5 pages</li>
-            <li>Brand-aligned visuals & typography</li>
-            <li>E-commerce integration</li>
-            <li>Ongoing maintenance</li>
-          </ul>
-          <p><strong>Starting at $800</strong></p>
-        </div>
-        <div class="service-image">
-          <img src="images/custom-website.jpg" alt="Custom Website Example">
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-  <!-- Swiper JS -->
-<script>
-const tabs = document.querySelectorAll('.folder-tab');
-const panels = document.querySelectorAll('.tab-panel');
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    panels.forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.tab).classList.add('active');
-  });
-});
-</script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      mousewheel: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      speed: 800,
+    });
+  </script>
 </body>
 </html>
