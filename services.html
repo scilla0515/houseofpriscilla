@@ -220,33 +220,53 @@
 
   </main>
 
-  <!-- Inline JS for the reveal animation -->
 <script>
-// cards
+// Fade-up reveal
+const faders = document.querySelectorAll('.fade-up');
+const appearOnScroll = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+  });
+}, { threshold: 0.2 });
+faders.forEach(el => appearOnScroll.observe(el));
+
+// Tabs + scroll sync
 const sections = document.querySelectorAll(".service-block");
 const tabs = document.querySelectorAll(".file-tab");
 
-// Smooth scroll to section when tab clicked
-tabs.forEach((tab, index) => {
+// Smooth scroll when clicking tab
+tabs.forEach((tab, i) => {
   tab.addEventListener("click", () => {
-    sections[index].scrollIntoView({ behavior: "smooth" });
+    sections[i].scrollIntoView({ behavior: "smooth" });
   });
 });
 
-// Highlight correct tab on scroll
-window.addEventListener("scroll", () => {
-  let currentSection = 0;
+// Update tab position + active state
+function updateTabs() {
+  let activeIndex = 0;
 
   sections.forEach((sec, i) => {
     const rect = sec.getBoundingClientRect();
-    if (rect.top <= window.innerHeight * 0.35) currentSection = i;
+    const tab = sec.querySelector(".file-tab");
+    tab.classList.remove("stuck");
+
+    if (rect.top <= 120 && rect.bottom > 300) {
+      activeIndex = i;
+      tab.classList.add("stuck");
+    }
   });
 
   tabs.forEach((tab, i) => {
-    tab.classList.toggle("active", i === currentSection);
+    tab.classList.toggle("active", i === activeIndex);
+    tab.style.opacity = (i === activeIndex) ? "1" : "0";
   });
-});
+}
+
+window.addEventListener("scroll", updateTabs);
+updateTabs(); // Initialize state on load
 </script>
+
 
 </body>
 </html>
