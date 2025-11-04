@@ -42,20 +42,20 @@ header {
 .hero-title { margin: 0 0 0.5rem; font-size: 2.4rem; }
 .hero-subtitle { margin: 0 auto; max-width: 720px; color: #444; }
 
-/* ===== STACKED FILES WRAPPER ===== */
+/* ===== STACKED SERVICE CARDS + TOP-ALIGNED FILE TABS ===== */
 #services {
   counter-reset: service;
 }
 
-/* ===== ONE FILE — NEW DESIGN BUT SAME ANIMATION ===== */
+/* === CARD BEHAVIOR === */
 .service-block {
   counter-increment: service;
   position: sticky;
-  top: 120px;
-  z-index: calc(10 + var(--order)); /* keeps stack order */
-  width: 100%; /* full width like screenshot */
-  margin: 0 0 120px;
-  background: var(--sage);
+  top: 120px; /* card sticks just below top tabs */
+  z-index: calc(10 + var(--order));
+  width: 100%;
+  margin: 0 0 140px;
+  background: #e3e7df; /* muted sage like reference */
   border-radius: 0;
   box-shadow: none;
   transform: translateY(100px);
@@ -64,40 +64,58 @@ header {
   overflow: hidden;
 }
 
-/* ===== FILE TAB ===== */
+/* === FILE TAB — sticks to top + shifts for nesting === */
 .file-tab {
+  position: sticky;
+  top: 82px; /* EXACT spot under your main nav */
   font-size: 1rem;
   font-weight: 700;
-  background: var(--gold);
+  background: #d9dccf;
   color: var(--black);
   padding: 14px 40px 14px 55px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-bottom-right-radius: 30px;
-  border-top-left-radius: 30px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  z-index: 500;
 }
+
+/* Auto numbering "01" */
 .file-tab::before {
   content: counter(service, decimal-leading-zero) " ";
   position: absolute;
   left: 16px;
   top: 50%;
-  transform: translateY(-50%);
   font-weight: 900;
+  transform: translateY(-50%);
 }
 
-/* ===== CONTENT AREA ===== */
+/* === Horizontal nest/offset per file === */
+.service-block[style*="--order:0"] .file-tab { transform: translateX(0%); }
+.service-block[style*="--order:1"] .file-tab { transform: translateX(12%); }
+.service-block[style*="--order:2"] .file-tab { transform: translateX(24%); }
+.service-block[style*="--order:3"] .file-tab { transform: translateX(36%); }
+.service-block[style*="--order:4"] .file-tab { transform: translateX(48%); }
+.service-block[style*="--order:5"] .file-tab { transform: translateX(60%); }
+.service-block[style*="--order:6"] .file-tab { transform: translateX(72%); }
+
+/* Hide non-active card tabs so only one shows at top */
+.service-block:not(.visible) .file-tab {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* === CONTENT LAYOUT INSIDE CARD === */
 .service-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 90px 8% 90px;
+  padding: 90px 8% 100px;
   gap: 4rem;
 }
 
-/* ===== TEXT ===== */
+/* TEXT */
 .service-text {
   flex: 1.3;
 }
@@ -107,9 +125,7 @@ header {
   font-weight: 600;
   margin: 0 0 20px;
 }
-.service-text p {
-  margin-bottom: 24px;
-}
+.service-text p { margin-bottom: 24px; font-size: 1.1rem; }
 .service-text ul {
   margin-bottom: 25px;
   padding-left: 1.2rem;
@@ -119,7 +135,7 @@ header {
   line-height: 1.6;
 }
 
-/* ===== IMAGE ===== */
+/* IMAGE */
 .service-image {
   flex: 1;
 }
@@ -129,18 +145,18 @@ header {
   object-fit: cover;
 }
 
-/* ===== ANIMATION ===== */
+/* ANIMATION */
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 980px) {
   .service-inner {
     flex-direction: column;
     gap: 2rem;
-    padding: 70px 6% 70px;
+    padding: 70px 6% 80px;
   }
   .service-image img {
     max-width: 92%;
