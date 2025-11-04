@@ -14,7 +14,7 @@ html, body {
   background: var(--cream);
 }
 
-/* ===== HEADER ===== */
+/* Header + hero (basic reset so they keep your site style) */
 header {
   display: flex;
   align-items: center;
@@ -23,7 +23,6 @@ header {
   background: var(--white);
   border-bottom: 2px solid var(--gold);
 }
-
 .nav-links {
   display: flex;
   list-style: none;
@@ -31,108 +30,56 @@ header {
   margin: 0;
   padding: 0;
 }
-
-.nav-links a { 
-  color: var(--black); 
-  text-decoration: none; 
-  font-weight: 500; 
-}
-
+.nav-links a { color: var(--black); text-decoration: none; font-weight: 500; }
 .logo-img { height: 44px; }
 
-/* ===== HERO ===== */
 .hero {
   background: #efeae4;
   padding: 5rem 8%;
   text-align: center;
 }
+.hero-title { margin: 0 0 0.5rem; font-size: 2.4rem; }
+.hero-subtitle { margin: 0 auto; max-width: 720px; color: #444; }
 
-.hero-title {
-  margin: 0 0 0.5rem;
-  font-size: 2.4rem;
+/* ===== STACKED FILES WRAPPER ===== */
+#services.stack {
+  position: relative;
+  width: 100%;
+  padding: 6rem 0 10rem;
+  counter-reset: service; /* for auto-numbering */
 }
 
-.hero-subtitle {
-  margin: 0 auto;
-  max-width: 720px;
-  color: #444;
-}
-
-/* ===== TOP TAB NAV (Coyne Style) ===== */
-.service-tabs {
-  position: sticky;
-  top: 82px;
-  z-index: 200;
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  padding: 20px 0;
-  background: var(--cream);
-  border-bottom: 2px solid rgba(0,0,0,0.1);
-}
-
-.tab-item {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #777;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tab-item.active {
-  color: var(--black);
-  border-bottom: 3px solid var(--black);
-}
-
-/* ===== STACKED SWIPE-UP SERVICE CARDS ===== */
-#services {
-  counter-reset: service-counter;
-}
-
+/* ===== ONE FILE (CARD) ===== */
 .service-block {
-  counter-increment: service-counter;
+  counter-increment: service; /* increases the counter for each card */
   position: sticky;
-  top: 120px; /* how high they stick */
-  z-index: calc(10 + var(--order));
+  top: 96px;                /* how high it sticks under header */
+  z-index: 1;               /* will be overridden per nth-child */
+  margin: 0 auto 40px;
   width: min(1100px, 86%);
-  margin: 0 auto 80px;
   border-radius: 14px;
   box-shadow: 0 16px 40px rgba(0,0,0,0.08);
   background: var(--white);
   transform: translateY(60px);
   opacity: 0;
   transition: transform .6s ease, opacity .6s ease;
-  overflow: clip;
+  overflow: clip;           /* clean rounded corners for child overflow */
 }
 
-/* Alternating background */
-.service-block:nth-child(even) { background: var(--cream); }
+/* Alternate backgrounds */
+.service-block:nth-child(odd) { background: var(--white); }
+.service-block:nth-child(even){ background: var(--cream); }
 
-/* ===== FOLDER TAB ON CARD ===== */
-.file-tab {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--black);
-  font-weight: 700;
-  padding: 12px 28px 12px 44px;
-  border-bottom-right-radius: 14px;
-  border-top-left-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  margin-left: 0;
-  position: relative;
-}
+/* Make later cards appear ABOVE previous ones (so next file slides over last) */
+.service-block:nth-child(1) { z-index: 7; }
+.service-block:nth-child(2) { z-index: 8; }
+.service-block:nth-child(3) { z-index: 9; }
+.service-block:nth-child(4) { z-index: 10; }
+.service-block:nth-child(5) { z-index: 11; }
+.service-block:nth-child(6) { z-index: 12; }
+.service-block:nth-child(7) { z-index: 13; }
 
-/* "01" numbering on card tab */
-.file-tab::before {
-  content: counter(service-counter, decimal-leading-zero) " ";
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: 800;
-}
-
-/* ===== INSIDE LAYOUT ===== */
+/* Inner layout */
 .service-inner {
   display: flex;
   align-items: center;
@@ -151,9 +98,8 @@ header {
 .service-text ul { margin: 0 0 14px; padding-left: 1.1rem; }
 .service-text li { line-height: 1.5; margin-bottom: 6px; }
 
-/* ===== IMAGE ===== */
+/* Image always on right */
 .service-image { flex: 1; text-align: right; }
-
 .service-image img {
   width: 100%;
   max-width: 480px;
@@ -161,13 +107,39 @@ header {
   object-fit: cover;
 }
 
-/* ===== REVEAL FADE ===== */
+/* ===== FILE TAB (Gold) with Auto Numbering ===== */
+.file-tab {
+  position: sticky;   /* keeps tab stuck to top edge of its card while scrolling */
+  top: 0;
+  align-self: flex-start;
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  font-weight: 700;
+  padding: 12px 28px 12px 44px; /* left space for number */
+  border-bottom-right-radius: 14px;
+  border-top-left-radius: 14px; /* soft feel */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-left: 0;
+}
+
+/* Number before tab text: "01 " */
+.file-tab::before {
+  content: counter(service, decimal-leading-zero) "  ";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+}
+
+/* ===== Reveal animation when observed ===== */
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== Responsive ===== */
 @media (max-width: 980px) {
   .service-inner {
     flex-direction: column;
@@ -175,15 +147,17 @@ header {
     gap: 1.75rem;
     padding: 56px 7.5% 48px;
   }
-  
-  .service-image {
-    width: 100%;
-    text-align: center;
-  }
-
-  .service-image img {
-    max-width: 92%;
-  }
+  .service-image { width: 100%; text-align: center; }
+  .service-image img { max-width: 92%; }
+  .file-tab { margin-left: 0; }
 }
+
+/* Give a little breathing room after stack ends */
+#services.stack::after {
+  content: "";
+  display: block;
+  height: 40vh;
+}
+
 
 
