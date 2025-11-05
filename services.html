@@ -230,14 +230,16 @@ const fadeObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.25 });
+
 faders.forEach(el => fadeObserver.observe(el));
 
 
-// ✅ Service tabs — scroll sync + docking
+// ✅ Service tabs — scroll sync + docking + movement into fixed bar
 const sections = Array.from(document.querySelectorAll(".service-block"));
 const tabs = Array.from(document.querySelectorAll(".file-tab"));
+const fixedBar = document.getElementById("tabs-fixed-bar");
 
-// ✅ Smooth click scroll to section
+// ✅ Smooth scroll on tab click
 tabs.forEach((tab, i) => {
   tab.style.cursor = "pointer";
   tab.addEventListener("click", () => {
@@ -245,8 +247,7 @@ tabs.forEach((tab, i) => {
   });
 });
 
-
-// ✅ Updated tab behavior function
+// ✅ Manage sticky & active tab logic
 function updateTabs() {
   let activeIndex = 0;
 
@@ -254,16 +255,15 @@ function updateTabs() {
     const rect = sec.getBoundingClientRect();
     const tab = tabs[i];
 
-    // Decide which card is currently active in viewport
-    if (rect.top <= 140 && rect.bottom > 250) {
+    // Active section: based on visibility in viewport
+    if (rect.top <= 150 && rect.bottom > 300) {
       activeIndex = i;
     }
 
-    // 🚀 When card reaches ~top → tab docks permanently up top
-    if (rect.top <= 140) {
+    // 🚀 Move tab into fixed row once card reaches sticky point
+    if (!tab.classList.contains("stuck") && rect.top <= 140) {
       tab.classList.add("stuck");
-      tab.style.opacity = "1";
-      tab.style.pointerEvents = "auto";
+      fixedBar.appendChild(tab);
     }
   });
 
@@ -273,7 +273,7 @@ function updateTabs() {
   });
 }
 
-// ✅ Scroll + first-load initialization
+// ✅ Scroll + load initialization
 window.addEventListener("scroll", updateTabs);
 window.addEventListener("load", updateTabs);
 </script>
