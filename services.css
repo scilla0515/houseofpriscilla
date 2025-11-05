@@ -74,7 +74,7 @@ header {
   position: sticky;
   top: 110px;
   width: 100%;
-  padding-top: 50px; /* ✅ move card content upward */
+  padding-top: 40px; /* ✅ move card content upward */
   margin-bottom: 220px; /* ✅ cascading overlap */
   counter-increment: service;
   opacity: 0;
