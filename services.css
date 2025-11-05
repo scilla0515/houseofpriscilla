@@ -49,34 +49,31 @@ header {
 /*** CARDS — Sticky layering ***/
 .service-block {
   position: sticky;
-  top: 160px; /* ✅ optimized overlap reveal */
+  top: 140px;
   background: var(--sage);
   width: 100%;
-  margin-bottom: 150px; /* ✅ tighter spacing but no card burying */
-  padding-top: 100px; /* ✅ better tab-to-content spacing */
+  margin-bottom: 160px;
+  padding-top: 120px;
   counter-increment: service;
   opacity: 0;
   transform: translateY(60px);
   transition: opacity .6s ease, transform .6s ease;
-  --i: 1; /* ✅ z-index variable */
-  z-index: calc(200 - (var(--i) * 10)); /* ✅ automatic stacking */
 }
 
-/*** Appears when visible ***/
+/*** Fading in from scroll ***/
 .service-block.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/*** ✅ Auto z-index order — card 1 highest, card 7 lowest ***/
-.service-block:nth-child(1) { --i: 1; }
-.service-block:nth-child(2) { --i: 2; }
-.service-block:nth-child(3) { --i: 3; }
-.service-block:nth-child(4) { --i: 4; }
-.service-block:nth-child(5) { --i: 5; }
-.service-block:nth-child(6) { --i: 6; }
-.service-block:nth-child(7) { --i: 7; }
-
+/*** Z-index stack so earlier tabs stay visible ***/
+.service-block:nth-child(1) { z-index: 110; }
+.service-block:nth-child(2) { z-index: 105; }
+.service-block:nth-child(3) { z-index: 100; }
+.service-block:nth-child(4) { z-index: 95; }
+.service-block:nth-child(5) { z-index: 90; }
+.service-block:nth-child(6) { z-index: 85; }
+.service-block:nth-child(7) { z-index: 80; }
 
 /*** TAB STYLE — anchored to card top ***/
 .file-tab {
@@ -137,3 +134,4 @@ header {
 @media (max-width: 980px) {
   .service-inner { flex-direction: column; padding: 40px 6% 60px; }
 }
+
