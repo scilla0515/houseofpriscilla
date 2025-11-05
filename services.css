@@ -44,13 +44,9 @@ header {
   position: relative;
   counter-reset: service;
   padding-bottom: 50vh;
-
-  
 }
 
-
-
-/* CARDS — Sticky layering */
+/*** CARDS — Sticky layering ***/
 .service-block {
   position: sticky;
   top: 140px;
@@ -61,7 +57,7 @@ header {
   counter-increment: service;
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity .6s ease, transform .6s ease; ***/
+  transition: opacity .6s ease, transform .6s ease;
 }
 
 /*** Fading in from scroll ***/
@@ -110,17 +106,15 @@ header {
   z-index: 200;
 }
 
-
-
-/CONTENT 
+/*** CONTENT ***/
 .service-inner {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
- padding: 60px 8% 80px; 
+  padding: 60px 8% 80px;
   max-width: 1300px;
   margin: auto;
-}  
+}
 
 .service-text { flex: 1.4; }
 .service-text h2 {
