@@ -69,90 +69,90 @@ header.scrolled .nav-links a {
   color: var(--gold);
 }
 
-/* HERO */
-/* HERO — Faith-Centered Luxury Workspace */
-.hero {
+/* ✅ Luxury Editorial Hero */
+.luxury-hero {
   position: relative;
+  height: 95vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  height: 90vh;
-  padding: 0 10%;
-  background: var(--deep-red); /* fallback while image loads */
+  justify-content: center;
   color: var(--white);
-  overflow: hidden;
-  border-bottom: 3px solid var(--gold);
 }
 
-.hero-image img {
+.hero-bg {
   position: absolute;
-  right: 0;
   top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  width: auto;
   object-fit: cover;
-  opacity: 0.75;
+  filter: brightness(72%);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, var(--deep-red) 40%, transparent);
-  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.55)
+  );
 }
 
-.hero-content {
+.hero-text {
   position: relative;
-  z-index: 2;
-  max-width: 540px;
+  text-align: center;
+  padding: 0 1rem;
+  max-width: 750px;
 }
 
-.hero-title {
+.hero-text h1 {
   font-family: var(--heading-font);
-  font-size: 3.6rem;
-  line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: .7px;
+  font-size: 4rem;
+  line-height: 1.1;
+  letter-spacing: 1px;
   margin-bottom: 1rem;
-  color: var(--cream-light);
+  color: var(--white);
+  text-transform: uppercase;
 }
 
-.hero-subtitle {
+.hero-text p {
   font-family: var(--body-font);
   font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1.55;
+  line-height: 1.6;
   margin-bottom: 2rem;
+  color: var(--white);
+  opacity: 0.9;
 }
 
 .hero-btn {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--black);
-  padding: 0.85em 2.2em;
-  font-family: var(--body-font);
-  font-weight: 500;
-  letter-spacing: .8px;
-  border-radius: 40px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-.hero-btn:hover {
   background: var(--white);
-  color: var(--deep-red);
+  color: var(--black);
+  padding: 0.9em 2.3em;
+  border-radius: 40px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/*** RESPONSIVE HERO ***/
-@media(max-width: 900px) {
-  .hero {
-    height: auto;
-    padding: 7rem 8% 4rem;
+.hero-btn:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* ✅ Mobile Scaling */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.4rem;
   }
-  .hero-image img {
-    opacity: 0.22;
-    width: 100%;
+  .hero-text p {
+    font-size: 1rem;
   }
-  .hero-title { font-size: 2.6rem; }
 }
 
 
