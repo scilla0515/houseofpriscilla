@@ -25,61 +25,85 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Header */
+/* ✅ Luxury Editorial Navbar */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5em 5%;                /* smaller header */
-    background-color: #ffffff;        /* white navbar */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    border-bottom: 3px solid #6B4C3B; /* brown bottom border */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2em 6%;
+  background: transparent;
+  transition: all 0.35s ease;
 }
 
-/* Logo */
+/* ✅ Scroll style — subtle cream blur so it stays readable */
+header.scrolled {
+  backdrop-filter: blur(12px);
+  background: rgba(249, 245, 239, 0.85); /* cream with transparency */
+  border-bottom: 2px solid var(--gold);
+}
+
+/* ✅ Logo size refinement */
 .logo-img {
-    height: 60px; /* smaller logo to match smaller nav */
-    width: auto;
+  height: 58px;
+  width: auto;
 }
 
-/* Navigation links */
-nav ul.nav-links {
-    display: flex;
-    gap: 2em; /* space between links */
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* ✅ Navigation */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.2em;
+  margin: 0;
 }
 
-nav a {
-    text-decoration: none;
-    color: #6B4C3B;         /* brown text */
-    font-weight: 500;          /* slightly bolder for elegance */
-    font-size: 0.95rem;        /* slightly smaller text */
-    transition: color 0.3s ease;
+/* ✅ Luxe Links */
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--body-font);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--white);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--gold);       /* gold hover accent */
+/* ✅ Underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5px;
+  width: 0%;
+  background: var(--gold);
+  transition: width .35s ease;
 }
 
-/* Optional: responsive header adjustments */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 0.5em 1em;
-    }
-    .logo-img {
-        height: 50px;
-    }
-    nav ul.nav-links {
-        flex-direction: column;
-        gap: 1em;
-        margin-top: 0.5em;
-    }
+.nav-links a:hover {
+  color: var(--gold);
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ✅ Responsive Menu */
+@media (max-width: 820px) {
+  header {
+    padding: 1em 4%;
+  }
+  .nav-links {
+    gap: 1.4em;
+  }
+  .logo-img {
+    height: 52px;
+  }
 }
 
 
