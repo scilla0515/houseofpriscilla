@@ -1,9 +1,19 @@
 :root {
-    --black: #0e0e0e;        /* primary text */
-    --white: #ffffff;        /* for text/buttons on dark bg */
-    --cream: #f9f5ef;        /* unified page background */
-    --gold: #c8a97e;         /* accent color */
-    --gray: #a6a6a6;   
+
+    :root {
+  --black: #0e0e0e;
+  --white: #ffffff;
+  --cream: #f9f5ef;
+  --gold: #c8a97e;
+  --gray: #a6a6a6;
+
+  /* ✅ Add these so styles don't break */
+  --deep-red: #761818;
+  --cream-light: #e4d9d2;
+  --olive: #757c31;
+
+  --heading-font: "Cormorant Garamond", serif;
+  --body-font: "Montserrat", sans-serif;
 }
 
 /* General */
