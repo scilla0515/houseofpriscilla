@@ -34,7 +34,7 @@ header {
 .hero {
   background: #efeae4;
   text-align: center;
-  padding: 6.5rem 8% 5rem;
+  padding: 4rem 8% 3rem;
 }
 .hero-title { font-size: 2.4rem; margin: 0 0 .5rem; }
 .hero-subtitle { max-width: 700px; margin: 0 auto; color: #444; }
@@ -49,15 +49,17 @@ header {
 /*** CARDS — Sticky layering ***/
 .service-block {
   position: sticky;
-  top: 140px;
+  top: 120px; /* earlier stick point so content rises correctly */
   background: var(--sage);
   width: 100%;
-  margin-bottom: 160px;
-  padding-top: 120px;
+  margin-bottom: 220px; /* proper cascading layers */
+  padding-top: 100px; /* space under the tab */
   counter-increment: service;
   opacity: 0;
   transform: translateY(60px);
   transition: opacity .6s ease, transform .6s ease;
+  --i: 1;
+  z-index: calc(200 - (var(--i) * 10));
 }
 
 /*** Fading in from scroll ***/
@@ -67,13 +69,13 @@ header {
 }
 
 /*** Z-index stack so earlier tabs stay visible ***/
-.service-block:nth-child(1) { z-index: 110; }
-.service-block:nth-child(2) { z-index: 105; }
-.service-block:nth-child(3) { z-index: 100; }
-.service-block:nth-child(4) { z-index: 95; }
-.service-block:nth-child(5) { z-index: 90; }
-.service-block:nth-child(6) { z-index: 85; }
-.service-block:nth-child(7) { z-index: 80; }
+.service-block:nth-child(1) { --i: 1; }
+.service-block:nth-child(2) { --i: 2; }
+.service-block:nthchild(3) { --i: 3; }
+.service-block:nth-child(4) { --i: 4; }
+.service-block:nth-child(5) { --i: 5; }
+.service-block:nth-child(6) { --i: 6; }
+.service-block:nth-child(7) { --i: 7; }
 
 /*** TAB STYLE — anchored to card top ***/
 .file-tab {
@@ -96,24 +98,29 @@ header {
 }
 
 /*** Show tab when card visible ***/
-.service-block.visible .file-tab { opacity: 1; }
+.service-block.visible .file-tab {
+  opacity: 1;
+}
 
 /*** Active tab highlight ***/
 .file-tab.active {
   background: var(--gold);
   color: var(--white);
   box-shadow: 0 6px 14px rgba(0,0,0,.2);
-  z-index: 200;
+  z-index: 500;
 }
 
-/*** CONTENT ***/
+/*** CONTENT — ✅ new stacking context fix */
 .service-inner {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  padding: 60px 8% 80px;
+  padding: 40px 8% 60px;
   max-width: 1300px;
   margin: auto;
+
+  position: relative; /* ✅ keeps newer card content in front */
+  z-index: 300; /* ✅ prevents content hiding */
 }
 
 .service-text { flex: 1.4; }
@@ -132,6 +139,7 @@ header {
 
 /*** RESPONSIVE ***/
 @media (max-width: 980px) {
-  .service-inner { flex-direction: column; padding: 40px 6% 60px; }
+  .service-inner { flex-direction: column; padding: 30px 6% 50px; }
 }
+
 
