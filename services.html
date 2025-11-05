@@ -222,7 +222,7 @@
 
   </main>
 <script>
-// ✅ Fade-up reveal animation
+/// ✅ Fade-up reveal animation
 const faders = document.querySelectorAll('.fade-up');
 const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -235,11 +235,9 @@ const fadeObserver = new IntersectionObserver((entries) => {
 
 faders.forEach(el => fadeObserver.observe(el));
 
-
-// ✅ Service tabs — scroll sync + docking + movement into fixed bar
+// ✅ Scroll sync: Tabs stay with their cards
 const sections = Array.from(document.querySelectorAll(".service-block"));
 const tabs = Array.from(document.querySelectorAll(".file-tab"));
-const fixedBar = document.getElementById("tabs-fixed-bar");
 
 // ✅ Smooth scroll on tab click
 tabs.forEach((tab, i) => {
@@ -249,35 +247,25 @@ tabs.forEach((tab, i) => {
   });
 });
 
-// ✅ Manage sticky & active tab logic
+// ✅ Highlight active tab while scrolling
 function updateTabs() {
   let activeIndex = 0;
 
   sections.forEach((sec, i) => {
     const rect = sec.getBoundingClientRect();
-    const tab = tabs[i];
-
-    // Active section: based on visibility in viewport
-    if (rect.top <= 150 && rect.bottom > 300) {
+    if (rect.top <= 160 && rect.bottom > 300) {
       activeIndex = i;
     }
-
-    // 🚀 Move tab into fixed row once card reaches sticky point
-    if (!tab.classList.contains("stuck") && rect.top <= 140) {
-      tab.classList.add("stuck");
-      fixedBar.appendChild(tab);
-    }
   });
 
-  // ✅ Highlight only the active tab
-  tabs.forEach((tab, i) => {
-    tab.classList.toggle("active", i === activeIndex);
-  });
+  tabs.forEach((tab, i) =>
+    tab.classList.toggle("active", i === activeIndex)
+  );
 }
 
-// ✅ Scroll + load initialization
 window.addEventListener("scroll", updateTabs);
 window.addEventListener("load", updateTabs);
+
 </script>
 
 
