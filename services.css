@@ -1,15 +1,19 @@
 :root {
   --black: #0e0e0e;
   --gold: #c8a97e;
-  --cream: #f7f5f2;
-  --sage: #dcdcc8;
   --white: #ffffff;
+
+  /* BRAND COLORS */
+  --deep-red: #761818;
+  --cream-light: #e4d9d2;
+  --olive: #757c31;
 }
 
+/*** GLOBAL ***/
 html, body {
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
-  background: var(--cream);
+  background: var(--cream-light);
   color: var(--black);
 }
 
@@ -21,124 +25,122 @@ header {
   padding: 1rem 8%;
   background: var(--white);
   border-bottom: 2px solid var(--gold);
+  z-index: 2000;
+  position: sticky;
+  top: 0;
 }
+
 .logo-img { height: 44px; }
-.nav-links { display: flex; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--black); font-weight: 500; }
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+}
 
 /*** HERO ***/
 .hero {
   background: #efeae4;
   text-align: center;
-  padding: 5rem 8%;
+  padding: 4rem 8% 3rem;
 }
-.hero-title { font-size: 2.4rem; margin: 0 0 .5rem; }
-.hero-subtitle { max-width: 700px; margin: 0 auto; color: #444; }
+.hero-title {
+  font-size: 2.4rem;
+  margin: 0 0 .5rem;
+}
+.hero-subtitle {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #444;
+}
 
-/* ===== STACKED CARDS ===== */
+/*** STACKED CARDS SECTION ***/
 #services {
-  position: relative;
   counter-reset: service;
-  padding-bottom: 60vh;
 }
 
-/*** CARD STICK + OVERLAP ***/
+/*** CARD CONTAINER ***/
 .service-block {
   position: sticky;
-  top: 120px;
-  background: var(--sage);
+  top: 110px;
   width: 100%;
-  margin-bottom: 140px;
-  padding-top: 60px;
+  padding-top: 50px; /* ✅ move card content upward */
+  margin-bottom: 220px; /* ✅ cascading overlap */
+  counter-increment: service;
   opacity: 0;
   transform: translateY(60px);
   transition: opacity .6s ease, transform .6s ease;
-  counter-increment: service;
 }
+
 .service-block.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/*** FILE TAB — EXACT SHAPE FROM SAMPLE ***/
-/* ✅ NEW TRUE FILE-TAB STYLE */
-/* ===== Browser-style tab that snaps into a top row ===== */
-
-/* Make sure these exist somewhere: */
-#services { counter-reset: service; }
-.service-block { counter-increment: service; }
-
-/* ===== FIXED TAB BAR AT TOP ===== */
-#tabs-fixed-bar {
-  position: fixed;
-  top: 90px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  gap: 12px;
-  padding: 10px 8%;
-  background: var(--white);
-  border-bottom: 2px solid var(--gold);
-  z-index: 1000;
+/*** BRAND COLOR ROTATION ***/
+.service-block:nth-child(1),
+.service-block:nth-child(4),
+.service-block:nth-child(7) {
+  background: var(--deep-red);
+  color: var(--white);
+}
+.service-block:nth-child(2),
+.service-block:nth-child(5) {
+  background: var(--cream-light);
+  color: var(--black);
+}
+.service-block:nth-child(3),
+.service-block:nth-child(6) {
+  background: var(--olive);
+  color: var(--white);
 }
 
-/* FILE TAB STYLE: Attached to card by default */
+/*** TAB STYLING ***/
 .file-tab {
   position: absolute;
   top: 0;
   transform: translateY(-100%);
   left: 0;
-  padding: 12px 28px 12px 48px;
-  background: #ffffff;
-  color: #222;
-  font-weight: 700;
-  font-size: 1rem;
-  border: 1px solid rgba(0,0,0,.08);
+  padding: 14px 30px 14px 54px;
+  background: var(--white);
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,.1);
   border-bottom: none;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+  border-radius: 10px 10px 0 0;
   opacity: 0;
-  transition: opacity .3s ease, transform .35s ease;
-  pointer-events: none;
-  z-index: 5;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  transition: opacity .3s ease;
 }
-.file-tab::before {
-  content: counter(service, decimal-leading-zero) " ";
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: 900;
-  opacity: .55;
-}
-
-/* Tab becomes visible when card fades in */
 .service-block.visible .file-tab {
   opacity: 1;
 }
-
-/* When stuck → Move into fixed top row */
-.file-tab.stuck {
-  position: static;
-  transform: none;
-  pointer-events: auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,.10);
-}
-
-/* ACTIVE TAB */
 .file-tab.active {
   background: var(--gold);
   color: var(--white);
 }
 
-/* Small screens → scrollable tab bar */
-@media (max-width: 980px) {
-  #tabs-fixed-bar {
-    overflow-x: auto;
-    white-space: nowrap;
-    top: 70px;
-  }
+/*** TAB COLOR MATCHING CARD ***/
+.service-block:nth-child(1) .file-tab,
+.service-block:nth-child(4) .file-tab,
+.service-block:nth-child(7) .file-tab {
+  background: var(--deep-red);
+  color: var(--white);
+}
+.service-block:nth-child(2) .file-tab,
+.service-block:nth-child(5) .file-tab {
+  background: var(--cream-light);
+  color: var(--black);
+}
+.service-block:nth-child(3) .file-tab,
+.service-block:nth-child(6) .file-tab {
+  background: var(--olive);
+  color: var(--white);
 }
 
 /*** CONTENT LAYOUT ***/
@@ -146,75 +148,68 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  padding: 60px 8% 80px;
-  max-width: 1400px;
+  padding: 45px 8% 60px; /* ✅ lifts content closer to tab */
+  max-width: 1300px;
   margin: auto;
+  position: relative;
+  z-index: 300;
 }
 
 .service-text { flex: 1.4; }
 
 .service-text h2 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-family: "Playfair Display", serif;
-  margin-bottom: 18px;
-  color: #2d2d2a;
+  margin-bottom: 12px;
 }
 
-/* ✅ Pricing tiers horizontal layout */
+.service-text p {
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/*** Pricing tiers horizontal layout ***/
 .tiers-row {
   display: flex !important;
   justify-content: center;
-  align-items: flex-start;
-  flex-wrap: nowrap;
   gap: 2rem;
-  list-style: none !important;
   padding: 0 !important;
+  list-style: none !important;
   margin: 2rem 0;
 }
 
-/* ✅ Tier pricing card styling */
 .tier-box {
   background: var(--white);
   border-radius: 10px;
   padding: 1.5rem;
-  flex: 1;
   min-width: 260px;
+  flex: 1;
   box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+  color: var(--black);
 }
 
-/* ✅ Tier titles */
 .tier-box strong {
   font-size: 1.2rem;
   color: var(--gold);
-  display: block;
   margin-bottom: .75rem;
+  display: block;
 }
 
-/* ✅ Remove UL indent inside pricing cards */
 .tier-box ul {
   list-style: none !important;
   padding-left: 0 !important;
   margin: 0 !important;
 }
 
-/* ✅ Tier list items */
 .tier-box li {
   margin-bottom: .5rem;
   font-size: .95rem;
   line-height: 1.45;
 }
 
-/* ✅ Other text */
-.service-text p { margin-bottom: 16px; font-size: 1.15rem; }
-
-/* Override default list style ONLY for non-pricing lists */
-.service-text > ul {
-  padding-left: 1.1rem;
-  margin-bottom: 26px;
-}
-
+/*** SERVICE IMAGE ***/
 .service-image { flex: 1; }
-
 .service-image img {
   width: 100%;
   border-radius: 10px;
@@ -223,9 +218,15 @@ header {
 
 /*** RESPONSIVE ***/
 @media (max-width: 980px) {
-  .service-inner { flex-direction: column; padding: 40px 6% 60px; }
+  .service-inner {
+    flex-direction: column;
+    padding: 40px 6% 50px;
+  }
 
-  /* ✅ Stack pricing tiers on mobile */
+  .file-tab {
+    left: 4%;
+  }
+
   .tiers-row {
     flex-direction: column;
     align-items: center;
@@ -234,9 +235,5 @@ header {
   .tier-box {
     width: 90%;
   }
-
-  .file-tab {
-    transform: translateX(0%) !important; 
-    left: 4%;
-  }
 }
+
