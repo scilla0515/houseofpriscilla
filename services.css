@@ -71,10 +71,25 @@ header {
 .service-block { counter-increment: service; }
 
 /* Base tab: lives on the card edge and visually sits ABOVE it */
+/* ===== FIXED TAB BAR AT TOP ===== */
+#tabs-fixed-bar {
+  position: fixed;
+  top: 90px; /* Adjust if header is taller */
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  padding: 10px 8%;
+  background: var(--white);
+  border-bottom: 2px solid var(--gold);
+  z-index: 1000;
+}
+
+/* FILE TAB STYLE: Attached to card by default */
 .file-tab {
   position: absolute;
-  top: 0;                         /* attach to the card’s top edge */
-  transform: translateY(-100%);   /* make it stick out above the card */
+  top: 0;
+  transform: translateY(-100%);
   left: 0;
   padding: 12px 28px 12px 48px;
   background: #ffffff;
@@ -82,17 +97,16 @@ header {
   font-weight: 700;
   font-size: 1rem;
   border: 1px solid rgba(0,0,0,.08);
-  border-bottom: none;            /* seamless with card top */
+  border-bottom: none;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   box-shadow: 0 8px 18px rgba(0,0,0,.06);
-  opacity: 0;                     /* hidden until revealed */
+  opacity: 0;
   transition: opacity .3s ease, transform .35s ease;
-  pointer-events: none;           /* disabled until stuck */
-  z-index: 1;
+  pointer-events: none;
+  z-index: 5;
 }
 
-/* Auto numbering "01", "02", … */
 .file-tab::before {
   content: counter(service, decimal-leading-zero) " ";
   position: absolute;
@@ -103,42 +117,31 @@ header {
   opacity: .55;
 }
 
-/* When a card has faded in, show its tab (still attached to the card) */
+/* Tab becomes visible when card fades in */
 .service-block.visible .file-tab {
   opacity: 1;
 }
 
-/* ===== When tabs SNAP into the fixed row ===== */
+/* When stuck → Move into fixed top row */
 .file-tab.stuck {
-  position: fixed;
-  top: 100px;
-  z-index: 1000;
-  opacity: 1;
+  position: static; /* 👈 lives inside #tabs-fixed-bar now */
+  transform: none;
   pointer-events: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,.10);
 }
 
-.service-block:nth-child(1) .file-tab.stuck { left: 6%; }
-.service-block:nth-child(2) .file-tab.stuck { left: 16%; }
-.service-block:nth-child(3) .file-tab.stuck { left: 26%; }
-.service-block:nth-child(4) .file-tab.stuck { left: 36%; }
-.service-block:nth-child(5) .file-tab.stuck { left: 46%; }
-.service-block:nth-child(6) .file-tab.stuck { left: 56%; }
-.service-block:nth-child(7) .file-tab.stuck { left: 66%; }
-
-
-/* Active tab styling (subtle elevation & darker text) */
+/* ACTIVE TAB */
 .file-tab.active {
-  background: #fff;
-  color: #111;
-  box-shadow: 0 12px 26px rgba(0,0,0,.12);
+  background: var(--gold);
+  color: var(--white);
 }
 
-/* On small screens, stack behavior stays, but we don't try to keep
-   a full row—just show the active one aligned left. */
+/* Small screens → scrollable tab bar */
 @media (max-width: 980px) {
-  .file-tab.stuck {
-    left: 4% !important;
-    top: 90px;
+  #tabs-fixed-bar {
+    overflow-x: auto;
+    white-space: nowrap;
+    top: 70px;
   }
 }
 
