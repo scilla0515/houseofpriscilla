@@ -145,6 +145,32 @@ header.scrolled .nav-links a {
   color: var(--white);
 }
 
+.hero-marquee {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero-marquee p {
+  display: inline-block;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  color: var(--white);
+  opacity: .65;
+  letter-spacing: .35rem;
+  text-transform: uppercase;
+  animation: scrollMarquee 20s linear infinite;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
 /* ✅ Mobile Scaling */
 @media (max-width: 768px) {
   .hero-text h1 {
