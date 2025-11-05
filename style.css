@@ -194,209 +194,219 @@ nav a:hover {
   }
 }
 /* -------------------- Mission Section -------------------- */ 
+/* -------------------- Mission Section -------------------- */
 .mission {
-    padding: 6em 10%;
-     background-color: var(--cream);
-    color: #6B4C3B;
-    text-align: center;
-    border-radius: 0;
-    border-bottom: 3px solid #6B4C3B;
+  padding: 6em 12%;
+  text-align: center;
+  background: var(--cream-light);
+  color: var(--deep-red);
 }
 
 .mission-main {
-    font-family: "Bellefair", serif;
-    font-size: 2rem;
-    margin-bottom: 1em;
+  font-family: var(--heading-font);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.35;
+  max-width: 900px;
+  margin: 0 auto 2.2rem;
 }
 
 .mission-sub {
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto 2em;
-    
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .mission-sub p {
-    font-family: "Bellefair", serif;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 0.5em 0;
-    max-width: 400px;
+  font-family: var(--body-font);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 420px;
+  opacity: 0.85;
 }
 
-.mission-button {
-    display: inline-block;
-    background-color: var(--gold);
-    color: #6B4C3B;
-    font-family: "Bellefair", serif;
-    padding: 0.8em 2em;
-    border: none;
-    border-radius: 25px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease;
-}
 
-.mission-button:hover {
-     background-color: #bfa870;
-}
-
+/* -------------------- About Section -------------------- */
 .about {
-   background-color: var(--cream);
-    color: #6B4C3B;
-    padding: 4em 10%;
-    border-radius: 0;
-    border-bottom: 3px solid #6B4C3B;
+  padding: 7em 10%;
+  background: var(--white);
+  color: var(--black);
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
 }
 
 .about-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 4em;
+  justify-content: center;
+  gap: 4rem;
   flex-wrap: wrap;
 }
 
-.about-text {
-  flex: 1;
-  min-width: 300px;
+.about-heading {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--deep-red);
 }
 
-.about-script {
-  font-family: "Dancing Script", cursive;
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 1.5em;
-  line-height: 1.4;
-}
-
-.about-text p {
-  font-family: "Bellefair", serif;
-  font-size: 1rem;
+.about-main {
+  font-family: var(--body-font);
+  font-size: 1.3rem;
+  font-weight: 300;
   line-height: 1.6;
-  margin-bottom: 1em;
-  color: #6B4C3B;
+  margin-bottom: 1.2rem;
   max-width: 600px;
 }
 
-.about-image {
-  flex: 1;
-  text-align: right;
+.about-text p {
+  font-family: var(--body-font);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  opacity: .85;
+}
+
+.about-btn {
+  display: inline-block;
+  margin-top: 1.8rem;
+  background: var(--gold);
+  color: var(--black);
+  padding: .85em 2.4em;
+  border-radius: 40px;
+  font-family: var(--body-font);
+  font-weight: 500;
+  letter-spacing: .6px;
+  text-decoration: none;
+  transition: .3s ease;
+}
+.about-btn:hover {
+  background: var(--deep-red);
+  color: var(--white);
 }
 
 .about-image img {
   width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
+  max-width: 460px;
+  border-radius: 16px;
   object-fit: cover;
 }
 
 
-/* Testimonials Section */
-.testimonial-banner {
-    text-align: center;
-    background-color: #d8cfc4;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 40px; 
-}
-
-.testimonial-marquee {
-    display: inline-block;
-    animation: scroll 20s linear infinite;
-}
-
-.testimonial-marquee p {
-    display: inline-block;
-    margin: 0;
-    font-family: "Bellefair", serif;
-    font-size: 1.2rem;
-    color: #6B4C3B;
-}
-
-/* Marquee Animation */
-@keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
-#what-we-do {
-    background-color: var(--cream);
-    padding: 100px 10%;
-    text-align: center;
+/* -------------------- What We Do -------------------- */
+.services-showcase {
+  background: var(--cream-light);
+  text-align: center;
+  padding: 8em 10%;
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    color: #6B4C3B;
-    margin-bottom: 60px;
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--deep-red);
+  margin-bottom: 3rem;
 }
 
-.what-we-do-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centers all the items */
-  gap: 25px;
+.showcase-grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  margin-bottom: 3rem;
 }
 
-.what-we-do-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centers number, text, and underline */
-  color:#6B4C3B;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+.service-item h3 {
+  font-family: var(--heading-font);
+  font-size: 1.7rem;
+  margin-bottom: .6rem;
+  color: var(--black);
 }
 
-.text-line {
+.service-item p {
+  font-family: var(--body-font);
+  font-size: 1rem;
+  line-height: 1.55;
+  opacity: .8;
+}
+
+.services-btn {
+  display: inline-block;
+  font-family: var(--body-font);
+  background: var(--gold);
+  color: var(--black);
+  padding: .85em 2.2em;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: .3s ease;
+}
+.services-btn:hover {
+  background: var(--deep-red);
+  color: var(--white);
+}
+
+
+/* -------------------- Testimonials -------------------- */
+.testimonial-banner {
+  background: var(--olive);
+  color: var(--white);
+  height: 50px;
   display: flex;
   align-items: center;
-  justify-content: center; /* centers number + text together */
-  gap: 12px;
-  text-align: center;
+  overflow: hidden;
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
 }
 
-.number {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  color: #6B4C3B;
-  font-size: 20px;
+.testimonial-marquee p {
+  font-family: var(--body-font);
+  font-size: 1.1rem;
+  animation: scroll 18s linear infinite;
 }
 
-/* Contact Section */
+
+/* -------------------- Contact CTA -------------------- */
 .contact {
-    background-color: var(--cream);/* white background for the entire section */
-    color: #6B4C3B;
-    padding: 3em 10%; /* spacing inside section */
-    margin-top: 4em;  /* space from previous section */
-    text-align: center; /* center all text */
-    border-radius: 0; 
-    border-bottom: 3px solid #6B4C3B;
+  padding: 6em 10%;
+  text-align: center;
+  background: var(--deep-red);
+  color: var(--white);
 }
 
-/* Links inside Contact Section */
-.contact a {
-    color: #6B4C3B;
-    text-decoration: none;
+.contact-title {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  font-weight: 600;
 }
 
-.contact a:hover {
-    color: var(--gold);
-    text-decoration: underline;
+.contact-sub {
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+  max-width: 520px;
+  margin: 1.2rem auto 2rem;
 }
 
+.contact-btn {
+  background: var(--gold);
+  color: var(--black);
+  padding: .9em 2.4em;
+  text-decoration: none;
+  border-radius: 40px;
+  font-family: var(--body-font);
+  font-weight: 500;
+  letter-spacing: .7px;
+  transition: .3s ease;
+}
+.contact-btn:hover {
+  background: var(--white);
+  color: var(--deep-red);
+}
 
-/* Footer */
-footer {
-    background-color: var(--cream);
-    text-align: center;
-    padding: 1.5em;
-    color: #6B4C3B;
-    font-size: 0.9em;
+/* Full responsive text adjustments */
+@media (max-width: 768px) {
+  .mission-main, .section-title, .contact-title {
+    font-size: 2.2rem;
+  }
 }
