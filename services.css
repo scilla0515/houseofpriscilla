@@ -152,6 +152,7 @@ header {
 }
 
 .service-text { flex: 1.4; }
+
 .service-text h2 {
   font-size: 3rem;
   font-family: "Playfair Display", serif;
@@ -159,25 +160,29 @@ header {
   color: #2d2d2a;
 }
 
-/* Pricing tiers horizontal layout */
+/* ✅ Pricing tiers horizontal layout */
 .tiers-row {
-  display: flex;
+  display: flex !important;
   justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
   gap: 2rem;
-  padding: 0;
-  list-style: none;
+  list-style: none !important;
+  padding: 0 !important;
   margin: 2rem 0;
 }
 
+/* ✅ Tier pricing card styling */
 .tier-box {
   background: var(--white);
   border-radius: 10px;
   padding: 1.5rem;
-  width: 30%;
+  flex: 1;
   min-width: 260px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.10);
 }
 
+/* ✅ Tier titles */
 .tier-box strong {
   font-size: 1.2rem;
   color: var(--gold);
@@ -185,21 +190,31 @@ header {
   margin-bottom: .75rem;
 }
 
+/* ✅ Remove UL indent inside pricing cards */
 .tier-box ul {
-  padding-left: 1rem;
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
 }
 
+/* ✅ Tier list items */
 .tier-box li {
   margin-bottom: .5rem;
   font-size: .95rem;
   line-height: 1.45;
 }
 
+/* ✅ Other text */
 .service-text p { margin-bottom: 16px; font-size: 1.15rem; }
-.service-text ul { padding-left: 1.1rem; margin-bottom: 26px; }
-.service-text li { margin-bottom: 10px; line-height: 1.6; }
+
+/* Override default list style ONLY for non-pricing lists */
+.service-text > ul {
+  padding-left: 1.1rem;
+  margin-bottom: 26px;
+}
 
 .service-image { flex: 1; }
+
 .service-image img {
   width: 100%;
   border-radius: 10px;
@@ -209,8 +224,19 @@ header {
 /*** RESPONSIVE ***/
 @media (max-width: 980px) {
   .service-inner { flex-direction: column; padding: 40px 6% 60px; }
-  .file-tab { transform: translateX(0%) !important; left: 4%; }
+
+  /* ✅ Stack pricing tiers on mobile */
+  .tiers-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tier-box {
+    width: 90%;
+  }
+
+  .file-tab {
+    transform: translateX(0%) !important; 
+    left: 4%;
+  }
 }
-
-
-
