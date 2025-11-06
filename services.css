@@ -71,7 +71,8 @@ header {
 
 /*** CARD CONTAINER ***/
 .service-block {
-  position: sticky;
+  position: relative;
+  z-index: 1; 
   top: 110px;
   width: 100%;
   padding-top: 40px; /* ✅ move card content upward */
@@ -83,6 +84,8 @@ header {
 }
 
 .service-block.visible {
+  position: sticky; /* ✅ sticky only when active */
+  z-index: 400; 
   opacity: 1;
   transform: translateY(0);
 }
