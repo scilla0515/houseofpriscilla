@@ -360,5 +360,17 @@ header {
   .process-step img {
     margin: 0 auto;
   }
+
+}
+/* ✅ LAST CARD SHOULD NOT BE STICKY */
+.service-block:last-of-type.visible {
+  position: relative !important;
+  top: auto !important;
+  z-index: 1 !important;
+}
+
+/* ✅ Spacing so last card scrolls away BEFORE the new sections show */
+.service-block:last-of-type {
+  margin-bottom: 620px !important;
 }
 
