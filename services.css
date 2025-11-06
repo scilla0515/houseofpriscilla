@@ -267,6 +267,8 @@ header {
   gap: 4em;
   padding: 8em 10%;
   background-color: var(--cream);
+   position: relative;
+  z-index: 500; 
 }
 
 .two-col-image img {
