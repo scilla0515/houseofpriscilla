@@ -407,6 +407,40 @@ header {
   border-radius: 6px;
 }
 
+/* ✅ FINAL FIX: ensure Next Steps sits above the sticky service cards cleanly */
+.service-block:last-of-type {
+  margin-bottom: 800px !important; /* extra scroll space before next section */
+}
+
+.service-block:last-of-type.visible {
+  position: relative !important;   /* stop sticky overlap */
+  top: auto !important;
+  z-index: 0 !important;           /* fully beneath Next Steps */
+}
+
+/* ✅ Next Steps + Process above all sticky service cards */
+.next-steps-flow,
+#process {
+  position: relative;
+  z-index: 1000 !important;
+  background: var(--cream-light);
+  padding: 8em 10%;
+}
+
+/* Smooth fade transition before Next Steps appears */
+.next-steps-flow::before,
+#process::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, var(--cream-light) 0%, transparent 100%);
+  z-index: -1;
+}
+
+
 /* Responsive */
 @media (max-width: 900px) {
   .two-column-section {
