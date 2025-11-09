@@ -101,7 +101,7 @@
 </section>
 
 <script>
-/* Word-by-word fade-in animation */
+// Fade-in declaration paragraphs
 const paragraphs = document.querySelectorAll('.declaration-text p');
 let delay = 0;
 paragraphs.forEach(p => {
@@ -112,9 +112,17 @@ paragraphs.forEach(p => {
     p.style.opacity = 1;
     p.style.transform = 'translateY(0)';
   }, delay);
-  delay += 2200; // delay between paragraphs
+  delay += 2200;
+});
+
+// Navbar scroll effect
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 80);
 });
 </script>
+
+
 
 </body>
 </html>
