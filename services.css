@@ -21,48 +21,158 @@ html, body {
   color: var(--black);
 }
 
-/*** HEADER ***/
+/* Transparent Hero Nav (copied from main page) */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 8%;
+  padding: 1em 5%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: background .3s ease, border-color .3s ease;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+}
+
+header.scrolled {
   background: var(--white);
   border-bottom: 2px solid var(--gold);
-  z-index: 2000;
-  position: sticky;
-  top: 0;
 }
 
-.logo-img { height: 44px; }
-.nav-links {
-  display: flex;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.logo-img {
+  height: 60px;
 }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.2rem;
+  padding: 0;
+  margin: 0;
+}
+
 .nav-links a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--white);
   font-weight: 500;
+  text-transform: uppercase;
+  font-size: .95rem;
+  transition: .3s ease;
 }
 
-/*** HERO ***/
-.hero {
-  background: #efeae4;
+header.scrolled .nav-links a {
+  color: var(--black);
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* Luxury Hero (matches homepage) */
+.luxury-hero {
+  position: relative;
+  height: 95vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--deep-red);
+  color: var(--white);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.10),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+.hero-marquee {
+  position: absolute;
+  top: 8%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero-marquee p {
+  display: inline-block;
+  font-family: var(--body-font);
+  font-size: 1.1rem;
+  color: var(--white);
+  opacity: 0.55;
+  animation: scroll-marquee 22s linear infinite;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.hero-text {
+  position: relative;
   text-align: center;
-  padding: 4rem 8% 3rem;
+  padding: 0 1rem;
+  max-width: 750px;
+  z-index: 2;
 }
-.hero-title {
-  font-size: 2.4rem;
-  margin: 0 0 .5rem;
+
+.hero-text h1 {
+  font-family: var(--heading-font);
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  letter-spacing: .5px;
 }
-.hero-subtitle {
-  max-width: 700px;
-  margin: 0 auto;
-  color: #444;
+
+.hero-text p {
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2rem;
 }
+
+.hero-btn {
+  background: var(--white);
+  color: var(--black);
+  padding: 0.9em 2.3em;
+  border-radius: 40px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.hero-btn:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
 
 /*** STACKED CARDS SECTION ***/
 #services {
