@@ -287,6 +287,13 @@
   </ul>
 </section>
 
+  <script>
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 60);
+});
+</script>
+
 
 <script>
 /// ✅ Fade-up reveal animation
