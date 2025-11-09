@@ -359,24 +359,64 @@ header {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-
-/* WHY US grid */
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5em;
-}
-
-.feature-box h4 {
-  font-family: var(--heading-font);
+/* ================= WHY US SECTION (Luxury Style) ================= */
+.values-section {
+  background: var(--cream);
+  text-align: center;
+  padding: 8em 10%;
   color: var(--black);
-  font-size: 1.2rem;
-  margin-bottom: 0.5em;
 }
 
-.feature-box p {
-  line-height: 1.7;
-  color: #4e4a45;
+.values-title {
+  font-family: var(--tab-font);
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 1.5em;
+}
+
+.values-divider {
+  width: 120px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  margin: 0 auto 4em;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 700px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.values-list li {
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+  color: var(--black);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1.2em;
+  line-height: 1.4;
+}
+
+.values-list li::before {
+  content: "●";
+  color: var(--gold);
+  font-size: 0.8rem;
+  display: inline-block;
+  transform: translateY(1px);
+}
+
+@media (max-width: 900px) {
+  .values-list li {
+    font-size: 1.3rem;
+  }
 }
 
 /* PROCESS section flip layout */
