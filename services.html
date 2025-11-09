@@ -225,7 +225,7 @@
       </div>
     </section>
 
-    <!-- ================= PROCESS / NEXT STEPS SECTION ================= -->
+<!-- ================= PROCESS / NEXT STEPS SECTION ================= -->
 <section id="process" class="two-column-section alt-section">
   <div class="two-col-content">
     <h2 class="section-heading">Next Steps</h2>
@@ -254,9 +254,13 @@
   </div>
 </section>
 
+</main> <!-- ✅ Properly close the main content before the next section -->
+
+<!-- Smooth Cream Divider -->
+<div style="background: var(--cream-light); height: 120px; width: 100%;"></div>
 
 <!-- ================= WHY US SECTION ================= -->
-<section id="why-us" class="two-column-section">
+<section id="why-us" class="two-column-section" style="background: var(--cream);">
   <div class="two-col-image">
     <img src="images/why-us.jpg" alt="Consulting Image">
   </div>
@@ -288,8 +292,6 @@
   </div>
 </section>
 
-
-  </main>
 <script>
 /// ✅ Fade-up reveal animation
 const faders = document.querySelectorAll('.fade-up');
