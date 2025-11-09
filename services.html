@@ -12,29 +12,45 @@
 </head>
 
 <body>
+  
+<!-- HEADER (matches main page transparent hero nav) -->
+<header>
+  <div class="logo">
+    <a href="index.html#hero">
+      <img src="H-2.svg" alt="House of Priscilla Consulting Logo" class="logo-img">
+    </a>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- HEADER -->
-  <header>
-    <a href="index.html"><img src="H-2.svg" alt="House of Priscilla Logo" class="logo-img" /></a>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html#hero">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- LUXURY HERO (same layout as main page) -->
+<section class="luxury-hero" id="services-hero">
+  <img src="images/hero-bg.jpg" alt="Luxury Office Background" class="hero-bg">
+  <div class="hero-overlay"></div>
 
-  <!-- HERO -->
-  <section class="hero" id="services-hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Our Services</h1>
-      <p class="hero-subtitle">
-        Purpose-driven bookkeeping, personal finance systems, and custom websites built from scratch.
-      </p>
-    </div>
-  </section>
+  <!-- Optional scrolling marquee (same as main page) -->
+  <div class="hero-marquee">
+    <p>Bookkeeping • Wealth Systems • Business Clarity • Website Design •</p>
+  </div>
+
+  <!-- Hero text content -->
+  <div class="hero-text">
+    <h1>Our Services</h1>
+    <p>
+      Purpose-driven bookkeeping, wealth systems, and custom-built websites —
+      designed to elevate your brand and create lasting clarity in your finances.
+    </p>
+    <a href="#services" class="hero-btn">Explore Services</a>
+  </div>
+</section>
+
 
   <!-- STACKED, SWIPE-UP SERVICES -->
   <main id="services" class="stack">
