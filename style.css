@@ -277,101 +277,51 @@ header.scrolled .nav-links a {
   margin-bottom: 1.4rem;
 }
 
-/**************************
- * WHAT WE DO
- **************************/
 .what-we-do {
-  padding: 5rem 8%;
-  background: var(--cream);
-  text-align: center;
-}
-
-.section-title {
-  font-family: var(--heading-font);
-  font-size: 2.2rem;
-  color: var(--deep-red);
-  margin-bottom: 2.5rem;
-}
-
-.services-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  padding: 4rem 8%;
+  background: var(--cream);
 }
 
 .service-item {
   width: 300px;
+  text-align: center;
   background: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
 }
 
 .service-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
 }
 
-/* 🔸 Image Styling */
-.image-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.image-wrapper img {
+.service-item img {
   width: 100%;
-  height: 210px;
+  height: 200px;
   object-fit: cover;
-  transition: transform 0.5s ease, filter 0.5s ease;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-.service-item:hover img {
-  transform: scale(1.05);
-  filter: brightness(0.85);
-}
-
-/* 🔸 Brand Overlay Effect (soft luxury tint) */
-.image-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top right, rgba(200,169,126,0.35), rgba(118,24,24,0.35));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.service-item:hover .image-wrapper::after {
-  opacity: 1;
-}
-
-/* 🔸 Text Styling */
 .service-item h3 {
   font-family: var(--heading-font);
-  font-size: 1.3rem;
   color: var(--deep-red);
-  margin: 1rem 0 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
 }
 
 .service-item p {
   font-family: var(--body-font);
   color: var(--black);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  padding: 0 1rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* Responsive layout */
-@media (max-width: 900px) {
-  .services-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .service-item {
-    width: 90%;
-  }
-}
 
 
 /**************************
