@@ -378,6 +378,7 @@ header.scrolled .nav-links a {
   background: var(--cream);
   padding: 8em 10%;
   text-align: center;
+  border-bottom: 3px solid var(--gold);
 }
 
 .next-steps-flow .section-heading {
