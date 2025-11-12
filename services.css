@@ -491,7 +491,7 @@ header.scrolled .nav-links a {
 .values-section {
   background: var(--cream);
   text-align: center;
-  padding: 8em 10%;
+  padding: 1.5em 10% 6em;
   color: var(--black);
 }
 
