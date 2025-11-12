@@ -272,6 +272,29 @@ header.scrolled .nav-links a {
 .service-block:nth-of-type(5) .file-tab.active {
   color: var(--black);
 }
+/* ✅ Pull service info upward for better visibility */
+.service-block {
+  padding-top: 4rem !important; /* was likely higher; reduces top space */
+  padding-bottom: 4rem !important; /* keep a little breathing room */
+}
+
+.service-inner {
+  align-items: flex-start !important; /* keeps text top-aligned with image */
+}
+
+.service-text {
+  margin-top: 0 !important; /* remove extra gap inside the text column */
+  padding-top: 0 !important;
+}
+
+.service-text p:first-of-type {
+  margin-top: 0 !important;
+}
+
+.service-block:has(.file-tab:contains("Steward Your Finances")) .service-inner {
+  align-items: flex-start;
+  padding-top: 0 !important;
+}
 
 
 /*** CONTENT LAYOUT ***/
