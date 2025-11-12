@@ -248,6 +248,7 @@ header.scrolled .nav-links a {
   color: var(--black);
   gap: 4rem;
   border-top: 2px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
 }
 
 #meet-priscilla .image-column {
