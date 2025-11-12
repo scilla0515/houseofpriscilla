@@ -238,43 +238,58 @@ header.scrolled .nav-links a {
   font-size: 1.1rem;
 }
 
-/**************************
- * ABOUT SECTION
- **************************/
-
-.about-section {
-  background: var(--cream);
-  padding: 8em 10%;
-  border-bottom: 3px solid var(--gold);
-}
-
-.about-heading {
-  font-family: var(--heading-font);
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--deep-red);
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.about-layout {
+/* Meet Priscilla Section */
+#meet-priscilla {
   display: flex;
-  gap: 4rem;
-  max-width: 1200px;
-  margin: auto;
   align-items: center;
+  justify-content: center;
+  padding: 6em 8%;
+  background: var(--cream);
+  color: var(--black);
+  gap: 4rem;
 }
 
-.about-image img {
+#meet-priscilla .image-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#meet-priscilla .image-column img {
   width: 100%;
-  max-width: 480px;
-  border-radius: 10px;
+  max-width: 420px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-.about-text p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  margin-bottom: 1.4rem;
+#meet-priscilla .text-column {
+  flex: 1;
+}
+
+#meet-priscilla h2 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  color: var(--deep-red);
+  margin-bottom: 1rem;
+}
+
+#meet-priscilla p {
+  font-family: var(--body-font);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #meet-priscilla {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #meet-priscilla .image-column img {
+    max-width: 320px;
+  }
 }
 
 .what-we-do {
