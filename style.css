@@ -388,38 +388,83 @@ header.scrolled .nav-links a {
 }
 
 /**************************
- * CONTACT CTA
+ * FOOTER SECTION
  **************************/
-
-.contact {
+footer {
   background: var(--deep-red);
   color: var(--white);
+  padding: 4em 10% 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.5rem;
+  text-align: left;
+  border-top: 3px solid var(--gold);
+}
+
+footer h3,
+footer h4 {
+  font-family: var(--heading-font);
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+footer p,
+footer a {
+  font-family: var(--body-font);
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+.footer-bottom {
+  width: 100%;
   text-align: center;
-  padding: 6em 10%;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 1.5rem;
 }
 
-.contact-btn:hover {
-  background: var(--white);
-  color: var(--deep-red);
-}
-
-/**************************
- * FOOTER
- **************************/
-
-footer {
-  background: var(--cream-light);
-  text-align: center;
-  padding: 1.5em;
-}
-
-/* ✅ RESPONSIVE */
+/* Responsive Layout */
 @media (max-width: 900px) {
-  .about-layout,
-  .mission-columns {
+  footer {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
-  header .nav-links a { font-size: .85rem; }
-  .hero-text h1 { font-size: 2.6rem; }
+
+  .footer-left,
+  .footer-links,
+  .footer-contact {
+    width: 100%;
+  }
+
+  .social-icons a {
+    margin: 0 0.5rem;
+  }
 }
