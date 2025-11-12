@@ -376,6 +376,10 @@ header.scrolled .nav-links a {
  * TESTIMONIALS
  **************************/
 
+/**************************
+ * TESTIMONIAL BANNER (MOVING)
+ **************************/
+
 .testimonial-banner {
   background: var(--deep-red);
   color: var(--white);
@@ -383,9 +387,32 @@ header.scrolled .nav-links a {
   display: flex;
   align-items: center;
   overflow: hidden;
+  white-space: nowrap;
+  position: relative;
 }
+
+.testimonial-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: testimonialScroll 22s linear infinite;
+}
+
 .testimonial-marquee p {
-  animation: heroScroll 18s linear infinite;
+  display: inline-block;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* 🔸 Animation keyframes */
+@keyframes testimonialScroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /**************************
