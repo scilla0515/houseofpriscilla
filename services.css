@@ -374,37 +374,41 @@ header.scrolled .nav-links a {
 } 
 
 /* ================= NEXT STEPS FLOW ================= */
+/* ================= NEXT STEPS FLOW ================= */
 .next-steps-flow {
   background: var(--cream);
-  padding: 8em 10%;
+  padding: 6em 10%;
   text-align: center;
+  border-top: 3px solid var(--gold);
   border-bottom: 3px solid var(--gold);
 }
 
 .next-steps-flow .section-heading {
   font-family: var(--heading-font);
-  font-size: 2.8rem;
-  margin-bottom: 2.5em;
-  color: var(--black);
-  letter-spacing: 1.5px;
+  font-size: 2.4rem;
+  margin-bottom: 2em;
+  color: var(--deep-red);
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.steps-row {
+/* 🔸 3 Equal Boxes in a Row */
+.steps-grid {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 2em;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .step-box {
+  flex: 1;
+  min-width: 240px;
+  max-width: 280px;
   background: var(--white);
   border: 2px solid var(--gold);
   border-radius: 10px;
-  padding: 2em 1.5em;
-  max-width: 300px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 2em 1em;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
@@ -414,31 +418,44 @@ header.scrolled .nav-links a {
 
 .step-box h3 {
   font-family: var(--heading-font);
-  font-size: 1.4rem;
-  margin-bottom: 1em;
+  font-size: 1.5rem;
   color: var(--deep-red);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .step-box p {
+  font-family: var(--body-font);
   font-size: 1rem;
-  color: #444;
+  color: var(--black);
   line-height: 1.6;
 }
 
-.arrow {
-  font-size: 2rem;
-  color: var(--gold);
-  font-weight: bold;
+/* 🔸 Optional small line separator inside boxes */
+.step-box::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 1rem;
+  border-radius: 1px;
 }
 
+/* 🔸 Responsive */
 @media (max-width: 900px) {
-  .steps-row {
+  .steps-grid {
     flex-direction: column;
+    align-items: center;
   }
-  .arrow {
-    transform: rotate(90deg);
+
+  .step-box {
+    width: 90%;
+    max-width: 350px;
   }
 }
+
 
 /* Two Column Sections */
 .two-column-section {
