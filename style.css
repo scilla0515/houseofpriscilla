@@ -314,7 +314,7 @@ header.scrolled .nav-links a {
 .what-we-do {
   background: var(--cream);
   text-align: center;
-  padding: 5rem 8%;
+  padding: 7rem 8% 5rem;
 }
 
 .section-title {
