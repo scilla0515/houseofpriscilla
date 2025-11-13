@@ -8,6 +8,9 @@
   --body-font: "Montserrat", sans-serif;
 }
 
+body {
+  background: var(--deep-red);
+}
 
 /* Transparent Hero Nav – Updated with NO LOGO */
 header {
