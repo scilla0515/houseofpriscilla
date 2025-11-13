@@ -500,6 +500,10 @@ header.scrolled .nav-links a {
   color: var(--deep-red);
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  text-align: center;       /* ensure it's centered */
+  width: 100%;              /* force full width */
+  margin: 0 auto 2.5rem;    /* center with clean spacing */
+  padding-top: 1rem;  
 }
 
 /* 3 boxes container */
