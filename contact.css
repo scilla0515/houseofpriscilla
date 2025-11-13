@@ -56,165 +56,126 @@ header.scrolled .nav-links a {
   color: var(--gold);
 }
 
-/* DECLARATION */
-.declaration {
+/* ================= CONTACT PAGE ================= */
+
+.contact-page {
   background: var(--cream);
-  color: var(--black);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 6em 10% 6em;
   text-align: center;
-  padding: 6em 10%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.declaration-text {
-  max-width: 850px;
+.contact-heading {
   font-family: var(--heading-font);
-  font-size: 1.6rem;
-  line-height: 1.8;
-}
-
-.declaration-text p {
-  margin-bottom: 1.8em;
-  opacity: 0;
-}
-
-.declaration-text .highlight {
-  font-weight: 600;
-  color: var(--gold);
-  font-size: 1.8rem;
-}
-
-/* DECLARATION */
-.declaration {
-  background: var(--cream);
-  color: var(--black);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4em 10%;
-}
-
-.declaration-text {
-  max-width: 800px;
-  font-family: var(--heading-font);
-  font-size: 1.5rem;
-  line-height: 1.8;
-}
-
-.declaration-text p {
-  margin-bottom: 1.8em;
-  opacity: 0;
-}
-
-.declaration-text .highlight {
-  font-weight: 600;
-  color: var(--gold);
-  font-size: 1.7rem;
-  letter-spacing: 0.5px;
-}
-
-/* CONTACT FORM SECTION */
-.contact-form-section {
-  background: var(--cream);
-  padding: 6em 10%;
-  color: var(--black);
-}
-
-.contact-form-section h2 {
-  font-family: var(--heading-font);
+  font-size: 2.8rem;
+  color: var(--deep-red);
   text-transform: uppercase;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2.5em;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  margin-bottom: .7em;
+}
+
+.contact-intro {
+  font-family: var(--body-font);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--black);
+  max-width: 680px;
+  margin: 0 auto 2em;
+  opacity: .9;
+}
+
+.contact-methods {
+  margin-bottom: 3em;
+  font-size: 1.05rem;
+  color: var(--black);
+}
+
+.contact-methods a {
+  color: var(--deep-red);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .contact-form {
-  max-width: 900px;
-  margin: 0 auto;
-  font-family: var(--body-font);
-}
-
-.form-row {
-  display: flex;
-  gap: 2em;
-  margin-bottom: 1.8em;
-}
-
-.form-group {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 1.2em;
+  margin: 0 auto 2.5em;
+  max-width: 650px;
 }
 
-.form-group.full {
-  width: 100%;
-  margin-bottom: 2em;
-}
-
-label {
-  font-weight: 500;
-  margin-bottom: 0.5em;
+.contact-form label {
   font-family: var(--heading-font);
   font-size: 1.1rem;
+  color: var(--black);
+  text-align: left;
 }
 
-input, textarea, select {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0.8em;
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: .9em 1em;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  background: var(--white);
   font-family: var(--body-font);
   font-size: 1rem;
-  background: var(--white);
+  outline: none;
+  transition: border .3s ease;
 }
 
-textarea {
-  min-height: 120px;
-  resize: vertical;
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--deep-red);
 }
 
-.checkbox-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.7em 1em;
-  margin-top: 0.5em;
+.contact-btn {
+  background: var(--deep-red);
+  color: var(--white);
+  padding: 1em 2.6em;
+  border-radius: 40px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
 }
 
-.submit-btn {
+.contact-btn:hover {
   background: var(--gold);
   color: var(--white);
-  border: none;
-  padding: 1em 2.5em;
+}
+
+.next-step-info {
   font-family: var(--body-font);
-  text-transform: uppercase;
-  font-weight: 600;
-  border-radius: 30px;
-  display: block;
-  margin: 3em auto 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: .85;
+  color: var(--black);
 }
 
-.submit-btn:hover {
-  background: var(--black);
-  color: var(--white);
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+  .contact-heading {
+    font-size: 2.2rem;
+  }
+
+  .contact-intro {
+    font-size: 1.05rem;
+  }
+
+  .contact-methods {
+    font-size: 1rem;
+  }
 }
 
-@media (max-width: 768px) {
-  .form-row {
-    flex-direction: column;
-  }
-  .checkbox-group {
-    grid-template-columns: 1fr;
-  }
-  .declaration-text {
-    font-size: 1.2rem;
-  }
-}
 /**************************
  * FOOTER SECTION
  **************************/
