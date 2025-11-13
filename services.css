@@ -675,8 +675,18 @@ header.scrolled .nav-links a {
 .values-section {
   background: var(--cream);
   text-align: center;
-  padding: 1.5em 10% 6em;
+  padding: 3em 10% 6em;
   color: var(--black);
+  
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;   /* full bleed */
+  margin-right: -50vw;
+  
+  border-top: 3px solid var(--gold);
+  margin-top: 4rem;
 }
 
 .values-title {
