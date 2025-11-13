@@ -3,6 +3,7 @@
   --gold: #c8a97e;
   --black: #2e2a26;
   --white: #ffffff;
+  --deep-red: #761818; 
   --heading-font: "Cormorant Garamond", serif;
   --body-font: "Montserrat", sans-serif;
 }
@@ -96,7 +97,7 @@ header.scrolled .nav-links a {
 .booking-btn {
   display: inline-block;
   padding: .9em 2.4em;
-  background: var(--gold);
+  background: var(--deep-red);
   color: var(--white);
   border-radius: 40px;
   text-transform: uppercase;
@@ -109,7 +110,7 @@ header.scrolled .nav-links a {
 }
 
 .booking-btn:hover {
-  background: var(--deep-red);
+  background: var(--gold);
   color: var(--white);
 }
 
