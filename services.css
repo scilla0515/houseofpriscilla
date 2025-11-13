@@ -491,9 +491,15 @@ header.scrolled .nav-links a {
   text-align: center;
   border-top: 3px solid var(--gold);
   border-bottom: 3px solid var(--gold);
+
+  padding-top: 2.5em;
+  padding-bottom: 0;     /* 👈 REMOVE gap under the boxes */
+  padding-left: 8%;
+  padding-right: 8%;
+
   margin-bottom: 0;
   position: relative;
-  overflow: visible;
+
 }
 
 
@@ -518,7 +524,7 @@ header.scrolled .nav-links a {
   justify-content: center;
   gap: 2.5rem;
   flex-wrap: wrap;
-  margin-bottom: 1.2em;
+   margin-bottom: 0; 
 }
 
 /* Individual step box */
@@ -568,6 +574,10 @@ header.scrolled .nav-links a {
   background: var(--gold);
   margin: 0 auto 1.1rem;
   border-radius: 2px;
+}
+
+.next-steps-flow .after-box-spacing {
+  height: 1.5em;        /* gives clean space before next section */
 }
 
 /* Mobile layout */
