@@ -25,7 +25,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 2%;
+  padding: 0.7em 4%; /* <--- MORE SPACE */
   width: 100%;
   position: fixed;
   top: 0;
@@ -34,6 +34,7 @@ header {
   background: transparent;
   border-bottom: 2px solid transparent;
 }
+
 
 header.scrolled {
   background: var(--white);
@@ -47,7 +48,7 @@ header.scrolled {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem; /* tighter spacing */
+ gap: 1.4rem; /* tighter spacing */
   padding: 0;
   margin: 0;
   white-space: nowrap; /* NEVER let links wrap */
