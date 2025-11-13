@@ -236,11 +236,13 @@ header.scrolled .nav-links a {
   gap: 3rem;     
   max-width: 1000px;
   margin: auto;
+  align-items: stretch; 
 }
 .mission-columns p {
   flex: 1;
   line-height: 1.7;
   font-size: 1.1rem;
+  margin: 0;
 }
 
 /* Meet Priscilla Section */
