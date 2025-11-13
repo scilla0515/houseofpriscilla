@@ -597,69 +597,65 @@ header.scrolled .nav-links a {
   letter-spacing: 2px;
 }
 
-/* ============================== */
-/* FULL WIDTH CTA                 */
-/* ============================== */
+/* =============================== */
+/* FULL-WIDTH CTA INSIDE NEXT STEPS */
+/* =============================== */
 
-.cta-fullwidth {
+.cta-fullwidth-inside {
   width: 100%;
-  background: var(--gold);   /* change to cream, deep-red, black, etc. if you prefer */
-  color: var(--white);
+  background: var(--gold);
+  padding: 3.5rem 1rem;
+  margin-bottom: 3rem;
   text-align: center;
-  padding: 4rem 1.8rem;
-  margin: 4rem 0;
   border-top: 3px solid var(--deep-red);
   border-bottom: 3px solid var(--deep-red);
 }
 
-.cta-fullwidth h2 {
+.cta-fullwidth-inside h2 {
   font-family: var(--heading-font);
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
+  letter-spacing: .8px;
   font-weight: 600;
-  letter-spacing: 1px;
+  color: var(--white);
   margin-bottom: 1rem;
-  color: var(--white);
 }
 
-.cta-fullwidth p {
+.cta-fullwidth-inside p {
   font-family: var(--body-font);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 300;
-  line-height: 1.7;
-  max-width: 900px;
-  margin: 0 auto 1.6rem auto;
-  opacity: .95;
+  line-height: 1.65;
+  max-width: 850px;
+  margin: 0 auto 1.8rem auto;
   color: var(--white);
+  opacity: 0.95;
 }
 
-.cta-fullwidth .cta-btn {
+.cta-fullwidth-inside .cta-btn {
   background: var(--white);
   color: var(--black);
   padding: 0.9em 2.4em;
   border-radius: 40px;
-  font-family: var(--body-font);
-  font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  text-decoration: none;
-  transition: all .3s ease;
+  font-weight: 600;
 }
 
-.cta-fullwidth .cta-btn:hover {
+.cta-fullwidth-inside .cta-btn:hover {
   background: var(--black);
   color: var(--white);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .cta-fullwidth h2 {
-    font-size: 2rem;
+  .cta-fullwidth-inside h2 {
+    font-size: 1.9rem;
   }
-  .cta-fullwidth p {
+  .cta-fullwidth-inside p {
     font-size: 1.05rem;
   }
 }
+
 
 /* ================= WHY US SECTION (Luxury Style) ================= */
 .values-section {
