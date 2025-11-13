@@ -358,6 +358,40 @@ header.scrolled .nav-links a {
   font-weight: 500;
 }
 
+/* 🔸 Title under image */
+.what-title {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  color: var(--deep-red);
+  margin-bottom: 0.4rem;
+}
+
+/* 🔸 Short description */
+.what-desc {
+  font-family: var(--body-font);
+  font-size: 0.95rem;
+  color: var(--black);
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+/* 🔸 Learn More link */
+.what-link {
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: .3s ease;
+}
+
+.what-link:hover {
+  color: var(--deep-red);
+  border-bottom-color: var(--deep-red);
+}
+
+
 /* 🔸 Responsive for mobile */
 @media (max-width: 900px) {
   .what-we-do-row {
@@ -373,6 +407,8 @@ header.scrolled .nav-links a {
     height: 240px;
   }
 }
+
+
 
 /**************************
  * TESTIMONIALS
