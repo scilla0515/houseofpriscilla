@@ -486,11 +486,13 @@ header.scrolled .nav-links a {
 }/* ================= NEXT STEPS FLOW ================= */
 .next-steps-flow {
   background: var(--cream);
-  padding: 3.5em 8% 6em;
+  padding: 3.5em 8% 3em;     /* 🔥 reduced bottom padding */
   text-align: center;
   border-top: 3px solid var(--gold);
-  border-bottom: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);   /* 🔥 bottom border stays on NEXT STEPS */
+  margin-bottom: 0;                      /* 🔥 remove any extra section spacing */
 }
+
 
 /* Main heading */
 .next-steps-flow .section-heading {
@@ -684,9 +686,7 @@ header.scrolled .nav-links a {
   width: 100vw;
   margin-left: -50vw;   /* full bleed */
   margin-right: -50vw;
-  
-  border-top: 3px solid var(--gold);
-  margin-top: 4rem;
+  margin-top: 2.5rem; 
 }
 
 .values-title {
