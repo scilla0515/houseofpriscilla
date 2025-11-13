@@ -577,37 +577,47 @@ header.scrolled .nav-links a {
   }
 }
 
-/* FULL-WIDTH CTA BANNER */
-.cta-banner {
-  width: 100%;
+/* FULL-WIDTH CTA INSIDE NEXT STEPS */
+.cta-inside-nextsteps {
+  position: relative;
+  width: 100vw;                 /* stretch FULL SCREEN */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;           /* pull full-width left */
+  margin-right: -50vw;          /* pull full-width right */
+  
   background: var(--deep-red);
   text-align: center;
   padding: 4rem 1.5rem;
-  color: var(--white);
   border-top: 4px solid var(--gold);
   border-bottom: 4px solid var(--gold);
+  color: var(--white);
+  margin-bottom: 3rem;          /* space before “Next Steps” heading */
 }
 
-.cta-banner h2 {
+/* Heading text inside CTA */
+.cta-inside-nextsteps h2 {
   font-family: var(--heading-font);
-  font-size: 2.5rem;
-  letter-spacing: .8px;
-  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  letter-spacing: .7px;
   text-transform: uppercase;
   color: var(--white);
+  margin-bottom: 1rem;
 }
 
-.cta-banner p {
+/* Paragraph inside CTA */
+.cta-inside-nextsteps p {
   font-family: var(--body-font);
   font-size: 1.2rem;
   line-height: 1.7;
-  opacity: .95;
   max-width: 900px;
   margin: 0 auto 2rem auto;
+  opacity: .95;
   color: var(--white);
 }
 
-.cta-banner .cta-btn {
+/* Button inside CTA */
+.cta-inside-nextsteps .cta-btn {
   background: var(--white);
   color: var(--black);
   padding: 0.9em 2.4em;
@@ -619,11 +629,10 @@ header.scrolled .nav-links a {
   transition: all .3s ease;
 }
 
-.cta-banner .cta-btn:hover {
+.cta-inside-nextsteps .cta-btn:hover {
   background: var(--gold);
   color: var(--white);
 }
-
 
 /* Two Column Sections */
 .two-column-section {
