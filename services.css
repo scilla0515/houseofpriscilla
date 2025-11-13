@@ -691,6 +691,8 @@ header.scrolled .nav-links a {
   margin-left: -50vw;   /* full bleed */
   margin-right: -50vw;
   margin-top: 2.5rem; 
+
+  border-top: 3px solid var(--gold);
 }
 
 .values-title {
