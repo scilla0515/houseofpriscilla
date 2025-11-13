@@ -4,6 +4,7 @@
   --black: #2e2a26;
   --white: #ffffff;
   --deep-red: #761818; 
+  --nude: #e8dfd7;
   --heading-font: "Cormorant Garamond", serif;
   --body-font: "Montserrat", sans-serif;
 }
@@ -257,8 +258,8 @@ header.scrolled .nav-links a {
  * FOOTER SECTION
  **************************/
 footer {
-  background: var(--deep-red);
-  color: var(--white);
+  background: var(--nude);
+  color: var(--black);
   padding: 4em 10% 2em;
   display: flex;
   flex-wrap: wrap;
@@ -271,14 +272,14 @@ footer {
 footer h3,
 footer h4 {
   font-family: var(--heading-font);
-  color: var(--gold);
+  color: var(--deep-red);
   margin-bottom: 0.8rem;
 }
 
 footer p,
 footer a {
   font-family: var(--body-font);
-  color: var(--white);
+  color: var(--black);
   font-size: 0.95rem;
   line-height: 1.7;
   text-decoration: none;
@@ -287,7 +288,7 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--gold);
+  color: var(--deep-red);
   opacity: 1;
 }
 
