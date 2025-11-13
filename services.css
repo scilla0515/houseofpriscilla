@@ -486,12 +486,16 @@ header.scrolled .nav-links a {
 }/* ================= NEXT STEPS FLOW ================= */
 .next-steps-flow {
   background: var(--cream);
-  padding: 3.5em 8% 3em;     /* 🔥 reduced bottom padding */
+  padding: 3.5em 8% 3em;
   text-align: center;
   border-top: 3px solid var(--gold);
-  border-bottom: 3px solid var(--gold);   /* 🔥 bottom border stays on NEXT STEPS */
-  margin-bottom: 0;                      /* 🔥 remove any extra section spacing */
+  border-bottom: 3px solid var(--gold);
+  margin-bottom: 0;
+
+  position: relative;   /* ⭐ required */
+  overflow: visible;    /* ⭐ required */
 }
+
 
 
 /* Main heading */
