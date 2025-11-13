@@ -482,59 +482,7 @@ header.scrolled .nav-links a {
   }
 } 
 
-/* ============================== */
-/* STRONG CTA SECTION             */
-/* ============================== */
 
-.cta-section {
-  text-align: center;
-  background: var(--white);
-  padding: 4rem 1.5rem;
-  margin: 4rem auto 2rem auto;
-  max-width: 900px;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-.cta-section h2 {
-  font-family: var(--heading-font);
-  font-size: 2.4rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  margin-bottom: 1rem;
-}
-
-.cta-section p {
-  font-family: var(--body-font);
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto 1.8rem auto;
-  opacity: .9;
-}
-
-.cta-btn {
-  display: inline-block;
-  padding: 1em 2.6em;
-  background: var(--gold);
-  color: var(--white);
-  font-family: var(--body-font);
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 40px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: all .3s ease;
-}
-
-.cta-btn:hover {
-  background: var(--black);
-  color: var(--white);
-}
-
-/* ================= NEXT STEPS FLOW ================= */
 /* ================= NEXT STEPS FLOW ================= */
 .next-steps-flow {
   background: var(--cream);
@@ -648,6 +596,46 @@ header.scrolled .nav-links a {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+/* CTA inside Next Steps */
+.cta-inside-next {
+  background: var(--white);
+  padding: 3rem 1.5rem 3rem;
+  max-width: 850px;
+  margin: 0 auto 3rem auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.cta-inside-next h2 {
+  font-family: var(--heading-font);
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  margin-bottom: 1rem;
+  color: var(--deep-red);
+}
+
+.cta-inside-next p {
+  font-family: var(--body-font);
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 1.8rem auto;
+  opacity: .92;
+}
+
+.cta-inside-next .cta-btn {
+  display: inline-block;
+  padding: 0.9em 2.4em;
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
 /* ================= WHY US SECTION (Luxury Style) ================= */
 .values-section {
   background: var(--cream);
