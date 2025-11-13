@@ -518,6 +518,7 @@ header.scrolled .nav-links a {
   justify-content: center;
   gap: 2.5rem;
   flex-wrap: wrap;
+  margin-bottom: 1.2em;
 }
 
 /* Individual step box */
@@ -700,6 +701,13 @@ header.scrolled .nav-links a {
   border-top: 3px solid var(--gold);
 }
 
+.values-section > * {
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .values-title {
   font-family: var(--tab-font);
   font-size: 0.9rem;
@@ -798,6 +806,10 @@ header.scrolled .nav-links a {
   z-index: 1000 !important;
   background: var(--cream-light);
   padding: 8em 10%;
+}
+
+.next-steps-flow {
+  padding-bottom: 1.2em !important;
 }
 
 /* Smooth fade transition before Next Steps appears */
