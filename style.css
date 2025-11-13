@@ -20,12 +20,12 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Transparent Hero Nav */
+/* Transparent Hero Nav – Updated with NO LOGO */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* center everything */
   align-items: center;
-  padding: 0.7em 4%; /* <--- MORE SPACE */
+  padding: 0.7em 2%;
   width: 100%;
   position: fixed;
   top: 0;
@@ -35,23 +35,20 @@ header {
   border-bottom: 2px solid transparent;
 }
 
-
-header.scrolled {
-  background: var(--white);
-  border-bottom: 2px solid var(--gold);
-}
-
+/* Hide logo completely */
 .logo-img {
-  height: 50px; /* smaller for more room */
+  display: none !important;
 }
 
+/* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
- gap: 1.4rem; /* tighter spacing */
+  gap: 2rem; /* clean spacing */
   padding: 0;
   margin: 0;
-  white-space: nowrap; /* NEVER let links wrap */
+  white-space: nowrap;
+  justify-content: center; /* center the links */
 }
 
 .nav-links a {
@@ -59,8 +56,13 @@ header.scrolled {
   color: var(--white);
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.9rem; /* slightly smaller */
+  font-size: 1rem;
   transition: .3s ease;
+}
+
+header.scrolled {
+  background: var(--white);
+  border-bottom: 2px solid var(--gold);
 }
 
 header.scrolled .nav-links a {
