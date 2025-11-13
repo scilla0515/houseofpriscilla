@@ -245,7 +245,7 @@ header.scrolled .nav-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6em 8%;
+  padding: 6em 8% 1.5em;
   background: var(--cream);
   color: var(--black);
   gap: 4rem;
