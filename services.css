@@ -19,7 +19,6 @@ html, body {
  font-family: var(--body-font);
   background: var(--cream-light);
   color: var(--black);
-   overflow-x: hidden;
 }
 
 /* Transparent Hero Nav (copied from main page) */
