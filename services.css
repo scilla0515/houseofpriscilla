@@ -562,12 +562,13 @@ header.scrolled .nav-links a {
   padding: 1.8rem 0;
   border-top: 3px solid var(--gold);
   border-bottom: 3px solid var(--gold);
+  width: 100vw; 
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin-bottom: 3rem; /* spacing before NEXT STEPS title */
+  margin-bottom: 1rem; /* spacing before NEXT STEPS title */
 }
 
 .next-steps-banner-btn {
