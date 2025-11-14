@@ -572,17 +572,18 @@ header.scrolled .nav-links a {
 .next-steps-banner-btn {
   background: var(--white);
   color: var(--black);
-  padding: 0.9em 2.6em;
-  border-radius: 40px;
+  padding: 0.35em 1.6em;   /* smaller height */
+  border-radius: 30px;     /* slimmer shape */
   font-family: var(--body-font);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
-
   border: 2px solid var(--white);
   transition: all 0.3s ease;
+  font-size: 0.95rem;      /* optional, makes it look refined */
 }
+
 
 .next-steps-banner-btn:hover {
   background: var(--gold);
