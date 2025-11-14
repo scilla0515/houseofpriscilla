@@ -600,23 +600,15 @@ header.scrolled .nav-links a {
 }
 
 /* FULL-WIDTH CTA INSIDE NEXT STEPS */
-.cta-inside-nextsteps {
-  position: relative;
-  width: 100%;               /* stretch FULL SCREEN */
-  left: 0;
-  right: 50%;
-  margin-left: 0;         /* pull full-width left */
-  margin-right: -50vw;          /* pull full-width right */
-  
-  background: var(--deep-red);
-  text-align: center;
-  padding: 4rem 1.5rem;
-  border-top: 4px solid var(--gold);
-  border-bottom: 4px solid var(--gold);
-  color: var(--white);
-  margin-bottom: 3rem;          /* space before “Next Steps” heading */
-}
-
+.cta-inside-nextsteps { 
+  position: relative; width: 100vw; /* stretch FULL SCREEN */ 
+  left: 50%; right: 50%; margin-left: -50vw; /* pull full-width left */ 
+  margin-right: -50vw; /* pull full-width right */ 
+  background: var(--deep-red); text-align: center; 
+  padding: 4rem 1.5rem; border-top: 4px solid var(--gold); 
+  border-bottom: 4px solid var(--gold); 
+  color: var(--white); margin-bottom: 3rem; 
+   }
 /* Heading text inside CTA */
 .cta-inside-nextsteps h2 {
   font-family: var(--heading-font);
@@ -696,11 +688,11 @@ header.scrolled .nav-links a {
   padding: 3em 10% 6em;
   color: var(--black);
 
-  /* FIXED full-width background without overflow */
+  /* full-width background */
   position: relative;
-  width: 100%;      /* was 100vw — FIXED */
-  left: 0;          /* FIXED */
-  margin: 0;        /* was margin-left: -50vw — FIXED */
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
   margin-top: 2.5rem;
 
   border-top: 3px solid var(--gold);
@@ -717,8 +709,6 @@ header.scrolled .nav-links a {
   margin-left: auto;
   margin-right: auto;
 }
-
-
 
 .values-title {
   font-family: var(--tab-font);
@@ -742,10 +732,9 @@ header.scrolled .nav-links a {
   list-style: none;
   padding: 0;
   max-width: 700px;
-  margin: 0 auto;     /* ✔ centers the bullet list */
-  text-align: left;   /* ✔ keeps text aligned nicely */
+  margin: 0 auto; /* ✔ centers the bullet list */
+  text-align: left; /* ✔ keeps text aligned nicely */
 }
-
 
 .values-list li {
   font-family: var(--heading-font);
@@ -807,9 +796,9 @@ header.scrolled .nav-links a {
 }
 
 .service-block:last-of-type.visible {
-  position: relative !important;   /* stop sticky overlap */
+  position: relative !important; /* stop sticky overlap */
   top: auto !important;
-  z-index: 0 !important;           /* fully beneath Next Steps */
+  z-index: 0 !important; /* fully beneath Next Steps */
 }
 
 /* ✅ Next Steps + Process above all sticky service cards */
@@ -838,7 +827,6 @@ header.scrolled .nav-links a {
   z-index: -1;
 }
 
-
 /* Responsive */
 @media (max-width: 900px) {
   .two-column-section {
@@ -858,8 +846,8 @@ header.scrolled .nav-links a {
   .process-step img {
     margin: 0 auto;
   }
-
 }
+
 /* ✅ LAST CARD SHOULD NOT BE STICKY */
 .service-block:last-of-type.visible {
   position: relative !important;
@@ -953,5 +941,3 @@ footer a:hover {
     margin: 0 0.5rem;
   }
 }
-
-
