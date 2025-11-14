@@ -695,28 +695,28 @@ header.scrolled .nav-links a {
   padding: 3em 10% 6em;
   color: var(--black);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* ⭐ centers EVERYTHING inside */
-  text-align: center;
-  
+  /* full-width background */
   position: relative;
   left: 50%;
-  right: 50%;
   width: 100vw;
-  margin-left: -50vw;   /* full bleed */
-  margin-right: -50vw;
-  margin-top: 2.5rem; 
+  margin-left: -50vw;
+  margin-top: 2.5rem;
 
   border-top: 3px solid var(--gold);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Center everything inside */
 .values-section > * {
   max-width: 900px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .values-title {
   font-family: var(--tab-font);
@@ -735,14 +735,15 @@ header.scrolled .nav-links a {
   margin: 0 auto 4em;
 }
 
+/* Center the list container */
 .values-list {
   list-style: none;
   padding: 0;
-  margin: 0;
   max-width: 700px;
-  margin-inline: auto;
-  text-align: left;
+  margin: 0 auto;     /* ✔ centers the bullet list */
+  text-align: left;   /* ✔ keeps text aligned nicely */
 }
+
 
 .values-list li {
   font-family: var(--heading-font);
