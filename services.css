@@ -514,7 +514,7 @@ header.scrolled .nav-links a {
 .step-box { 
   flex: 1; min-width: 260px; 
   max-width: 320px; 
-  background: var(--white); 
+  background: var(--olive);
   border: 2px solid var(--gold); 
   border-radius: 14px; 
   padding: 2.2em 1.4em; 
@@ -528,7 +528,7 @@ header.scrolled .nav-links a {
 .step-box h3 { font-family: var(--heading-font); 
               font-size: 1.55rem; 
               color: var(--deep-red);
-              margin-bottom: 0.75rem; 
+              margin-bottom: 1.2rem; 
               text-transform: none; 
               letter-spacing: 0.3px; } /* Paragraph text */ 
 
@@ -539,10 +539,15 @@ header.scrolled .nav-links a {
   line-height: 1.65;
   opacity: 0.95; } /* Gold separator line */ 
 
-.step-box::before { content: ""; display: block; width: 44px; 
-                   height: 2px; background: var(--gold);
-                   margin: 0 auto 1.1rem; 
-                   border-radius: 2px; } /* Mobile layout */
+.step-box h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0.7rem auto 0;
+  border-radius: 2px;
+}
 
 @media (max-width: 900px) 
 { .steps-grid { flex-direction: column; 
