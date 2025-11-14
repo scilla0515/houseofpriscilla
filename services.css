@@ -483,4 +483,105 @@ header.scrolled .nav-links a {
 } 
 
 
-/* ================= NEXT STEPS FLOW ================= */ /* ================= NEXT STEPS FLOW ================= */ .next-steps-flow { background: var(--cream); padding: 2.5em 8% 1.5em; /* 🔥 reduce top + bottom spacing */ text-align: center; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); margin-bottom: 0; position: relative; overflow: visible; } /* Main heading */ .next-steps-flow .section-heading { font-family: var(--heading-font); font-size: 2.3rem; margin-bottom: 2.2rem; color: var(--deep-red); text-transform: uppercase; letter-spacing: 0.8px; text-align: center; /* ensure it's centered */ width: 100%; /* force full width */ margin: 0 auto 2.5rem; /* center with clean spacing */ padding-top: 1rem; } /* 3 boxes container */ .steps-grid { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 1.2em; } /* Individual step box */ .step-box { flex: 1; min-width: 260px; max-width: 320px; background: var(--white); border: 2px solid var(--gold); border-radius: 14px; padding: 2.2em 1.4em; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; } /* Hover softness */ .step-box:hover { transform: translateY(-6px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); } /* Remove all caps for elegance */ .step-box h3 { font-family: var(--heading-font); font-size: 1.55rem; color: var(--deep-red); margin-bottom: 0.75rem; text-transform: none; letter-spacing: 0.3px; } /* Paragraph text */ .step-box p { font-family: var(--body-font); font-size: 1.05rem; color: var(--black); line-height: 1.65; opacity: 0.95; } /* Gold separator line */ .step-box::before { content: ""; display: block; width: 44px; height: 2px; background: var(--gold); margin: 0 auto 1.1rem; border-radius: 2px; } /* Mobile layout */ @media (max-width: 900px) { .steps-grid { flex-direction: column; align-items: center; gap: 2rem; } .step-box { width: 92%; max-width: 380px; } .next-steps-flow .section-heading { font-size: 2rem; } } /* FULL-WIDTH CTA INSIDE NEXT STEPS */ .cta-inside-nextsteps { position: relative; width: 100vw; /* stretch FULL SCREEN */ left: 50%; right: 50%; margin-left: -50vw; /* pull full-width left */ margin-right: -50vw; /* pull full-width right */ background: var(--deep-red); text-align: center; padding: 4rem 1.5rem; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); color: var(--white); margin-bottom: 3rem; /* space before “Next Steps” heading */ } /* Heading text inside CTA */ .cta-inside-nextsteps h2 { font-family: var(--heading-font); font-size: 2.4rem; letter-spacing: .7px; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; } /* Paragraph inside CTA */ .cta-inside-nextsteps p { font-family: var(--body-font); font-size: 1.2rem; line-height: 1.7; max-width: 900px; margin: 0 auto 2rem auto; opacity: .95; color: var(--white); } /* Button inside CTA */ .cta-inside-nextsteps .cta-btn { background: var(--white); color: var(--black); padding: 0.9em 2.4em; border-radius: 40px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; transition: all .3s ease; } .cta-inside-nextsteps .cta-btn:hover { background: var(--gold); color: var(--white); } /* Two Column Sections */ .two-column-section { display: flex; align-items: center; gap: 4em; padding: 8em 10%; background-color: var(--cream); position: relative; z-index: 500; } .two-col-image img { width: 100%; height: auto; border-radius: 4px; object-fit: cover; } .two-col-content { flex: 1; } .section-heading { font-family: var(--heading-font); font-size: 2.8rem; color: var(--black); margin-bottom: 1.5em; text-transform: uppercase; letter-spacing: 2px; } /* ================= WHY US SECTION (Luxury Style) ================= */ .values-section { background: var(--cream); text-align: center; padding: 3em 10% 6em; color: var(--black); display: flex; flex-direction: column; align-items: center; /* ⭐ centers EVERYTHING inside */ text-align: center; position: relative; left: 50%; right: 50%; width: 100vw; margin-left: -50vw; /* full bleed */ margin-right: -50vw; margin-top: 2.5rem; border-top: 3px solid var(--gold); } .values-section > * { max-width: 900px; width: 100%; margin-left: auto; margin-right: auto; } .values-title { font-family: var(--tab-font); font-size: 0.9rem; letter-spacing: 3px; color: #555; text-transform: uppercase; margin-bottom: 1.5em; } .values-divider { width: 120px; height: 1px; background: rgba(0, 0, 0, 0.3); border: none; margin: 0 auto 4em; } .values-list { list-style: none; padding: 0; margin: 0; max-width: 700px; margin-inline: auto; text-align: left; } .values-list li { font-family: var(--heading-font); font-size: 1.6rem; color: var(--black); font-weight: 500; display: flex; align-items: center; gap: 1em; margin-bottom: 1.2em; line-height: 1.4; } .values-list li::before { content: "●"; color: var(--gold); font-size: 0.8rem; display: inline-block; transform: translateY(1px); } @media (max-width: 900px) { .values-list li { font-size: 1.3rem; } } /* PROCESS section flip layout */ .alt-section { background-color: var(--cream-light); } /* Process steps */ .process-step { display: grid; grid-template-columns: 40px 90px 1fr; align-items: center; gap: 1.5em; margin-bottom: 2em; } .step-number { font-size: 2.5rem; font-family: var(--heading-font); color: var(--gold); font-weight: 700; } .process-step img { width: 90px; height: 90px; object-fit: cover; border-radius: 6px; } /* ✅ FINAL FIX: ensure Next Steps sits above the sticky service cards cleanly */ .service-block:last-of-type { margin-bottom: 800px !important; /* extra scroll space before next section */ } .service-block:last-of-type.visible { position: relative !important; /* stop sticky overlap */ top: auto !important; z-index: 0 !important; /* fully beneath Next Steps */ } /* ✅ Next Steps + Process above all sticky service cards */ .next-steps-flow, #process { position: relative; z-index: 1000 !important; background: var(--cream-light); padding: 8em 10%; } .next-steps-flow { padding-bottom: 1.2em !important; } /* Smooth fade transition before Next Steps appears */ .next-steps-flow::before, #process::before { content: ""; position: absolute; top: -100px; left: 0; width: 100%; height: 100px; background: linear-gradient(to bottom, var(--cream-light) 0%, transparent 100%); z-index: -1; } /* Responsive */ @media (max-width: 900px) { .two-column-section { flex-direction: column; text-align: center; } .features-grid { grid-template-columns: 1fr; } .process-step { grid-template-columns: 1fr; text-align: center; } .process-step img { margin: 0 auto; } } /* ✅ LAST CARD SHOULD NOT BE STICKY */ .service-block:last-of-type.visible { position: relative !important; top: auto !important; z-index: 1 !important; } /* ✅ Spacing so last card scrolls away BEFORE the new sections show */ .service-block:last-of-type { margin-bottom: 620px !important; } /************************** * FOOTER SECTION **************************/ footer { background: var(--deep-red); color: var(--white); padding: 4em 10% 2em; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem; text-align: left; border-top: 3px solid var(--gold); } footer h3, footer h4 { font-family: var(--heading-font); color: var(--gold); margin-bottom: 0.8rem; } footer p, footer a { font-family: var(--body-font); color: var(--white); font-size: 0.95rem; line-height: 1.7; text-decoration: none; opacity: 0.9; transition: 0.3s ease; } footer a:hover { color: var(--gold); opacity: 1; } .footer-links ul { list-style: none; padding: 0; margin: 0; } .footer-links li { margin-bottom: 0.5rem; } .social-icons a { margin-right: 1rem; font-weight: 500; } .footer-bottom { width: 100%; text-align: center; margin-top: 3rem; font-size: 0.85rem; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem; } /* Responsive Layout */ @media (max-width: 900px) { footer { flex-direction: column; align-items: center; text-align: center; } .footer-left, .footer-links, .footer-contact { width: 100%; } .social-icons a { margin: 0 0.5rem; } }
+/* ================= NEXT STEPS FLOW ================= */ 
+.next-steps-flow { 
+  background: var(--cream); 
+  padding: 2.5em 8% 1.5em; /* 🔥 reduce top + bottom spacing */ 
+  text-align: center; border-top: 3px solid var(--gold); 
+  border-bottom: 3px solid var(--gold); 
+  margin-bottom: 0; 
+  position: relative; overflow: visible; } /* Main heading */
+
+.next-steps-flow .section-heading { 
+  font-family: var(--heading-font); 
+  font-size: 2.3rem; 
+  margin-bottom: 2.2rem; 
+  color: var(--deep-red); 
+  text-transform: uppercase; 
+  letter-spacing: 0.8px; 
+  text-align: center; /* ensure it's centered */ 
+  width: 100%; /* force full width */ 
+  margin: 0 auto 2.5rem; /* center with clean spacing */
+  padding-top: 1rem; } /* 3 boxes container */ 
+
+.steps-grid { 
+  display: flex; 
+  justify-content: 
+    center; gap: 2.5rem; 
+  flex-wrap: wrap; 
+  margin-bottom: 1.2em; } /* Individual step box */ 
+
+.step-box { 
+  flex: 1; min-width: 260px; 
+  max-width: 320px; 
+  background: var(--white); 
+  border: 2px solid var(--gold); 
+  border-radius: 14px; 
+  padding: 2.2em 1.4em; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
+  transition: transform 0.3s ease, 
+  box-shadow 0.3s ease; } /* Hover softness */ 
+
+.step-box:hover { transform: translateY(-6px); 
+                 box-shadow: 0 6px 18px rgba(0,0,0,0.12); } /* Remove all caps for elegance */ 
+
+.step-box h3 { font-family: var(--heading-font); 
+              font-size: 1.55rem; 
+              color: var(--deep-red);
+              margin-bottom: 0.75rem; 
+              text-transform: none; 
+              letter-spacing: 0.3px; } /* Paragraph text */ 
+
+.step-box p { 
+  font-family: var(--body-font); 
+             font-size: 1.05rem; 
+  color: var(--black); 
+  line-height: 1.65;
+  opacity: 0.95; } /* Gold separator line */ 
+
+.step-box::before { content: ""; display: block; width: 44px; 
+                   height: 2px; background: var(--gold);
+                   margin: 0 auto 1.1rem; 
+                   border-radius: 2px; } /* Mobile layout */
+
+@media (max-width: 900px) 
+{ .steps-grid { flex-direction: column; 
+               align-items: center; 
+               gap: 2rem; } 
+ 
+ .step-box { width: 92%; 
+            max-width: 380px; } 
+ 
+ .next-steps-flow .section-heading 
+ { font-size: 2rem; } } /* FULL-WIDTH CTA INSIDE NEXT STEPS */ 
+
+
+
+/* Two Column Sections */
+.two-column-section { display: flex; align-items: center; gap: 4em; padding: 8em 10%; background-color:
+  var(--cream); position: relative; z-index: 500; } .two-col-image img { width: 100%; height: auto; border-radius: 
+  4px; object-fit: cover; } .two-col-content { flex: 1; } .section-heading { font-family: var(--heading-font); 
+ font-size: 2.8rem; color: var(--black); margin-bottom: 1.5em; text-transform: uppercase; letter-spacing: 2px; } 
+
+
+/* ================= WHY US SECTION (Luxury Style) ================= */
+.values-section { background: var(--cream); text-align: center; padding: 3em 10% 6em;
+                 color: var(--black); display: flex; 
+                 flex-direction: column; align-items: center; /* ⭐ centers EVERYTHING inside */ 
+                 text-align: center; position: 
+                   relative; left: 50%; right: 50%; margin-top: 2.5rem; border-top: 3px solid var(--gold); } 
+
+.values-title { font-family: var(--tab-font); font-size: 0.9rem; letter-spacing: 3px; 
+               color: #555; text-transform: uppercase; margin-bottom: 1.5em; }
+.values-divider { width: 120px; height: 1px; background: rgba(0, 0, 0, 0.3); 
+                 border: none; margin: 0 auto 4em; } .values-list { list-style: 
+  none; padding: 0; margin: 0; max-width: 700px; margin-inline: auto; text-align: left; } 
+.values-list li { font-family: var(--heading-font); font-size: 1.6rem; color: var(--black); 
+                 font-weight: 500; display: flex; align-items: center; gap: 1em; margin-bottom: 1.2em; 
+                 line-height: 1.4; }
+.values-list li::before { content: "●"; 
+                         color: var(--gold); font-size: 0.8rem; 
+                         display: inline-block; transform: translateY(1px); } @media 
+(max-width: 900px) { .values-list li { font-size: 1.3rem; } } /* PROCESS section flip layout */
+
+.alt-section { background-color: var(--cream-light); } /* Process steps */ .process-step { display: grid; grid-template-columns: 40px 90px 1fr; align-items: center; gap: 1.5em; margin-bottom: 2em; } .step-number { font-size: 2.5rem; font-family: var(--heading-font); color: var(--gold); font-weight: 700; } .process-step img { width: 90px; height: 90px; object-fit: cover; border-radius: 6px; } /* ✅ FINAL FIX: ensure Next Steps sits above the sticky service cards cleanly */ .service-block:last-of-type { margin-bottom: 800px !important; /* extra scroll space before next section */ } .service-block:last-of-type.visible { position: relative !important; /* stop sticky overlap */ top: auto !important; z-index: 0 !important; /* fully beneath Next Steps */ } /* ✅ Next Steps + Process above all sticky service cards */ .next-steps-flow, #process { position: relative; z-index: 1000 !important; background: var(--cream-light); padding: 8em 10%; } .next-steps-flow { padding-bottom: 1.2em !important; } /* Smooth fade transition before Next Steps appears */ .next-steps-flow::before, #process::before { content: ""; position: absolute; top: -100px; left: 0; width: 100%; height: 100px; background: linear-gradient(to bottom, var(--cream-light) 0%, transparent 100%); z-index: -1; } /* Responsive */ @media (max-width: 900px) { .two-column-section { flex-direction: column; text-align: center; } .features-grid { grid-template-columns: 1fr; } .process-step { grid-template-columns: 1fr; text-align: center; } .process-step img { margin: 0 auto; } } /* ✅ LAST CARD SHOULD NOT BE STICKY */ .service-block:last-of-type.visible { position: relative !important; top: auto !important; z-index: 1 !important; } /* ✅ Spacing so last card scrolls away BEFORE the new sections show */ .service-block:last-of-type { margin-bottom: 620px !important; } /************************** * FOOTER SECTION **************************/ footer { background: var(--deep-red); color: var(--white); padding: 4em 10% 2em; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem; text-align: left; border-top: 3px solid var(--gold); } footer h3, footer h4 { font-family: var(--heading-font); color: var(--gold); margin-bottom: 0.8rem; } footer p, footer a { font-family: var(--body-font); color: var(--white); font-size: 0.95rem; line-height: 1.7; text-decoration: none; opacity: 0.9; transition: 0.3s ease; } footer a:hover { color: var(--gold); opacity: 1; } .footer-links ul { list-style: none; padding: 0; margin: 0; } .footer-links li { margin-bottom: 0.5rem; } .social-icons a { margin-right: 1rem; font-weight: 500; } .footer-bottom { width: 100%; text-align: center; margin-top: 3rem; font-size: 0.85rem; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem; } /* Responsive Layout */ @media (max-width: 900px) { footer { flex-direction: column; align-items: center; text-align: center; } .footer-left, .footer-links, .footer-contact { width: 100%; } .social-icons a { margin: 0 0.5rem; } }
