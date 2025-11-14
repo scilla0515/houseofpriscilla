@@ -724,7 +724,7 @@ header.scrolled .nav-links a {
 
 .next-steps-flow, #process { 
   position: relative; z-index: 1000 !important; 
-  background: var(--cream-light); padding: 4em 10%; }
+  background: var(--cream-light); padding: 2em 10%; }
 
 .next-steps-flow { 
   padding-bottom: 1.2em !important; } /* Smooth fade transition before Next Steps appears */ 
