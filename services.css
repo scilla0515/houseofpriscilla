@@ -555,6 +555,43 @@ header.scrolled .nav-links a {
  .next-steps-flow .section-heading 
  { font-size: 2rem; } } /* FULL-WIDTH CTA INSIDE NEXT STEPS */ 
 
+/* ================= CTA BANNER ABOVE NEXT STEPS ================= */
+.next-steps-banner {
+  width: 100%;
+  background: var(--deep-red);
+  padding: 1.8rem 0;
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 3rem; /* spacing before NEXT STEPS title */
+}
+
+.next-steps-banner-btn {
+  background: var(--white);
+  color: var(--black);
+  padding: 0.9em 2.6em;
+  border-radius: 40px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  border: 2px solid var(--white);
+  transition: all 0.3s ease;
+}
+
+.next-steps-banner-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+
 
 /* ================= WHY WE VALUE SECTION ================= */
 .values-section {
