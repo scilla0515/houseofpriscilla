@@ -19,6 +19,7 @@ html, body {
  font-family: var(--body-font);
   background: var(--cream-light);
   color: var(--black);
+   overflow-x: hidden;
 }
 
 /* Transparent Hero Nav (copied from main page) */
@@ -601,10 +602,10 @@ header.scrolled .nav-links a {
 /* FULL-WIDTH CTA INSIDE NEXT STEPS */
 .cta-inside-nextsteps {
   position: relative;
-  width: 100vw;                 /* stretch FULL SCREEN */
-  left: 50%;
+  width: 100%;               /* stretch FULL SCREEN */
+  left: 0;
   right: 50%;
-  margin-left: -50vw;           /* pull full-width left */
+  margin-left: 0;         /* pull full-width left */
   margin-right: -50vw;          /* pull full-width right */
   
   background: var(--deep-red);
@@ -695,11 +696,11 @@ header.scrolled .nav-links a {
   padding: 3em 10% 6em;
   color: var(--black);
 
-  /* full-width background */
+  /* FIXED full-width background without overflow */
   position: relative;
-  left: 50%;
-  width: 100vw;
-  margin-left: -50vw;
+  width: 100%;      /* was 100vw — FIXED */
+  left: 0;          /* FIXED */
+  margin: 0;        /* was margin-left: -50vw — FIXED */
   margin-top: 2.5rem;
 
   border-top: 3px solid var(--gold);
@@ -716,6 +717,7 @@ header.scrolled .nav-links a {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 
 .values-title {
