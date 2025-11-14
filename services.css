@@ -486,7 +486,7 @@ header.scrolled .nav-links a {
 /* ================= NEXT STEPS FLOW ================= */ 
 .next-steps-flow { 
   background: var(--cream); 
-  padding: 2.5em 8% 1.5em; /* 🔥 reduce top + bottom spacing */ 
+  padding: 1.5em 8% 1.5em; /* 🔥 reduce top + bottom spacing */ 
   text-align: center; border-top: 3px solid var(--gold); 
   border-bottom: 3px solid var(--gold); 
   margin-bottom: 0; 
