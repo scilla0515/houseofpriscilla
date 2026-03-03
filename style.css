@@ -46,14 +46,50 @@ header {
   display: none !important;
 }
 
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 2.8rem;
+  align-items: center;
+  flex: 1;
+}
+
+.nav-left { justify-content: flex-end; }
+.nav-right { justify-content: flex-start; }
+
+.nav-logo {
+  flex-shrink: 0;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo svg {
+  width: 46px;
+  height: 46px;
+}
+
+header.scrolled .nav-logo .logo-light { display: none; }
+header.scrolled .nav-logo .logo-dark  { display: block; }
+header:not(.scrolled) .nav-logo .logo-dark  { display: none; }
+header:not(.scrolled) .nav-logo .logo-light { display: block; }
+
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 3rem;
+  gap: 2.8rem;
   padding: 0;
   margin: 0;
   white-space: nowrap;
-  justify-content: center;
 }
 
 .nav-links a {
@@ -114,6 +150,25 @@ header.scrolled .nav-links a {
   );
 }
 
+/* ========================
+   WATERMARK
+======================== */
+.watermark-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.watermark-wrap svg {
+  width: min(500px, 65vw);
+  height: auto;
+  opacity: 0.07;
+}
+
 .hero-marquee {
   position: absolute;
   top: 9%;
@@ -169,7 +224,6 @@ header.scrolled .nav-links a {
   letter-spacing: 0.02em;
 }
 
-/* Hero thin rule above button */
 .hero-text::before {
   content: '';
   display: block;
@@ -202,15 +256,9 @@ header.scrolled .nav-links a {
 }
 
 @media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2.6rem;
-  }
-  .hero-text p {
-    font-size: 0.82rem;
-  }
-  .hero-marquee p {
-    font-size: 0.6rem;
-  }
+  .hero-text h1 { font-size: 2.6rem; }
+  .hero-text p  { font-size: 0.82rem; }
+  .hero-marquee p { font-size: 0.6rem; }
 }
 
 /* ========================
@@ -335,12 +383,10 @@ header.scrolled .nav-links a {
     gap: 2.5rem;
     padding: 5em 6%;
   }
-
   #meet-priscilla .image-column img {
     max-width: 300px;
     box-shadow: 4px 4px 0px rgba(184,149,90,0.2);
   }
-
   #meet-priscilla h2::after {
     margin: 0.8rem auto 0;
   }
@@ -364,7 +410,6 @@ header.scrolled .nav-links a {
   margin-bottom: 0.5rem;
 }
 
-/* Thin gold rule under section title */
 .section-title-rule {
   display: block;
   width: 50px;
@@ -449,14 +494,8 @@ header.scrolled .nav-links a {
     align-items: center;
     gap: 3rem;
   }
-
-  .what-item {
-    width: 85%;
-  }
-
-  .what-item img {
-    height: 240px;
-  }
+  .what-item { width: 85%; }
+  .what-item img { height: 240px; }
 }
 
 /* ========================
@@ -572,13 +611,11 @@ footer a:hover {
     text-align: center;
     padding: 4em 6% 2em;
   }
-
   .footer-left,
   .footer-links,
-  .footer-contact {
-    width: 100%;
-  }
-
+  .footer-contact { width: 100%; }
+  .social-icons a { margin: 0 0.6rem; }
+}
   .social-icons a {
     margin: 0 0.6rem;
   }
