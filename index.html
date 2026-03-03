@@ -1,211 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House of Priscilla Consulting</title>
-    <link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Imperial+Script&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Bellefair&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House of Priscilla — Faith-Rooted Financial Coaching</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation -->
-   <header>
-    <div class="logo">
-        <a href="#hero">
-            <img src="H-2.svg" alt="House of Priscilla Consulting Logo" class="logo-img">
-        </a>
-    </div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <!-- ========================
+       NAVIGATION
+  ======================== -->
+  <header id="mainNav">
+    <nav class="nav-inner">
+
+      <div class="nav-left nav-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+      </div>
+
+      <div class="nav-logo">
+        <!-- White icon — shows on dark hero -->
+        <svg class="logo-light" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,8 92,35 92,92 8,92 8,35"
+                   fill="rgba(255,255,255,0.04)"
+                   stroke="rgba(255,255,255,0.7)"
+                   stroke-width="1.5"/>
+          <polygon points="50,16 85,40 85,86 15,86 15,40"
+                   fill="none"
+                   stroke="rgba(200,200,120,0.35)"
+                   stroke-width="0.6"/>
+          <circle cx="50" cy="8" r="2.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+          <circle cx="50" cy="8" r="1" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+
+        <!-- Wine red icon — shows when nav scrolls to white -->
+        <svg class="logo-dark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,8 92,35 92,92 8,92 8,35"
+                   fill="rgba(107,20,20,0.04)"
+                   stroke="#6B1414"
+                   stroke-width="1.5"/>
+          <polygon points="50,16 85,40 85,86 15,86 15,40"
+                   fill="none"
+                   stroke="rgba(92,107,34,0.4)"
+                   stroke-width="0.6"/>
+          <circle cx="50" cy="8" r="2.5" fill="none" stroke="#6B1414" stroke-width="0.8" opacity="0.6"/>
+          <circle cx="50" cy="8" r="1" fill="#6B1414" opacity="0.5"/>
+        </svg>
+      </div>
+
+      <div class="nav-right nav-links">
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
     </nav>
-</header>
-
-    <!-- Hero Section -->
-
-    <!-- Luxury Editorial Hero -->
-<section id="hero" class="hero luxury-hero">
-  
-  <!-- Background Image Placeholder -->
-  <img src="images/hero-placeholder.jpg" alt="House of Priscilla Consulting" class="hero-bg" />
-
-  <!-- Gradient Overlay -->
-  <div class="hero-overlay"></div>
-
-  <!-- Marquee Tagline -->
-  <div class="hero-marquee">
-    <p>Stewardship • Excellence • Faith • Strategy • Stewardship • Excellence • Faith • Strategy •</p>
-  </div>
-
-  <!-- Center Hero Text -->
-  <div class="hero-text">
-    <h1>Faith-Rooted Financial Excellence</h1>
-    <p>Empowering purpose-driven businesses to operate with clarity, confidence, and excellence.</p>
-    <a href="services.html" class="hero-btn">Explore Services</a>
-  </div>
-
-</section>
+  </header>
 
 
+  <!-- ========================
+       HERO
+  ======================== -->
+  <section id="hero" class="luxury-hero">
 
- <!-- Mission Section -->
-<section id="mission" class="mission-section">
-  <h2 class="mission-heading">
-    Stewarding Finances with Excellence & Faith
-  </h2>
+    <img src="images/hero-placeholder.jpg" alt="House of Priscilla" class="hero-bg"/>
+    <div class="hero-overlay"></div>
 
-  <div class="mission-layout">
-    <!-- Image Center Block -->
-    <div class="mission-image">
-      <img src="images/mission.jpg" alt="Faith and Finance Mission Image">
+    <!-- Watermark -->
+    <div class="watermark-wrap">
+      <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="wmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#F0EAD8"/>
+            <stop offset="100%" style="stop-color:#C8C878"/>
+          </linearGradient>
+        </defs>
+        <rect x="18" y="18" width="364" height="404" fill="none" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <rect x="24" y="24" width="352" height="392" fill="none" stroke="url(#wmGrad)" stroke-width="0.3"/>
+        <polygon points="200,42 358,140 358,368 42,368 42,140" fill="none" stroke="url(#wmGrad)" stroke-width="1.5"/>
+        <polygon points="200,58 342,148 342,354 58,354 58,148" fill="none" stroke="url(#wmGrad)" stroke-width="0.5"/>
+        <polygon points="200,70 328,154 328,342 72,342 72,154" fill="none" stroke="url(#wmGrad)" stroke-width="0.25"/>
+        <line x1="42" y1="140" x2="358" y2="140" stroke="url(#wmGrad)" stroke-width="0.4"/>
+        <circle cx="200" cy="42" r="5" fill="none" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <circle cx="200" cy="42" r="2" fill="url(#wmGrad)" opacity="0.8"/>
+        <line x1="58" y1="162" x2="74" y2="162" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <line x1="58" y1="162" x2="58" y2="178" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <line x1="342" y1="162" x2="326" y2="162" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <line x1="342" y1="162" x2="342" y2="178" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <line x1="58" y1="348" x2="74" y2="348" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <line x1="58" y1="348" x2="58" y2="332" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <line x1="342" y1="348" x2="326" y2="348" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <line x1="342" y1="348" x2="342" y2="332" stroke="url(#wmGrad)" stroke-width="0.8"/>
+        <text x="200" y="188" font-family="Cinzel, serif" font-size="13" font-weight="400" fill="url(#wmGrad)" text-anchor="middle" letter-spacing="12">THE</text>
+        <line x1="70" y1="198" x2="178" y2="198" stroke="url(#wmGrad)" stroke-width="0.6"/>
+        <polygon points="200,194 206,198 200,202 194,198" fill="url(#wmGrad)" opacity="0.7"/>
+        <line x1="222" y1="198" x2="330" y2="198" stroke="url(#wmGrad)" stroke-width="0.6"/>
+        <text x="200" y="258" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="300" fill="url(#wmGrad)" text-anchor="middle" letter-spacing="-1">House</text>
+        <text x="200" y="280" font-family="Cormorant Garamond, serif" font-size="18" font-style="italic" font-weight="300" fill="url(#wmGrad)" text-anchor="middle" letter-spacing="8">of</text>
+        <text x="200" y="326" font-family="Cinzel, serif" font-size="26" font-weight="500" fill="url(#wmGrad)" text-anchor="middle" letter-spacing="6">PRISCILLA</text>
+        <line x1="75" y1="342" x2="148" y2="342" stroke="url(#wmGrad)" stroke-width="0.5"/>
+        <circle cx="158" cy="342" r="1.5" fill="url(#wmGrad)" opacity="0.6"/>
+        <circle cx="200" cy="342" r="2.2" fill="url(#wmGrad)" opacity="0.5"/>
+        <circle cx="242" cy="342" r="1.5" fill="url(#wmGrad)" opacity="0.6"/>
+        <line x1="252" y1="342" x2="325" y2="342" stroke="url(#wmGrad)" stroke-width="0.5"/>
+        <text x="200" y="390" font-family="Cinzel, serif" font-size="8" font-weight="400" fill="url(#wmGrad)" text-anchor="middle" letter-spacing="5" opacity="0.6">FINANCIAL STEWARDSHIP</text>
+      </svg>
     </div>
 
-    <!-- Text in Two Columns -->
-    <div class="mission-columns">
+    <!-- Marquee -->
+    <div class="hero-marquee">
+      <p>Financial Coaching &nbsp;•&nbsp; Wealth Planning &nbsp;•&nbsp; Debt Elimination &nbsp;•&nbsp; Life Transitions &nbsp;•&nbsp; Private Client Services &nbsp;•&nbsp; Group Workshops &nbsp;•&nbsp; Financial Coaching &nbsp;•&nbsp; Wealth Planning &nbsp;•&nbsp; Debt Elimination &nbsp;•&nbsp; Life Transitions &nbsp;•&nbsp;</p>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text">
+      <h1>Faith-Rooted Financial Excellence</h1>
+      <p>Faith-rooted financial coaching, strategic wealth planning, and purposeful life transition guidance built to bring clarity, structure, and long-term growth to your financial life.</p>
+      <a href="contact.html" class="hero-btn">Book Your Free Discovery Call</a>
+    </div>
+
+  </section>
+
+
+  <!-- ========================
+       MISSION
+  ======================== -->
+  <section id="mission" class="mission-section">
+    <h2 class="mission-heading">
+      Stewarding Finances with Excellence &amp; Faith
+    </h2>
+    <div class="mission-layout">
+      <div class="mission-image">
+        <img src="images/mission.jpg" alt="Mission">
+      </div>
+      <div class="mission-columns">
+        <p>
+          At House of Priscilla, we believe money is not the goal — it is a tool.
+          Inspired by Priscilla of Aquila, a woman in scripture who built a business,
+          opened her home, and stewarded every gift she was given with excellence and faith,
+          this practice is built on that same standard of wisdom, diligence, and grace.
+        </p>
+        <p>
+          Every person who walks through our doors deserves the same quality of financial guidance
+          that wealthy families have always had access to. Our mission is to help individuals, families,
+          and high-income professionals steward their finances with clarity, strategy, and intention —
+          eliminating debt, building wealth, and planning for a future that reflects their purpose.
+          We bring order where there is confusion and vision where there is uncertainty.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================
+       MEET PRISCILLA
+  ======================== -->
+  <section id="meet-priscilla">
+    <div class="image-column">
+      <img src="images/priscilla.jpg" alt="Priscilla Boateng">
+    </div>
+    <div class="text-column">
+      <h2>Meet Priscilla</h2>
       <p>
-        At House of Priscilla, we believe money is not the goal — it is a tool. 
-        Inspired by Priscilla of Aquila, a woman in scripture who built a business, 
-        opened her home, and stewarded every gift she was given with excellence and faith, 
-        this practice is built on that same standard of wisdom, diligence, and grace.
+        Priscilla Boateng is a Financial Analyst, Masters student in Accounting and Analytics,
+        and founder of The House of Priscilla. At 23, she is building something rare — a faith-rooted
+        financial practice that combines institutional-level analytical expertise with genuine care
+        for the people sitting across the table. She is a Ghanaian-American woman of faith who watched
+        too many hardworking families earn good money and still feel behind — not because they lacked
+        discipline, but because nobody ever sat down and built them a real plan.
       </p>
       <p>
-        Every person who walks through our doors deserves the same quality of financial guidance 
-        that wealthy families have always had access to. Our mission is to help individuals, families, 
-        and high-income professionals steward their finances with clarity, strategy, and intention — 
-        eliminating debt, building wealth, and planning for a future that reflects their purpose. 
-        We bring order where there is confusion and vision where there is uncertainty.
+        Her background in accounting and information systems, combined with her work as a financial
+        analyst under licensed CPAs, gives her a depth of knowledge that most coaches simply do not have.
+        She is currently on the path to her Series 65, CPA, and CFP certifications — building her
+        credentials the right way while building real relationships with real clients who have real goals.
+        Her approach is rooted in stewardship, integrity, and excellence — for every client, at every level.
       </p>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- About Section -->
-<section id="meet-priscilla" class="two-column-section fade-up">
-  <div class="image-column">
-    <img src="images/priscilla.jpg" alt="Priscilla Boateng portrait">
-  </div>
+  <!-- ========================
+       WHAT WE DO
+  ======================== -->
+  <section class="what-we-do">
+    <h2 class="section-title">What We Do</h2>
+    <span class="section-title-rule"></span>
 
-  <div class="text-column">
-    <h2>Meet Priscilla</h2>
-    <p>
-      Priscilla Boateng is a Financial Analyst, Masters student in Accounting and Analytics, 
-      and founder of The House of Priscilla. At 23, she is building something rare — a faith-rooted 
-      financial practice that combines institutional-level analytical expertise with genuine care 
-      for the people sitting across the table. She is a Ghanaian-American woman of faith who watched 
-      too many hardworking families earn good money and still feel behind — not because they lacked 
-      discipline, but because nobody ever sat down and built them a real plan.
-    </p>
-    <p>
-      Her background in accounting and information systems, combined with her work as a senior financial 
-      analyst, gives her a depth of knowledge that most coaches simply do not have. 
-      She is currently on the path to her Series 65, CPA, and CFP certifications — building her 
-      credentials the right way while building real relationships with real clients who have real goals. 
-      Her approach is rooted in stewardship, integrity, and excellence — for every client, at every level.
-    </p>
-  </div>
-</section>
+    <div class="what-we-do-row">
 
+      <div class="what-item">
+        <img src="images/assessment.jpg" alt="Financial Coaching">
+        <p class="what-title">Financial Coaching &amp; Action Planning</p>
+        <p class="what-desc">A complete analysis of your financial picture transformed into a clear, written action plan — so you always know exactly where you stand and where you are going.</p>
+        <a href="services.html" class="what-link">Learn More →</a>
+      </div>
 
+      <div class="what-item">
+        <img src="images/debt.jpg" alt="Debt Elimination">
+        <p class="what-title">Debt Elimination &amp; Wealth Building</p>
+        <p class="what-desc">A month-by-month strategy to eliminate debt, build savings, and start accumulating wealth — designed around your exact income, goals, and timeline.</p>
+        <a href="services.html" class="what-link">Learn More →</a>
+      </div>
 
-<section class="what-we-do">
-  <h2 class="section-title">What We Do</h2>
+      <div class="what-item">
+        <img src="images/private-client.jpg" alt="Private Client Services">
+        <p class="what-title">Private Client Wealth Coaching</p>
+        <p class="what-desc">Comprehensive, discreet financial guidance for high-income professionals, business owners, athletes, and families managing complex financial lives.</p>
+        <a href="services.html" class="what-link">Learn More →</a>
+      </div>
 
-  <div class="what-we-do-row">
-
- <div class="what-item">
-  <img src="images/assessment.jpg" alt="Financial Coaching">
-  <p class="what-title">Financial Coaching &amp; Action Planning</p>
-  <p class="what-desc">A complete analysis of your financial picture transformed into a clear, written action plan — so you always know exactly where you stand and where you are going.</p>
-  <a href="services.html" class="what-link">Learn More →</a>
-</div>
-<div class="what-item">
-  <img src="images/debt.jpg" alt="Debt Elimination">
-  <p class="what-title">Debt Elimination &amp; Wealth Building</p>
-  <p class="what-desc">A month-by-month strategy to eliminate debt, build savings, and start accumulating wealth — designed around your exact income, goals, and timeline.</p>
-  <a href="services.html" class="what-link">Learn More →</a>
-</div>
-<div class="what-item">
-  <img src="images/private-client.jpg" alt="Private Client Services">
-  <p class="what-title">Private Client Wealth Coaching</p>
-  <p class="what-desc">Comprehensive, discreet financial guidance for high-income professionals, business owners, athletes, and families managing complex financial lives.</p>
-  <a href="services.html" class="what-link">Learn More →</a>
-</div>
-
-  </div>
-</section>
-
-
-
-
-
-<!-- 🌟 Testimonials -->
-<section class="testimonial-banner">
-  <div class="testimonial-marquee">
-    <p>
-      "House of Priscilla Consulting helped me finally understand my finances." &nbsp; • &nbsp;
-      "Elegant service and unmatched professionalism." &nbsp; • &nbsp;
-      "My business books have never been cleaner — highly recommend!" &nbsp; • &nbsp;
-      "A rare balance of clarity, excellence, and grace." &nbsp; • &nbsp;
-    </p>
-  </div>
-</section>
-
-
-
-<footer>
-  <div class="footer-left">
-    <h3>House of Priscilla Consulting</h3>
-    <p>Financial clarity, creative strategy, and stewardship — built with excellence.</p>
-  </div>
-
-  <div class="footer-links">
-    <h4>Quick Links</h4>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-
-  <div class="footer-contact">
-    <h4>Get in Touch</h4>
-    <p>Email: <a href="mailto:info@houseofpriscilla.com">info@houseofpriscilla.com</a></p>
-    <p>Location: East Coast, USA</p>
-    <div class="social-icons">
-      <a href="#">LinkedIn</a>
-      <a href="#">Pinterest</a>
-      <a href="#">YouTube</a>
     </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2025 House of Priscilla Consulting · All Rights Reserved</p>
-  </div>
-</footer>
+  </section>
 
 
-    <script>
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
-  if (window.scrollY > 40) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
-</script>
+  <!-- ========================
+       TESTIMONIAL BANNER
+  ======================== -->
+  <section class="testimonial-banner">
+    <div class="testimonial-marquee">
+      <p>
+        "House of Priscilla helped me finally understand my finances." &nbsp;•&nbsp;
+        "Unmatched clarity, professionalism, and care." &nbsp;•&nbsp;
+        "For the first time I have a real plan — not just a budget." &nbsp;•&nbsp;
+        "A rare balance of excellence, faith, and genuine strategy." &nbsp;•&nbsp;
+        "House of Priscilla helped me finally understand my finances." &nbsp;•&nbsp;
+        "Unmatched clarity, professionalism, and care." &nbsp;•&nbsp;
+        "For the first time I have a real plan — not just a budget." &nbsp;•&nbsp;
+        "A rare balance of excellence, faith, and genuine strategy." &nbsp;•&nbsp;
+      </p>
+    </div>
+  </section>
 
+
+  <!-- ========================
+       FOOTER
+  ======================== -->
+  <footer>
+    <div class="footer-left">
+      <h3>The House of Priscilla</h3>
+      <p>Faith-rooted financial coaching and wealth planning built with excellence, integrity, and genuine care.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p>Email: <a href="mailto:priscilla@houseofpriscilla.com">priscilla@houseofpriscilla.com</a></p>
+      <p>Location: Cleveland, Ohio</p>
+      <div class="social-icons">
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+        <a href="#">Substack</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 The House of Priscilla · All Rights Reserved</p>
+    </div>
+  </footer>
+
+
+  <!-- ========================
+       SCROLL SCRIPT
+  ======================== -->
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
+
+</body>
+</html>
