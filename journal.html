@@ -101,7 +101,7 @@
     </div>
     <div class="footer-contact">
       <h4>Get in Touch</h4>
-      <p>Email: <a href="mailto:houseofpriscilla@gmail.com">houseofpriscilla@gmail.com</a></p>
+      <p>Email: <a href="/cdn-cgi/l/email-protection#9cf4f3e9eff9f3faeceef5effff5f0f0fddcfbf1fdf5f0b2fff3f1"><span class="__cf_email__" data-cfemail="523a3d2721373d3422203b21313b3e3e3312353f333b3e7c313d3f">[email&#160;protected]</span></a></p>
       <p>Location: Cleveland, Ohio</p>
       <div class="social-icons">
         <a href="#">LinkedIn</a>
@@ -117,29 +117,41 @@
   <!-- ========================
        SCRIPTS
   ======================== -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const SUBSTACK_URL = 'https://thehouseofpriscilla.substack.com/feed';
-    const PROXIES = [
-      url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-      url => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
-      url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+    const RSS2JSON = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_URL)}`;
+
+    // Hardcoded fallback articles in case API is unavailable
+    const FALLBACK_ARTICLES = [
+      {
+        title: 'Foundations Of Financial Stewardship: In Order To Increase',
+        link: 'https://thehouseofpriscilla.substack.com/p/foundations-of-financial-stewardship',
+        pubDate: 'Sat, 01 Mar 2026 00:00:00 GMT',
+        description: 'Financial stewardship, at its core, is not just about budgeting or numbers. God\'s definition of stewardship is recognizing that everything — our time, talents, resources, and even life itself — belongs to Him.',
+        thumbnail: 'https://substackcdn.com/image/fetch/w_1200,h_600,c_fill/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fca43b987-92fb-4d60-bf60-935723a4c09b_1563x1563.png',
+      }
     ];
 
     async function fetchFeed() {
-      for (const proxy of PROXIES) {
-        try {
-          const res = await fetch(proxy(SUBSTACK_URL));
-          if (!res.ok) continue;
-          const text = await res.text();
-          try {
-            const json = JSON.parse(text);
-            if (json.contents) return json.contents;
-          } catch {
-            if (text.includes('<rss') || text.includes('<feed')) return text;
-          }
-        } catch { continue; }
+      try {
+        const res = await fetch(RSS2JSON);
+        if (!res.ok) throw new Error('rss2json failed');
+        const data = await res.json();
+        if (data.status !== 'ok' || !data.items?.length) throw new Error('No items');
+        // Normalize to same shape
+        return data.items.map(item => ({
+          title: item.title || 'Untitled',
+          link: item.link || '#',
+          pubDate: item.pubDate || '',
+          description: item.description || '',
+          thumbnail: item.thumbnail || null,
+          enclosureUrl: null,
+          mediaUrl: null,
+          contentEncoded: item.content || '',
+        }));
+      } catch {
+        return null; // triggers fallback
       }
-      throw new Error('All proxies failed');
     }
 
     const houseSVG = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,6 +172,7 @@
     }
 
     function getImage(item) {
+      if (item.thumbnail) return item.thumbnail;
       if (item.enclosureUrl) return item.enclosureUrl;
       if (item.mediaUrl) return item.mediaUrl;
       const tmp = document.createElement('div');
@@ -216,33 +229,13 @@
 
     async function loadArticles() {
       try {
-        const xmlText = await fetchFeed();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(xmlText, 'text/xml');
-        const items = Array.from(xml.querySelectorAll('item'));
-        if (!items.length) throw new Error('No items');
+        let articles = await fetchFeed();
+        if (!articles) articles = FALLBACK_ARTICLES;
 
         document.getElementById('loading').style.display = 'none';
         document.getElementById('grid-label').style.display = 'flex';
 
-        const articles = items.map(item => {
-          const enclosureEl = item.querySelector('enclosure');
-          const enclosureUrl = enclosureEl?.getAttribute('url') || null;
-          const mediaEl = item.getElementsByTagNameNS('*', 'content')[0] || item.querySelector('content');
-          const mediaUrl = mediaEl?.getAttribute('url') || null;
-          const contentEncoded = item.getElementsByTagNameNS('*', 'encoded')[0]?.textContent
-            || item.querySelector('encoded')?.textContent || '';
-          return {
-            title: item.querySelector('title')?.textContent || 'Untitled',
-            link: item.querySelector('link')?.textContent || '#',
-            pubDate: item.querySelector('pubDate')?.textContent || '',
-            description: item.querySelector('description')?.textContent || '',
-            enclosureUrl,
-            mediaUrl,
-            contentEncoded,
-          };
-        });
-
+        // Featured = first article
         const featuredSlot = document.getElementById('featured-slot');
         featuredSlot.innerHTML = buildFeatured(articles[0]);
         setTimeout(() => {
@@ -250,6 +243,7 @@
           if (el) el.classList.add('visible');
         }, 100);
 
+        // Grid = remaining articles
         const grid = document.getElementById('articles-grid');
         if (articles.length > 1) {
           grid.innerHTML = articles.slice(1).map((a, i) => buildCard(a, i)).join('');
@@ -265,42 +259,15 @@
       } catch (err) {
         document.getElementById('loading').style.display = 'none';
         document.getElementById('grid-label').style.display = 'flex';
-        document.getElementById('featured-slot').innerHTML = `
-          <article class="featured-article visible">
-            <div class="featured-img-wrap">
-              <div class="img-placeholder">${houseSVG}</div>
-              <span class="featured-label">Journal</span>
-            </div>
-            <div class="featured-text">
-              <p class="featured-meta">The House of Priscilla</p>
-              <a href="https://thehouseofpriscilla.substack.com/" class="featured-title" target="_blank">
-                Faith, Finance &amp; the Life You Were Meant to Build
-              </a>
-              <p class="featured-excerpt">At The House of Priscilla, we believe financial freedom isn't a number — it's a posture. Read the latest on Substack.</p>
-              <a href="https://thehouseofpriscilla.substack.com/" class="read-link" target="_blank" rel="noopener">Read on Substack</a>
-            </div>
-          </article>`;
-        document.getElementById('articles-grid').innerHTML = `
-          <div class="no-articles">
-            <p>Visit <a href="https://thehouseofpriscilla.substack.com/" style="color:var(--gold)">Substack</a> to read all articles.</p>
-          </div>`;
+        document.getElementById('featured-slot').innerHTML = buildFeatured(FALLBACK_ARTICLES[0]);
+        setTimeout(() => {
+          const el = document.getElementById('featured-article');
+          if (el) el.classList.add('visible');
+        }, 100);
+        document.getElementById('articles-grid').innerHTML =
+          `<div class="no-articles"><p>More articles coming soon.</p></div>`;
       }
     }
 
     document.querySelectorAll('.category-strip button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.category-strip button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-
-    loadArticles();
-  </script>
-
-  <script src="nav.js"></script>
-
-</body>
-</html>
-
-</body>
-</html>
+      btn.addEventListener('cl
