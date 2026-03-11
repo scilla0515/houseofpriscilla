@@ -128,6 +128,29 @@
   --body-font: "Montserrat", sans-serif;
 }
 
-    
+function updateTabs() {
+  let activeIndex = 0;
+
+  sections.forEach((sec, i) => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= 160 && rect.bottom > 300) {
+      activeIndex = i;
+    }
+  });
+
+  tabs.forEach((tab, i) =>
+    tab.classList.toggle("active", i === activeIndex)
+  );
+}
+
+window.addEventListener("scroll", updateTabs);
+window.addEventListener("load", updateTabs);
+
+</script>
+
+<script src="nav.js"></script>
+
+</body>
+</html>
 </body>
 </html>
