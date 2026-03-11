@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>The Journal — The House of Priscilla</title>
+  <meta name="description" content="Faith-rooted financial wisdom, wealth strategy, and stewardship insight from Priscilla Boateng — financial coach and founder of The House of Priscilla in Cleveland, Ohio.">
+  <meta name="keywords" content="faith based financial coach, Christian money coach, debt elimination, wealth building, financial coaching Cleveland Ohio, stewardship, biblical finance">
+  <meta name="author" content="Priscilla Boateng">
+  <link rel="canonical" href="https://thehouseofpriscilla.com/journal.html">
+
+  <!-- Open Graph (for sharing on social) -->
+  <meta property="og:title" content="The Journal — The House of Priscilla">
+  <meta property="og:description" content="Faith-rooted financial wisdom, wealth strategy, and stewardship insight.">
+  <meta property="og:url" content="https://thehouseofpriscilla.com/journal.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://thehouseofpriscilla.com/images/hero-placeholder.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet">
+  <!-- ========================
+       JOURNAL HEADER
+  ======================== -->
+  <div class="journal-header">
+    <p class="journal-eyebrow">The House of Priscilla</p>
+    <h1>The Journal</h1>
+    <span class="journal-rule"></span>
+    <p>Faith-rooted financial wisdom, stewardship insight, and wealth strategy — for those building a life of purpose and intention.</p>
+  </div>
+
+  <!-- ========================
+       CATEGORY STRIP
+  ======================== -->
+  <div class="category-strip">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="stewardship">Stewardship</button>
+    <button data-filter="debt">Debt &amp; Freedom</button>
+    <button data-filter="wealth">Wealth Building</button>
+    <button data-filter="faith">Faith &amp; Money</button>
+    <button data-filter="life">Life Transitions</button>
+  </div>
+
+  <!-- ========================
+       MAIN JOURNAL CONTENT
+  ======================== -->
+  <main class="journal-main">
+
+    <!-- Loading spinner -->
+    <div class="loading-state" id="loading">
+      <div class="spinner"></div>
+      <p>Loading articles</p>
+    </div>
+
+    <!-- Featured article slot -->
+    <div id="featured-slot"></div>
+
+    <!-- Section label -->
+    <div class="section-label" id="grid-label" style="display:none;">
+      <span>Latest from the journal</span>
+    </div>
+
+    <!-- Articles grid -->
+    <div class="articles-grid" id="articles-grid"></div>
+
+  </main>
+
+  <!-- ========================
+       SUBSTACK CTA
+  ======================== -->
+  <div class="substack-band">
+    <p class="eyebrow">Never miss a word</p>
+    <h2>Subscribe on Substack</h2>
+    <p class="sub">New articles on faith, finance, and freedom — delivered directly to your inbox.</p>
+    <a href="https://thehouseofpriscilla.substack.com/" target="_blank" rel="noopener" class="substack-btn">Subscribe Free →</a>
+  </div>
+
+  <!-- ========================
+       FOOTER
+  ======================== -->
+  <footer>
+    <div class="footer-left">
+      <h3>The House of Priscilla</h3>
+      <p>Faith-rooted financial coaching and wealth planning built with excellence, integrity, and genuine care.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#mission">About</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p>Email: <a href="mailto:houseofpriscilla@gmail.com">houseofpriscilla@gmail.com</a></p>
+      <p>Location: Cleveland, Ohio</p>
+      <div class="social-icons">
+        <a href="#">LinkedIn</a>
+        <a href="https://thehouseofpriscilla.substack.com/" target="_blank">Substack</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 The House of Priscilla · All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- ========================
+       SCRIPTS
+  ======================== -->
+  <script>
+    const SUBSTACK_URL = 'https://thehouseofpriscilla.substack.com/feed';
+    const CORS_PROXY = 'https://api.allorigins.win/get?url=';
+
+    // House SVG placeholder for articles without images
+    const houseSVG = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,8 92,35 92,92 8,92 8,35" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <circle cx="50" cy="8" r="2" fill="rgba(255,255,255,0.4)"/>
+    </svg>`;
+
+    function formatDate(dateStr) {
+      if (!dateStr) return '';
+      const d = new Date(dateStr);
+      return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    }
+
+    function stripHTML(html) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || '';
+    }
+
+    function getImage(item) {
+      // 1. Try enclosure url
+      if (item.enclosureUrl) return item.enclosureUrl;
+      // 2. Try media url
+      if (item.mediaUrl) return item.mediaUrl;
+      // 3. Extract first img from description HTML (Substack puts cover image here)
+      const tmp = document.createElement('div');
+      tmp.innerHTML = item.description || '';
+      const img = tmp.querySelector('img');
+      if (img && img.src) return img.src;
+      // 4. Try content:encoded
+      if (item.contentEncoded) {
+        const tmp2 = document.createElement('div');
+        tmp2.innerHTML = item.contentEncoded;
+        const img2 = tmp2.querySelector('img');
+        if (img2 && img2.src) return img2.src;
+      }
+      return null;
+    }
+
+    function buildFeatured(item) {
+      const imgSrc = getImage(item);
+      const date = formatDate(item.pubDate);
+      const excerpt = stripHTML(item.description || '').substring(0, 200).trim() + '…';
+
+      return `
+        <article class="featured-article" id="featured-article">
+          <div class="featured-img-wrap">
+            ${imgSrc
+              ? `<img src="${imgSrc}" alt="${item.title}" loading="lazy">`
+              : `<div class="img-placeholder">${houseSVG}</div>`
+            }
+            <span class="featured-label">Latest</span>
+          </div>
+          <div class="featured-text">
+            <p class="featured-meta">${date}</p>
+            <a href="${item.link}" class="featured-title" target="_blank" rel="noopener">${item.title}</a>
+            <p class="featured-excerpt">${excerpt}</p>
+            <a href="${item.link}" class="read-link" target="_blank" rel="noopener">Read Article</a>
+          </div>
+        </article>`;
+    }
+
+    function buildCard(item, index) {
+      const imgSrc = getImage(item);
+      const date = formatDate(item.pubDate);
+      const excerpt = stripHTML(item.description || '').substring(0, 130).trim() + '…';
+
+      return `
+        <a href="${item.link}" class="article-card" target="_blank" rel="noopener" style="transition-delay: ${index * 0.1}s">
+          ${imgSrc
+            ? `<img class="card-img" src="${imgSrc}" alt="${item.title}" loading="lazy">`
+            : `<div class="card-img-placeholder">${houseSVG}</div>`
+          }
+          <div class="card-body">
+            <p class="card-meta">${date}</p>
+            <p class="card-title">${item.title}</p>
+            <p class="card-excerpt">${excerpt}</p>
+            <span class="card-link">Read More →</span>
+          </div>
+        </a>`;
+    }
+
+    async function loadArticles() {
+      try {
+        const res = await fetch(CORS_PROXY + encodeURIComponent(SUBSTACK_URL));
+        const data = await res.json();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(data.contents, 'text/xml');
+        const items = Array.from(xml.querySelectorAll('item'));
+
+        if (!items.length) throw new Error('No items');
+
+        // Hide loading
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('grid-label').style.display = 'flex';
+
+        // Parse items to plain objects
+        const articles = items.map(item => {
+          // enclosure tag has url as attribute
+          const enclosureEl = item.querySelector('enclosure');
+          const enclosureUrl = enclosureEl?.getAttribute('url') || null;
+
+          // media:content — try both namespaced and plain
+          const mediaEl = item.getElementsByTagNameNS('*', 'content')[0]
+            || item.querySelector('content');
+          const mediaUrl = mediaEl?.getAttribute('url') || null;
+
+          // content:encoded for full HTML body
+          const contentEncoded = item.getElementsByTagNameNS('*', 'encoded')[0]?.textContent
+            || item.querySelector('encoded')?.textContent || '';
+
+          return {
+            title: item.querySelector('title')?.textContent || 'Untitled',
+            link: item.querySelector('link')?.textContent || '#',
+            pubDate: item.querySelector('pubDate')?.textContent || '',
+            description: item.querySelector('description')?.textContent || '',
+            enclosureUrl,
+            mediaUrl,
+            contentEncoded,
+          };
+        });
+
+        // Featured = first article
+        const featuredSlot = document.getElementById('featured-slot');
+        featuredSlot.innerHTML = buildFeatured(articles[0]);
+        setTimeout(() => {
+          const el = document.getElementById('featured-article');
+          if (el) el.classList.add('visible');
+        }, 100);
+
+        // Grid = rest of articles
+        const grid = document.getElementById('articles-grid');
+        if (articles.length > 1) {
+          grid.innerHTML = articles.slice(1).map((a, i) => buildCard(a, i)).join('');
+          // Animate cards in
+          setTimeout(() => {
+            document.querySelectorAll('.article-card').forEach((card, i) => {
+              setTimeout(() => card.classList.add('visible'), i * 100);
+            });
+          }, 200);
+        } else {
+          grid.innerHTML = `<div class="no-articles"><p>More articles coming soon.</p></div>`;
+        }
+
+      } catch (err) {
+        // Fallback if feed fails
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('grid-label').style.display = 'flex';
+        document.getElementById('featured-slot').innerHTML = `
+          <article class="featured-article visible">
+            <div class="featured-img-wrap">
+              <div class="img-placeholder">${houseSVG}</div>
+              <span class="featured-label">Journal</span>
+            </div>
+            <div class="featured-text">
+              <p class="featured-meta">The House of Priscilla</p>
+              <a href="https://thehouseofpriscilla.substack.com/" class="featured-title" target="_blank">
+                Faith, Finance & the Life You Were Meant to Build
+              </a>
+              <p class="featured-excerpt">At The House of Priscilla, we believe financial freedom isn't a number — it's a posture. It's building a life where money serves your purpose, not the other way around. Read the latest on Substack.</p>
+              <a href="https://thehouseofpriscilla.substack.com/" class="read-link" target="_blank" rel="noopener">Read on Substack</a>
+            </div>
+          </article>`;
+        document.getElementById('articles-grid').innerHTML = `
+          <div class="no-articles">
+            <p>Visit <a href="https://thehouseofpriscilla.substack.com/" style="color:var(--gold)">Substack</a> to read all articles.</p>
+          </div>`;
+      }
+    }
+
+    // Category filter (client-side, filters by title keywords)
+    document.querySelectorAll('.category-strip button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.category-strip button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // Filter is illustrative — full filtering requires tagged RSS data
+      });
+    });
+
+    loadArticles();
+  </script>
+
+  <script src="nav.js"></script>
+
+</body>
+</html>
