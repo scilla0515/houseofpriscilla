@@ -155,5 +155,16 @@
 
 
 
+  --heading-font: "Cormorant Garamond", serif;
+  --body-font: "Montserrat", sans-serif;
+}
+
+<script>
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+    
 </body>
 </html>
