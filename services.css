@@ -36,9 +36,15 @@ header {
   position: fixed;
   top: 0;
   z-index: 1000;
-  transition: background 0.4s ease, border-color 0.4s ease;
   background: transparent;
   border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease;
+  box-sizing: border-box;
+}
+
+header.scrolled {
+  background: var(--white);
+  border-bottom: 1px solid rgba(184,149,90,0.3);
 }
 
 .nav-inner {
@@ -73,15 +79,32 @@ header {
   height: 46px;
 }
 
-header.scrolled .nav-logo .logo-light { display: none; }
-header.scrolled .nav-logo .logo-dark  { display: block; }
-header:not(.scrolled) .nav-logo .logo-dark  { display: none; }
-header:not(.scrolled) .nav-logo .logo-light { display: block; }
+.nav-left a,
+.nav-right a {
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--body-font);
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  transition: color 0.3s ease;
+}
 
-header.scrolled .nav-links a {
+.nav-left a:hover,
+.nav-right a:hover {
+  color: var(--gold);
+}
+
+header.scrolled .nav-left a,
+header.scrolled .nav-right a {
   color: var(--black);
 }
 
+header.scrolled .logo-light { display: none; }
+header.scrolled .logo-dark  { display: block; }
+header:not(.scrolled) .logo-dark  { display: none; }
+header:not(.scrolled) .logo-light { display: block; }
 /* ========================
    HERO
 ======================== */
