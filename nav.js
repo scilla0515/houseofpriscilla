@@ -1,3 +1,9 @@
+// Inject nav stylesheet
+const navStyle = document.createElement('link');
+navStyle.rel = 'stylesheet';
+navStyle.href = 'style.css';
+document.head.appendChild(navStyle);
+
 fetch('nav.html')
   .then(res => res.text())
   .then(html => {
