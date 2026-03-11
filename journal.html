@@ -11,16 +11,24 @@
   <meta name="author" content="Priscilla Boateng">
   <link rel="canonical" href="https://thehouseofpriscilla.com/journal.html">
 
-  <!-- Open Graph (for sharing on social) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="The Journal — The House of Priscilla">
   <meta property="og:description" content="Faith-rooted financial wisdom, wealth strategy, and stewardship insight.">
   <meta property="og:url" content="https://thehouseofpriscilla.com/journal.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://thehouseofpriscilla.com/images/hero-placeholder.jpg">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="journal.css">
+</head>
+<body>
+
   <!-- ========================
        JOURNAL HEADER
   ======================== -->
@@ -48,21 +56,17 @@
   ======================== -->
   <main class="journal-main">
 
-    <!-- Loading spinner -->
     <div class="loading-state" id="loading">
       <div class="spinner"></div>
       <p>Loading articles</p>
     </div>
 
-    <!-- Featured article slot -->
     <div id="featured-slot"></div>
 
-    <!-- Section label -->
     <div class="section-label" id="grid-label" style="display:none;">
       <span>Latest from the journal</span>
     </div>
 
-    <!-- Articles grid -->
     <div class="articles-grid" id="articles-grid"></div>
 
   </main>
@@ -115,9 +119,29 @@
   ======================== -->
   <script>
     const SUBSTACK_URL = 'https://thehouseofpriscilla.substack.com/feed';
-    const CORS_PROXY = 'https://api.allorigins.win/get?url=';
+    const PROXIES = [
+      url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+      url => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+      url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+    ];
 
-    // House SVG placeholder for articles without images
+    async function fetchFeed() {
+      for (const proxy of PROXIES) {
+        try {
+          const res = await fetch(proxy(SUBSTACK_URL));
+          if (!res.ok) continue;
+          const text = await res.text();
+          try {
+            const json = JSON.parse(text);
+            if (json.contents) return json.contents;
+          } catch {
+            if (text.includes('<rss') || text.includes('<feed')) return text;
+          }
+        } catch { continue; }
+      }
+      throw new Error('All proxies failed');
+    }
+
     const houseSVG = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <polygon points="50,8 92,35 92,92 8,92 8,35" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
       <circle cx="50" cy="8" r="2" fill="rgba(255,255,255,0.4)"/>
@@ -136,16 +160,12 @@
     }
 
     function getImage(item) {
-      // 1. Try enclosure url
       if (item.enclosureUrl) return item.enclosureUrl;
-      // 2. Try media url
       if (item.mediaUrl) return item.mediaUrl;
-      // 3. Extract first img from description HTML (Substack puts cover image here)
       const tmp = document.createElement('div');
       tmp.innerHTML = item.description || '';
       const img = tmp.querySelector('img');
       if (img && img.src) return img.src;
-      // 4. Try content:encoded
       if (item.contentEncoded) {
         const tmp2 = document.createElement('div');
         tmp2.innerHTML = item.contentEncoded;
@@ -159,14 +179,12 @@
       const imgSrc = getImage(item);
       const date = formatDate(item.pubDate);
       const excerpt = stripHTML(item.description || '').substring(0, 200).trim() + '…';
-
       return `
         <article class="featured-article" id="featured-article">
           <div class="featured-img-wrap">
             ${imgSrc
               ? `<img src="${imgSrc}" alt="${item.title}" loading="lazy">`
-              : `<div class="img-placeholder">${houseSVG}</div>`
-            }
+              : `<div class="img-placeholder">${houseSVG}</div>`}
             <span class="featured-label">Latest</span>
           </div>
           <div class="featured-text">
@@ -182,13 +200,11 @@
       const imgSrc = getImage(item);
       const date = formatDate(item.pubDate);
       const excerpt = stripHTML(item.description || '').substring(0, 130).trim() + '…';
-
       return `
-        <a href="${item.link}" class="article-card" target="_blank" rel="noopener" style="transition-delay: ${index * 0.1}s">
+        <a href="${item.link}" class="article-card" target="_blank" rel="noopener" style="transition-delay:${index * 0.1}s">
           ${imgSrc
             ? `<img class="card-img" src="${imgSrc}" alt="${item.title}" loading="lazy">`
-            : `<div class="card-img-placeholder">${houseSVG}</div>`
-          }
+            : `<div class="card-img-placeholder">${houseSVG}</div>`}
           <div class="card-body">
             <p class="card-meta">${date}</p>
             <p class="card-title">${item.title}</p>
@@ -200,33 +216,22 @@
 
     async function loadArticles() {
       try {
-        const res = await fetch(CORS_PROXY + encodeURIComponent(SUBSTACK_URL));
-        const data = await res.json();
+        const xmlText = await fetchFeed();
         const parser = new DOMParser();
-        const xml = parser.parseFromString(data.contents, 'text/xml');
+        const xml = parser.parseFromString(xmlText, 'text/xml');
         const items = Array.from(xml.querySelectorAll('item'));
-
         if (!items.length) throw new Error('No items');
 
-        // Hide loading
         document.getElementById('loading').style.display = 'none';
         document.getElementById('grid-label').style.display = 'flex';
 
-        // Parse items to plain objects
         const articles = items.map(item => {
-          // enclosure tag has url as attribute
           const enclosureEl = item.querySelector('enclosure');
           const enclosureUrl = enclosureEl?.getAttribute('url') || null;
-
-          // media:content — try both namespaced and plain
-          const mediaEl = item.getElementsByTagNameNS('*', 'content')[0]
-            || item.querySelector('content');
+          const mediaEl = item.getElementsByTagNameNS('*', 'content')[0] || item.querySelector('content');
           const mediaUrl = mediaEl?.getAttribute('url') || null;
-
-          // content:encoded for full HTML body
           const contentEncoded = item.getElementsByTagNameNS('*', 'encoded')[0]?.textContent
             || item.querySelector('encoded')?.textContent || '';
-
           return {
             title: item.querySelector('title')?.textContent || 'Untitled',
             link: item.querySelector('link')?.textContent || '#',
@@ -238,7 +243,6 @@
           };
         });
 
-        // Featured = first article
         const featuredSlot = document.getElementById('featured-slot');
         featuredSlot.innerHTML = buildFeatured(articles[0]);
         setTimeout(() => {
@@ -246,11 +250,9 @@
           if (el) el.classList.add('visible');
         }, 100);
 
-        // Grid = rest of articles
         const grid = document.getElementById('articles-grid');
         if (articles.length > 1) {
           grid.innerHTML = articles.slice(1).map((a, i) => buildCard(a, i)).join('');
-          // Animate cards in
           setTimeout(() => {
             document.querySelectorAll('.article-card').forEach((card, i) => {
               setTimeout(() => card.classList.add('visible'), i * 100);
@@ -261,7 +263,6 @@
         }
 
       } catch (err) {
-        // Fallback if feed fails
         document.getElementById('loading').style.display = 'none';
         document.getElementById('grid-label').style.display = 'flex';
         document.getElementById('featured-slot').innerHTML = `
@@ -273,9 +274,9 @@
             <div class="featured-text">
               <p class="featured-meta">The House of Priscilla</p>
               <a href="https://thehouseofpriscilla.substack.com/" class="featured-title" target="_blank">
-                Faith, Finance & the Life You Were Meant to Build
+                Faith, Finance &amp; the Life You Were Meant to Build
               </a>
-              <p class="featured-excerpt">At The House of Priscilla, we believe financial freedom isn't a number — it's a posture. It's building a life where money serves your purpose, not the other way around. Read the latest on Substack.</p>
+              <p class="featured-excerpt">At The House of Priscilla, we believe financial freedom isn't a number — it's a posture. Read the latest on Substack.</p>
               <a href="https://thehouseofpriscilla.substack.com/" class="read-link" target="_blank" rel="noopener">Read on Substack</a>
             </div>
           </article>`;
@@ -286,12 +287,10 @@
       }
     }
 
-    // Category filter (client-side, filters by title keywords)
     document.querySelectorAll('.category-strip button').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.category-strip button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        // Filter is illustrative — full filtering requires tagged RSS data
       });
     });
 
@@ -299,6 +298,9 @@
   </script>
 
   <script src="nav.js"></script>
+
+</body>
+</html>
 
 </body>
 </html>
