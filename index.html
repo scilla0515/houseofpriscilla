@@ -11,38 +11,42 @@
 </head>
 <body>
 
- <header id="main-header">
-  <div class="nav-inner">
+  <!-- ========================
+       NAVIGATION
+  ======================== -->
+  <header id="main-header">
+    <div class="nav-inner">
 
-    <div class="nav-left">
-      <a href="index.html#mission">About</a>
-      <a href="services.html">Services</a>
+      <div class="nav-left">
+        <a href="index.html#mission">About</a>
+        <a href="services.html">Services</a>
+      </div>
+
+      <div class="nav-logo">
+        <a href="index.html">
+          <svg class="logo-light" width="46" height="46" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,8 92,35 92,92 8,92 8,35" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+            <polygon points="50,16 85,40 85,86 15,86 15,40" fill="none" stroke="rgba(200,200,120,0.35)" stroke-width="0.6"/>
+            <circle cx="50" cy="8" r="2.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+            <circle cx="50" cy="8" r="1" fill="rgba(255,255,255,0.5)"/>
+          </svg>
+          <svg class="logo-dark" width="46" height="46" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,8 92,35 92,92 8,92 8,35" fill="rgba(107,20,20,0.04)" stroke="#6B1414" stroke-width="1.5"/>
+            <polygon points="50,16 85,40 85,86 15,86 15,40" fill="none" stroke="rgba(92,107,34,0.4)" stroke-width="0.6"/>
+            <circle cx="50" cy="8" r="2.5" fill="none" stroke="#6B1414" stroke-width="0.8" opacity="0.6"/>
+            <circle cx="50" cy="8" r="1" fill="#6B1414" opacity="0.5"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
     </div>
+  </header>
 
-    <div class="nav-logo">
-      <a href="index.html">
-        <svg class="logo-light" width="46" height="46" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="50,8 92,35 92,92 8,92 8,35" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-          <polygon points="50,16 85,40 85,86 15,86 15,40" fill="none" stroke="rgba(200,200,120,0.35)" stroke-width="0.6"/>
-          <circle cx="50" cy="8" r="2.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
-          <circle cx="50" cy="8" r="1" fill="rgba(255,255,255,0.5)"/>
-        </svg>
-        <svg class="logo-dark" width="46" height="46" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="50,8 92,35 92,92 8,92 8,35" fill="rgba(107,20,20,0.04)" stroke="#6B1414" stroke-width="1.5"/>
-          <polygon points="50,16 85,40 85,86 15,86 15,40" fill="none" stroke="rgba(92,107,34,0.4)" stroke-width="0.6"/>
-          <circle cx="50" cy="8" r="2.5" fill="none" stroke="#6B1414" stroke-width="0.8" opacity="0.6"/>
-          <circle cx="50" cy="8" r="1" fill="#6B1414" opacity="0.5"/>
-        </svg>
-      </a>
-    </div>
-
-    <div class="nav-right">
-      <a href="journal.html">Journal</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-  </div>
-</header>
 
   <!-- ========================
        HERO
@@ -98,13 +102,13 @@
       <p>Financial Coaching &nbsp;•&nbsp; Wealth Planning &nbsp;•&nbsp; Debt Elimination &nbsp;•&nbsp; Life Transitions &nbsp;•&nbsp; Private Client Services &nbsp;•&nbsp; Group Workshops &nbsp;•&nbsp; Financial Coaching &nbsp;•&nbsp; Wealth Planning &nbsp;•&nbsp; Debt Elimination &nbsp;•&nbsp; Life Transitions &nbsp;•&nbsp;</p>
     </div>
 
-    <!-- Hero text -->
+    <!-- Hero text — fixed: removed duplicate nested div -->
     <div class="hero-text">
-      <div class="hero-text">
-  <h1>The House<br/>of Priscilla</h1>
-  <p>Faith-Rooted Financial Planning &amp; Wealth Management</p>
-  <a href="contact.html" class="hero-btn">Book a Discovery Call</a>
-</div>
+      <h1>The House<br/>of Priscilla</h1>
+      <p>Faith-Rooted Financial Planning &amp; Wealth Management</p>
+      <a href="contact.html" class="hero-btn">Book a Discovery Call</a>
+    </div>
+
   </section>
 
 
@@ -137,42 +141,29 @@
     </div>
   </section>
 
-<section id="covenant">
-  <p class="covenant-eyebrow fade-up">A Covenant of Stewardship</p>
 
-  <span class="covenant-rule-top fade-up"></span>
+  <!-- ========================
+       COVENANT
+  ======================== -->
+  <section id="covenant">
+    <p class="covenant-eyebrow">A Covenant of Stewardship</p>
+    <span class="covenant-rule-top"></span>
+    <p class="covenant-scripture">"Commit your work to the Lord, and your plans will be established."</p>
+    <p class="covenant-ref">— Proverbs 16:3</p>
+    <div class="covenant-divider"><span></span><em>✦</em><span></span></div>
+    <p class="covenant-body">
+      At The House of Priscilla, we believe that true financial freedom is not built on strategy alone, but on wisdom that begins with God. Money is a tool, and like every tool, it is most powerful when placed in the right hands — <strong>first His, then yours.</strong>
+    </p>
+    <p class="covenant-body">
+      As part of our engagement, we commit to a <strong>monthly prayer meeting</strong> — bringing your goals, your fears, your progress, and your decisions before the Lord together. This is not an add-on to our financial work. It is the foundation of it.
+    </p>
+    <div class="covenant-divider"><span></span><em>✦</em><span></span></div>
+    <p class="covenant-scripture">"For I know the plans I have for you, declares the Lord — plans to prosper you and not to harm you, plans to give you a future and a hope."</p>
+    <p class="covenant-ref">— Jeremiah 29:11</p>
+    <span class="covenant-rule-bottom"></span>
+  </section>
 
-  <p class="covenant-scripture fade-up">
-    "Commit your work to the Lord, and your plans will be established."
-  </p>
-  <p class="covenant-ref fade-up">— Proverbs 16:3</p>
 
-  <div class="covenant-divider fade-up">
-    <span></span>
-    <em>✦</em>
-    <span></span>
-  </div>
-  <p class="covenant-body fade-up">
-    At The House of Priscilla, we believe that true financial freedom is not built on strategy alone, but on wisdom that begins with God. Money is a tool, and like every tool, it is most powerful when placed in the right hands — <strong>first His, then yours.</strong>
-  </p>
-
-  <p class="covenant-body fade-up">
-    As part of our engagement, we commit to a <strong>monthly prayer meeting</strong> — bringing your goals, your fears, your progress, and your decisions before the Lord together. This is not an add-on to our financial work. It is the foundation of it.
-  </p>
-
-  <div class="covenant-divider fade-up">
-    <span></span>
-    <em>✦</em>
-    <span></span>
-  </div>
-
-  <p class="covenant-scripture fade-up">
-    "For I know the plans I have for you, declares the Lord — plans to prosper you and not to harm you, plans to give you a future and a hope."
-  </p>
-  <p class="covenant-ref fade-up">— Jeremiah 29:11</p>
-
-  <span class="covenant-rule-bottom fade-up"></span>
-</section>
   <!-- ========================
        MEET PRISCILLA
   ======================== -->
@@ -268,7 +259,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#mission">About</a></li>
         <li><a href="journal.html">Journal</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -286,18 +277,18 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2025 The House of Priscilla · All Rights Reserved</p>
+      <p>© 2026 The House of Priscilla · All Rights Reserved</p>
     </div>
   </footer>
 
 
   <!-- ========================
-       SCROLL SCRIPT
+       SCROLL SCRIPT — fixed: now targets main-header
   ======================== -->
   <script>
-    const nav = document.getElementById('mainNav');
+    const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+      header.classList.toggle('scrolled', window.scrollY > 60);
     });
   </script>
 
